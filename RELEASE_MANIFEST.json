@@ -143,8 +143,8 @@
     },
     {
       "path": "EQA_STAGE2_GATE/PTP_SINGLE_TRACE_GATE/TRACE_EVIDENCE.md",
-      "source_sha256": "3635f15fec33fda2decf66aa87b8d35058ba1ca6054c4c03cec51e9faed32b17",
-      "publication_sha256": "14027a04fdbbccda36a3e5b3055038d9993c03c2210dcd17a502fe770ebd2bf3",
+      "source_sha256": "36c20f054540842035fc126950ea84fdb8763f3189bdca14a36a8493c6c67750",
+      "publication_sha256": "0f36aec94a70f854ef8c20aa78ca3569d2c3737faa7f360e34c21444d8fb3e43",
       "edited_copy": true,
       "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
     },
@@ -157,8 +157,8 @@
     },
     {
       "path": "EQA_STAGE2_GATE/PTP_SINGLE_TRACE_GATE/GATE_DECISION.md",
-      "source_sha256": "8be64942bba1f2c01589172f335d341d1529829099064ae82c4ee87a63ecb8b1",
-      "publication_sha256": "5430e140e06a1ea1905bf90614199d749168d7aa8b3447fe64c6f5331d3c10a2",
+      "source_sha256": "ce6686fba967854d2b5ff53a331bc00017f5046eb1c889e49fc8ad64b278ea54",
+      "publication_sha256": "8ee4267d903337f864f2c1bc0dbff34ec124d04f68b9e73c4e35af4acd6ace24",
       "edited_copy": true,
       "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
     },
