@@ -1,0 +1,11 @@
+*.pdf
+*.png
+*.jpg
+*.zip
+*.tar*
+*.pt
+*.pth
+*.safetensors
+.env*
+node_modules/
+__pycache__/

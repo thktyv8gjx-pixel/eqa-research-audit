@@ -1,0 +1,197 @@
+{
+  "date": "2026-10-21",
+  "files": [
+    {
+      "path": "reports/phase1.md",
+      "source_sha256": "bdde79ba4b901b877b322f5cda2c22cfb817c99483492a765f5fa2d420dcc29c",
+      "publication_sha256": "0ddde489c29301c3a8e9433354aae4ec6b50d240b03c867d2c50a6a00770a43e",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "reports/screening.md",
+      "source_sha256": "94ef3bf6563072a4ee0b722e329f68846e6e0d5018b175bd4352de4509f9c3d9",
+      "publication_sha256": "784592432019b109ad2a085e656929f896dc234ac850233d5d76eea1ddff88c4",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "reports/public_reviews.md",
+      "source_sha256": "355a47694281e731b2a5935901137082c8f93e1894098c13ca047c6a144d03fa",
+      "publication_sha256": "fde6f03e4a10bee25858aaa8b5e13c07d5c92457109f08186b1990d5a5aa222d",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "reports/search_audit.md",
+      "source_sha256": "086957b6a240fef76db3bd94c956961849eb7085bac0a9a6ca4a9d89dd57b730",
+      "publication_sha256": "0c473f73db7afe42181ef62a1d859365d02a865618e99bc2ff2699f69d1d07f7",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "notes/01_3dmem.md",
+      "source_sha256": "0293124e4ca6d6788a060f0067d11eaf04c4e34f257d7146c7ea120492b86730",
+      "publication_sha256": "d57e5193e016c7e64adefd8c5636c9ffbd15dad04656f186e26558916fab3ee4",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "notes/02_grapheqa.md",
+      "source_sha256": "d52a7582a3e816a25695303362a5f7152fcfc951264577d539ab1da4188fa8b2",
+      "publication_sha256": "0dc1d9d93c0d442fff6d507021b29df8a4ef4d85e32d636774b4e4c12bc8a29c",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "notes/03_memoryeqa.md",
+      "source_sha256": "8c89cf43a49fd04d5c4bd80f98f21685fc33bf4a46744e5135f9505c20810f61",
+      "publication_sha256": "06abe5f83b8c213ee5039ec2110fb612e13d28ca6e8bc77f6ec5ac74b0bff876",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "notes/04_express.md",
+      "source_sha256": "b77fcca47714fda1650b5e241fb3d0b8a1eddf8a61fb38d26262666ab91da5eb",
+      "publication_sha256": "8bbd19fdce06decd8c151539c33a938a0dd00576d0390947827cb36978fb585d",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "notes/05_abstaineqa.md",
+      "source_sha256": "d6fe256e3c9d17685c2a5f38b880c591a56cad7ab982a18bff3721b310330c04",
+      "publication_sha256": "58e2e2ec11ed4c46f708cc7617f191f2df364b86cfade5ea555bf49f6efb39a9",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "notes/06_streameqa.md",
+      "source_sha256": "199621591e2770eb7da4e538ff38cfd395ba4ee812a1c66d64ed500514aef417",
+      "publication_sha256": "cfcbfc262ff4bc3f37aa3699fd5d5593772de6835afc61c0260f951d864b3a23",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "notes/07_pqb_eqa.md",
+      "source_sha256": "ab091c82a555d163ab6589f19c1378cf0092ff13ced12df9316289aa251555de",
+      "publication_sha256": "aff573455601b8dc1004c9cfca49b78ea720f84b6ff5eb574c4984651661db44",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "notes/08_sequential_eqa.md",
+      "source_sha256": "5034f61344d64d17eb90371014d1123ae18482e30f4c44e490aa743ada0a2f5b",
+      "publication_sha256": "b8a12350b097184509d05b33654c1e2495811e48a3060bcadf407beaccff49de",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "notes/README.md",
+      "source_sha256": "56c2b60e94e99e9cbc76baecaf96c61e41ceee81790ebb6e08b21d9fd9cb258c",
+      "publication_sha256": "d17174a8d18a3ac98aac33b81f05dbbaee06030a42410053961d6011a32a0539",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "tables/candidates.csv",
+      "source_sha256": "a7f0b47fb871f848ab46b03ea2905cb9a1a63746a0378e057b796b9c5f178d6a",
+      "publication_sha256": "590589570fd423f0b998556e0aef88f2e432c4ee0e1ca78dbe37f7ff3f275a06",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "tables/limitations.csv",
+      "source_sha256": "bb151e2ad5abb54d014592ca4958eb96b6b72a1add2f167880d174c1e8289e75",
+      "publication_sha256": "f39a6ef2bb5096574d44a317b1960229e3af942e5aefd9d0b0ee5342ddc8d105",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "tables/README.md",
+      "source_sha256": "1d0833febc9885e40fda07e5bc9877a7e78fe2fc70376f8e61c0ff70b0276f2b",
+      "publication_sha256": "f2495f32e9d88adbd8e037f61f8e35389e0e4eb661dc1d66214482c0210d3d05",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "EQA_STAGE2_GATE/DATA_FIELD_MATRIX.csv",
+      "source_sha256": "c4c3122f8437a94c862442e349ac0df52bc729dd414ff51a8030472610a272c9",
+      "publication_sha256": "38cc2e8e7a8f61a4d5fe4e5cd4cd268a0f509696819431b21b39e3d66c6a43d7",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "EQA_STAGE2_GATE/NOVELTY_COUNTEREVIDENCE.md",
+      "source_sha256": "29b06c13569f0e748d30542563afb7ddc25cda21230b49df45ed546e1ddf7569",
+      "publication_sha256": "88ff23003395a22192b468d5d84163e6cf46681d5ba9195fb8c49676d2e5d3fc",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "EQA_STAGE2_GATE/MINIMAL_EXPERIMENT_PLAN.md",
+      "source_sha256": "b9369b1b49963cbcd5ce80931abf6d331d512fd8a43d1aecb815c5951d03c05d",
+      "publication_sha256": "002ff45a6376a2ffecadd8a28932224a969a727baf34bfe05f35c3c239ae696c",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "EQA_STAGE2_GATE/STAGE2_GATE_REPORT.md",
+      "source_sha256": "edd34665a34b2d3aee5c44ab77ca3d0e01d0fad9eae3af710cd63de2c5569e4b",
+      "publication_sha256": "23feb3aec35d15f57a826fd608b726ce617fd3e8e06235b7fa13064025955075",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "EQA_STAGE2_GATE/PTP_SINGLE_TRACE_GATE/TRACE_EVIDENCE.md",
+      "source_sha256": "3635f15fec33fda2decf66aa87b8d35058ba1ca6054c4c03cec51e9faed32b17",
+      "publication_sha256": "14027a04fdbbccda36a3e5b3055038d9993c03c2210dcd17a502fe770ebd2bf3",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "EQA_STAGE2_GATE/PTP_SINGLE_TRACE_GATE/MISSING_REQUIREMENTS.md",
+      "source_sha256": "34651631889b0d29be0aec608cb276cd8f4157acd52ef837a8ac08eeaafcd410",
+      "publication_sha256": "2c0219d333750a1de1651e9c739ab427427f2a4f8b5be2e7aa2fc799c66beed7",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "EQA_STAGE2_GATE/PTP_SINGLE_TRACE_GATE/GATE_DECISION.md",
+      "source_sha256": "8be64942bba1f2c01589172f335d341d1529829099064ae82c4ee87a63ecb8b1",
+      "publication_sha256": "5430e140e06a1ea1905bf90614199d749168d7aa8b3447fe64c6f5331d3c10a2",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "logs/eqa_phase1_20261021.md",
+      "source_sha256": "6e7b321b7f3c26bd0028b9e8342c7cb229a0781d2e71836d206f7e28c0409629",
+      "publication_sha256": "05031d29f7a62b4ba24ba2de3ab02e2f1cdd79129f6db20f7a9c52a9e58c74fd",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "EQA_STAGE2_GATE/logs/WORK_LOG.md",
+      "source_sha256": "bf9b1aca7b03e90d146609cd1584f229b50bdf7d5d0d58b61a62bd916086eb50",
+      "publication_sha256": "30882b6c3cafca3850cd454f8f04db248afe2afc3c80cb9289404e3a8576df49",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    },
+    {
+      "path": "EQA_STAGE2_GATE/PTP_SINGLE_TRACE_GATE/logs/WORK_LOG.md",
+      "source_sha256": "bd1963cbb117e19bb52e3c6d3fecdf8b4175655dec5b175b3956b3dc4ecff3cf",
+      "publication_sha256": "0a6276e38d1c6f97409829a66b1610ae18f96d7a5be9c473875d75458d22fa1d",
+      "edited_copy": true,
+      "change_scope": "remove machine paths; redirect excluded evidence; trace report omits raw row values"
+    }
+  ],
+  "excluded": [
+    "teacher materials",
+    "old unrelated research",
+    "PDFs and full paper text",
+    "third-party code snapshots",
+    "raw datasets and extracted rows",
+    "images",
+    "credentials and machine configuration"
+  ],
+  "notes": "Edited publication copies use UTF-8/LF. Historical claims are retained; latest gate decision supersedes earlier recommendation. No experiments run."
+}
