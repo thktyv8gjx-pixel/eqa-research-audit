@@ -1,0 +1,126 @@
+{
+  "scope": "Perception.json only; numeric strings normalized; author basis annotations are not independently validated necessary/sufficient supports",
+  "rows": 6500,
+  "tasks": {
+    "ARB": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500
+      },
+      "max_query_minus_basis_end_if_past": 2.0,
+      "max_query_minus_basis_start_if_past": 32.47
+    },
+    "ARF": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500,
+        "ends_after_query": 495,
+        "starts_after_query": 495
+      },
+      "max_query_minus_basis_end_if_past": 0.0,
+      "max_query_minus_basis_start_if_past": 0.0
+    },
+    "ARR": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500,
+        "ends_after_query": 500
+      },
+      "max_query_minus_basis_end_if_past": null,
+      "max_query_minus_basis_start_if_past": null
+    },
+    "OPB": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500
+      },
+      "max_query_minus_basis_end_if_past": 1.99,
+      "max_query_minus_basis_start_if_past": 20.84
+    },
+    "OPF": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500,
+        "ends_after_query": 500,
+        "starts_after_query": 500
+      },
+      "max_query_minus_basis_end_if_past": null,
+      "max_query_minus_basis_start_if_past": null
+    },
+    "OPR": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500,
+        "ends_after_query": 495
+      },
+      "max_query_minus_basis_end_if_past": 0.0,
+      "max_query_minus_basis_start_if_past": 2.56
+    },
+    "ORQ": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500,
+        "ends_after_query": 500,
+        "starts_after_query": 496
+      },
+      "max_query_minus_basis_end_if_past": null,
+      "max_query_minus_basis_start_if_past": null
+    },
+    "RRB": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500,
+        "crosses_recent64_left": 1
+      },
+      "max_query_minus_basis_end_if_past": 3.0,
+      "max_query_minus_basis_start_if_past": 87.9
+    },
+    "RRF": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500,
+        "ends_after_query": 500,
+        "starts_after_query": 500
+      },
+      "max_query_minus_basis_end_if_past": null,
+      "max_query_minus_basis_start_if_past": null
+    },
+    "RRR": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500,
+        "ends_after_query": 500,
+        "starts_after_query": 1
+      },
+      "max_query_minus_basis_end_if_past": null,
+      "max_query_minus_basis_start_if_past": null
+    },
+    "SUB": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500
+      },
+      "max_query_minus_basis_end_if_past": 0.5,
+      "max_query_minus_basis_start_if_past": 49.9
+    },
+    "SUF": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500,
+        "ends_after_query": 500,
+        "starts_after_query": 500
+      },
+      "max_query_minus_basis_end_if_past": null,
+      "max_query_minus_basis_start_if_past": null
+    },
+    "SUR": {
+      "counts": {
+        "total": 500,
+        "parsed_intervals": 500,
+        "ends_after_query": 500
+      },
+      "max_query_minus_basis_end_if_past": null,
+      "max_query_minus_basis_start_if_past": null
+    }
+  }
+}

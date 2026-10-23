@@ -1,0 +1,723 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "policy": "No third-party content is republished. Unknown permission is not a license. Original raw bytes retained locally. No automatic reacquisition or downloads authorized.",
+  "source_metadata": {
+    "apm": {
+      "revision": "70ea35f6f414e5692bb569a227ebb77fb9cb637c",
+      "tree_url": "https://api.github.com/repos/Jianguo-Huang11/APM-Bench/git/trees/70ea35f6f414e5692bb569a227ebb77fb9cb637c"
+    },
+    "selectstream": {
+      "revision": "ea10420c1c24d322bb1717a179df66c5e05895ba",
+      "tree_url": "https://api.github.com/repos/Haonan-Ge/selectstream/git/trees/ea10420c1c24d322bb1717a179df66c5e05895ba"
+    }
+  },
+  "assets": [
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/EXTRA_ANNOTATION_FETCH_LOG.json",
+      "bytes": 590,
+      "sha256": "7ee9e3e50867c32d6e2922ee772fa60e1e65164184b17e8630c5baf9c8c041a9",
+      "source_url": null,
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "source_kind": "Locally generated acquisition metadata; not an upstream file"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/FETCH_LOG.json",
+      "bytes": 1994,
+      "sha256": "c2864881196733ed226126c4162ce525f289ec65f266186278c486be1d0000f3",
+      "source_url": null,
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "source_kind": "Locally generated acquisition metadata; not an upstream file"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/GITHUB_RELEASE_METADATA.json",
+      "bytes": 21394,
+      "sha256": "db4971a789649c77c0bb1020d0cbaa36df69b2213440bca459d21b2504f8dc17",
+      "source_url": null,
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "source_kind": "Locally generated public Git tree metadata; repos and revisions in source_metadata"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/RESOURCE_FETCH_LOG.json",
+      "bytes": 1953,
+      "sha256": "13e341d2e13fe0a617ff745250b2b13250678b2f95903293f6b293d27bbf1b99",
+      "source_url": null,
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "source_kind": "Locally generated acquisition metadata; not an upstream file"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/apm.html",
+      "bytes": 671257,
+      "sha256": "9df1c6e2775e5bc00e6f6cf14ea8e33ab8c0e799d35452bfce6b9d1e1b2ffa47",
+      "source_url": "https://arxiv.org/html/2609.37559v2",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/apm.txt",
+      "bytes": 88399,
+      "sha256": "236643013df344972b9469dec288f99eed5c0698e07077a915055d228744108a",
+      "source_url": "https://arxiv.org/html/2609.37559v2",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "derived_from": "apm.html"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/apm_hf_info.json",
+      "bytes": 43429,
+      "sha256": "b6c416d691a9c5638bd67fa907d78c6831667a3b91957db3366730854655b87e",
+      "source_url": "https://huggingface.co/datasets/Jianguo-Huang11/APM-Bench/tree/b847a4a8d75ebe9b18bba09000225d747bb34dc4",
+      "source_version": "b847a4a8d75ebe9b18bba09000225d747bb34dc4",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/apm_hf_tree.json",
+      "bytes": 392,
+      "sha256": "8d4a0302258c7cb640b2070754710c9388c0f6a4d5c28fb5a894f5a434f9ccac",
+      "source_url": "https://huggingface.co/datasets/Jianguo-Huang11/APM-Bench/tree/b847a4a8d75ebe9b18bba09000225d747bb34dc4",
+      "source_version": "b847a4a8d75ebe9b18bba09000225d747bb34dc4",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/apm_readme.md",
+      "bytes": 1802,
+      "sha256": "46700f1533ab21ba5ee1a516096810ba94e128ff8856e2d10d66f5e623d275a9",
+      "source_url": "https://github.com/Jianguo-Huang11/APM-Bench/blob/70ea35f6f414e5692bb569a227ebb77fb9cb637c/README.md",
+      "source_version": "70ea35f6f414e5692bb569a227ebb77fb9cb637c",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_dataset_record.html",
+      "bytes": 28792,
+      "sha256": "a883d1e27fc09c66b7077728f92dcc82e41f32823d11d7b650542bfaaa152ca6",
+      "source_url": "https://data.bris.ac.uk/data/dataset/3cqb5b81wk2dc2379fx1mrxh47",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "HD-EPIC project/deposit says CC BY-NC 4.0; Bristol catalog says CC BY 4.0; conflict unresolved; no media redistribution",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_deposit_readme.txt",
+      "bytes": 3875,
+      "sha256": "a1441ed07b5dda8b3cd8491f84df307b8fcfc515eabcc42d9d0e2a2cc6e0c0d0",
+      "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/readme.txt",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "HD-EPIC project/deposit says CC BY-NC 4.0; Bristol catalog says CC BY 4.0; conflict unresolved; no media redistribution",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_downloader.py",
+      "bytes": 11788,
+      "sha256": "1eaf10cbd9b7cbbefc7936c6732b3e0ae61a0ed6bfe2d39feb69a656867cc1b6",
+      "source_url": "https://github.com/hd-epic/hd-epic-downloader/blob/d3431a3a9051cbcadeca98fbb86137605a017525/hd-epic-downloader.py",
+      "source_version": "d3431a3a9051cbcadeca98fbb86137605a017525",
+      "license_status": "Software license not independently verified; HD-EPIC data terms do not automatically license this software",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_downloader_readme.md",
+      "bytes": 5996,
+      "sha256": "929108d99e8b4217e97a21b7e4b30c534bff02ccc9044983080facce48ca2d72",
+      "source_url": "https://github.com/hd-epic/hd-epic-downloader/blob/d3431a3a9051cbcadeca98fbb86137605a017525/README.md",
+      "source_version": "d3431a3a9051cbcadeca98fbb86137605a017525",
+      "license_status": "Software license not independently verified; HD-EPIC data terms do not automatically license this software",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_md5.txt",
+      "bytes": 80857,
+      "sha256": "a2b0f5945114f4af28c87df9d51fab58a71cde33650b4616b5acc5846103d824",
+      "source_url": "https://github.com/hd-epic/hd-epic-downloader/blob/d3431a3a9051cbcadeca98fbb86137605a017525/data/md5.txt",
+      "source_version": "d3431a3a9051cbcadeca98fbb86137605a017525",
+      "license_status": "HD-EPIC project/deposit says CC BY-NC 4.0; Bristol catalog says CC BY 4.0; conflict unresolved; no media redistribution",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_p01_durations.txt",
+      "bytes": 950,
+      "sha256": "986e2513538389d0cebcc30d584662e9bcd13ab0ee0c79b35b6ba226d5614aa7",
+      "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/durations.txt",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "HD-EPIC project/deposit says CC BY-NC 4.0; Bristol catalog says CC BY 4.0; conflict unresolved; no media redistribution",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_videos_p01_listing.html",
+      "bytes": 18224,
+      "sha256": "daae68a87aebfe100e40c45042a3c168e0e911e94283a23f482d061ff00db4ef",
+      "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "HD-EPIC project/deposit says CC BY-NC 4.0; Bristol catalog says CC BY 4.0; conflict unresolved; no media redistribution",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hdepic.html",
+      "bytes": 51075,
+      "sha256": "81b46d5cfb1b58015c3d553192c6de469056d53e367d16bbc5c72205bbdd3777",
+      "source_url": "https://hd-epic.github.io/site/",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "HD-EPIC project/deposit says CC BY-NC 4.0; Bristol catalog says CC BY 4.0; conflict unresolved; no media redistribution",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hdepic.txt",
+      "bytes": 13394,
+      "sha256": "397e26d07aaff6afa8862baba54744b12af97956a70ddc89546624e6b152aea5",
+      "source_url": "https://hd-epic.github.io/site/",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "HD-EPIC project/deposit says CC BY-NC 4.0; Bristol catalog says CC BY 4.0; conflict unresolved; no media redistribution",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "derived_from": "hdepic.html"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/oasis.html",
+      "bytes": 308576,
+      "sha256": "43f1cab7edba02686bce091292804bbd593b00fb05381af8ad2d6da4e1f7b4da",
+      "source_url": "https://arxiv.org/html/2604.17052v1",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/oasis.txt",
+      "bytes": 72025,
+      "sha256": "8b6c27180ec0b00d71db0919b410d47f96c1710bf6f102426310d084515d11fc",
+      "source_url": "https://arxiv.org/html/2604.17052v1",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "derived_from": "oasis.html"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/oasis_forest.py",
+      "bytes": 11899,
+      "sha256": "d37d5ede24f98974616e05b9062b193ef7212159ba52fa9786daed05fe0f718e",
+      "source_url": "https://github.com/Solus-sano/OASIS/blob/dbd342c79a1b9b03327d4ec5daa87488737db988/src/oasis/event/forest.py",
+      "source_version": "dbd342c79a1b9b03327d4ec5daa87488737db988",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/oasis_readme.md",
+      "bytes": 6415,
+      "sha256": "057a787e7ed580bceafbf183599c44145b72bff6c7e17d8a5e22846fe08bcd7b",
+      "source_url": "https://github.com/Solus-sano/OASIS/blob/dbd342c79a1b9b03327d4ec5daa87488737db988/README.md",
+      "source_version": "dbd342c79a1b9b03327d4ec5daa87488737db988",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/oasis_types.py",
+      "bytes": 1657,
+      "sha256": "60c056e8f26ce35676467f312b0dcb1e8bc33de41db1d3970f630e5dc5770966",
+      "source_url": "https://github.com/Solus-sano/OASIS/blob/dbd342c79a1b9b03327d4ec5daa87488737db988/src/oasis/types.py",
+      "source_version": "dbd342c79a1b9b03327d4ec5daa87488737db988",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes",
+      "locator_evidence": "Path inferred from forest.py relative import, not independently blob-verified in this archive pass"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/selectstream.html",
+      "bytes": 607523,
+      "sha256": "b98fef2d041bcea3eb3c3f9dc2687e4b8f61622243ea7c8ebc26af52514d4b5f",
+      "source_url": "https://arxiv.org/html/2606.16353v2",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/selectstream.txt",
+      "bytes": 87536,
+      "sha256": "dffdf8167f654c3445491511b558b1eae2dbd0f98551e8c495a0d1e984625e5c",
+      "source_url": "https://arxiv.org/html/2606.16353v2",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "derived_from": "selectstream.html"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/selectstream_config.yaml",
+      "bytes": 2554,
+      "sha256": "2d0d5a8e527c72ebdb4eb9a61de95625988ea95901fb67ef4b83cac150c34dcd",
+      "source_url": "https://github.com/Haonan-Ge/selectstream/blob/ea10420c1c24d322bb1717a179df66c5e05895ba/configs/selectstream_qwen3vl8b_lvm_sft.yaml",
+      "source_version": "ea10420c1c24d322bb1717a179df66c5e05895ba",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/selectstream_lvm.py",
+      "bytes": 62589,
+      "sha256": "584223717ca0b6031140859599b8dd6baa1db27c5ab23ab40546c67d7aee0a5a",
+      "source_url": "https://github.com/Haonan-Ge/selectstream/blob/ea10420c1c24d322bb1717a179df66c5e05895ba/main/model/lvm_memory.py",
+      "source_version": "ea10420c1c24d322bb1717a179df66c5e05895ba",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/selectstream_readme.md",
+      "bytes": 17619,
+      "sha256": "ef2765ef5a116855f89e8fa79efbae7ac9587e0ec7123beeddb4e55258348339",
+      "source_url": "https://github.com/Haonan-Ge/selectstream/blob/ea10420c1c24d322bb1717a179df66c5e05895ba/README.md",
+      "source_version": "ea10420c1c24d322bb1717a179df66c5e05895ba",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/stream_Interaction.json",
+      "bytes": 8525036,
+      "sha256": "f3ce6abe46f3bfc91542cad97051a74c433b13539436e500f1384587a4186e9e",
+      "source_url": "https://raw.githubusercontent.com/MrYF-Wang/StreamEQA/01dc44aaef2a450ff245e9056fa39ee59bf75d5f/data/annotations/Interaction.json",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/stream_infer.py",
+      "bytes": 2501,
+      "sha256": "77db1230eaf3ece3b5c035f32ca5a53dc8c3bfa2b0cfe3e0a4367bb05d1d4fba",
+      "source_url": "https://github.com/MrYF-Wang/StreamEQA/blob/01dc44aaef2a450ff245e9056fa39ee59bf75d5f/streameqa/benchmark/infer_online.py",
+      "source_version": "01dc44aaef2a450ff245e9056fa39ee59bf75d5f",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/stream_metrics.py",
+      "bytes": 1915,
+      "sha256": "b34ecd492dce95e881de4e6cc868ab0b8f568c8e4570fd8f6ab32d3fa824bec7",
+      "source_url": "https://github.com/MrYF-Wang/StreamEQA/blob/01dc44aaef2a450ff245e9056fa39ee59bf75d5f/streameqa/metrics.py",
+      "source_version": "01dc44aaef2a450ff245e9056fa39ee59bf75d5f",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/stream_perception.json",
+      "bytes": 4992994,
+      "sha256": "9feb623954d8da035e7c19abdcfcd80dceac0a63fe9543e256c3ae52f161ce08",
+      "source_url": "https://raw.githubusercontent.com/MrYF-Wang/StreamEQA/01dc44aaef2a450ff245e9056fa39ee59bf75d5f/data/annotations/Perception.json",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/stream_video.py",
+      "bytes": 3682,
+      "sha256": "3528db41d742a6a15162d0a9c8af66209bb99a1c4fa46bd8d3e9e28de930c61f",
+      "source_url": "https://github.com/MrYF-Wang/StreamEQA/blob/01dc44aaef2a450ff245e9056fa39ee59bf75d5f/streameqa/utils/video.py",
+      "source_version": "01dc44aaef2a450ff245e9056fa39ee59bf75d5f",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "cache_note": "Connector snapshots can normalize terminal newline; cached SHA256 is not asserted identical to remote raw bytes"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/streameqa.html",
+      "bytes": 250987,
+      "sha256": "4d4a3c45ad9f8133d878e1dbb2fae4b23c1f34ee6b001cd97d23c6f2a591b2db",
+      "source_url": "https://arxiv.org/html/2512.04451v1",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/streameqa.txt",
+      "bytes": 63271,
+      "sha256": "655bd320753cbed74eeb5b669b84561f499cf8332b8798b780748f3b0b2704ae",
+      "source_url": "https://arxiv.org/html/2512.04451v1",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "derived_from": "streameqa.html"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/wrws.html",
+      "bytes": 590555,
+      "sha256": "4de8ddd42d7f42182fd2e5d1797c8f1a585433a40289baec0a87ecf111a37832",
+      "source_url": "https://arxiv.org/html/2609.37345v1",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/wrws.txt",
+      "bytes": 78117,
+      "sha256": "7e3dba910021cd3e874619298bb1907ccdb25eb85da8e997c8fabd36bf2de2a7",
+      "source_url": "https://arxiv.org/html/2609.37345v1",
+      "source_version": "Pinned in URL or source_metadata; otherwise unspecified, exact cached hash retained",
+      "license_status": "Upstream terms must be checked; no redistribution grant asserted",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "derived_from": "wrws.html"
+    },
+    {
+      "path": "D3_VIDEO_RESUME_ID4370/.gitignore",
+      "bytes": 59,
+      "sha256": "57a215986904014c819723b79f74568108a3c17bd85398d535a43466e25cdf72",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_RESUME_ID4370/PROTECTION_BEFORE.json",
+      "bytes": 172041,
+      "sha256": "a798a98c12d0b774c7e9102af9c813cc227ac693ecc3d5c44d423f486e0ddb2a",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_RESUME_ID4370/candidate.mp4.partial",
+      "bytes": 94875356,
+      "sha256": "93a895270832fc42d1a4f447f748c3d1bb4750f8041a671ec07dddc51bf8006f",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+      "full_expected_bytes": 357839862,
+      "full_expected_md5": "c981eab775c96858da313acef769b014",
+      "license_status": "HD-EPIC NC terms and catalog conflict; incomplete bytes are not complete video evidence; preserve prefix"
+    },
+    {
+      "path": "D3_VIDEO_RESUME_ID4370/journal.jsonl",
+      "bytes": 3209860,
+      "sha256": "1124a494b7ab6c0a6e228e5a0fd6822740dbad689a5dc7dbe940084c12280286",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_RESUME_ID4370/logs/POST_STOP_DECODE_GATE_CHECK.log",
+      "bytes": 52,
+      "sha256": "7d44713789678b5524ba0a59ca042fc1f7310e7628e4e823fe4b249ad5cde437",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_RESUME_ID4370/logs/TRANSFER_RUN.log",
+      "bytes": 533,
+      "sha256": "01814ee4fb6c3b5a41566a3b505e5f40448ee32d58d1c5cbfc893dd9fd81142e",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_RESUME_ID4370/result_0000.json",
+      "bytes": 557,
+      "sha256": "a2da48a8e71b47563c581de319e2a71688bc31311d3b0104bb2313ba58a85fd0",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_RESUME_ID4370/run.lock",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_DOWNLOADER_OFFLINE_2026-10-23/.gitignore",
+      "bytes": 38,
+      "sha256": "830766c9dab726169dda2d0d757a71a2f456489a1dd6889f74aff5bf810dc923",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_DOWNLOADER_OFFLINE_2026-10-23/PROTECTION_BEFORE.json",
+      "bytes": 16436,
+      "sha256": "6f392840032be7c9e78bc4512cf80e99a2acf6dafdc0278c4c42fd1b6bd8dae0",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_DOWNLOADER_OFFLINE_2026-10-23/REMOTE_RESUME_PLAN_UNAPPROVED.json",
+      "bytes": 1148,
+      "sha256": "87d61eca18c2fff1ed8f22244a419555a6bb8648120245a974baa1eae8e5578b",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_DOWNLOADER_OFFLINE_2026-10-23/RESUME_BUDGET_AND_VERIFICATION.md",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_DOWNLOADER_OFFLINE_2026-10-23/results/LOOPBACK_REQUEST_LOG_run2.json",
+      "bytes": 16279,
+      "sha256": "2426ed79f874f9147a7ff5fa4634bcc4f933e288eaa3678398575b8cdc757f02",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_DOWNLOADER_OFFLINE_2026-10-23/results/LOOPBACK_REQUEST_LOG_run3.json",
+      "bytes": 16279,
+      "sha256": "fb210f4f9eb9c91e05b48efaf6e7877a6962b7df22e4abb43bdb3b3c6454554c",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_DOWNLOADER_OFFLINE_2026-10-23/results/TEST_RUN_1.log",
+      "bytes": 1360,
+      "sha256": "cd6725b78aabeae356e181685a54117bbed3529a87601d9369abf7e56a403967",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_DOWNLOADER_OFFLINE_2026-10-23/results/TEST_RUN_2.log",
+      "bytes": 2425,
+      "sha256": "2e312d6023368e723ea2d7abbac06859f7ca028e2a08b91001a31abd4d7c0071",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_DOWNLOADER_OFFLINE_2026-10-23/results/TEST_RUN_3.log",
+      "bytes": 2425,
+      "sha256": "cd0aa6c989772dae5eaad036fde973308a6dcea82d28b2e43b60aa4f253611db",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "local_migration/2026-10-22/AUDIT_EVIDENCE.json",
+      "bytes": 14890,
+      "sha256": "ca6e8b08776185505a6232319632670b19de7f7e7901156b49f17773916172e0",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/.gitignore",
+      "bytes": 30,
+      "sha256": "c87dbe59648f84b376d093194e02040f89bd3c9d8aec717da0d6866893fa2f7b",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/AUTHORIZATION.json",
+      "bytes": 576,
+      "sha256": "1237df07eef883f32c0298dced1bfb7c9f147f2ca48ede661d7b0560bac4318f",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/PROTECTION_BEFORE.json",
+      "bytes": 12419,
+      "sha256": "e072eb8fb3478ccbdb94f33ed7dd51ac4b6eed26a94f0fcfd168b983b1bba42f",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/logs/ACQUISITION.log",
+      "bytes": 4830,
+      "sha256": "c6bca53bffd04f6df2f3644bd32a6851d021d084c1bf6919ede233a9486c3b41",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/logs/ACQUISITION_CURL.log",
+      "bytes": 1708,
+      "sha256": "928c2497c3f402aa730b6b93a588adca96d1db90b0d24c215d9574f354fe36b1",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/logs/COMPILER_CACHE_CLEANUP.json",
+      "bytes": 370,
+      "sha256": "e0c203e00a9fe7d381235b2ae46b177ada24d15e7a919da97b25514f84ce3f8c",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/logs/SHEET_COMPILE.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/logs/SWIFT_COMPILE.log",
+      "bytes": 950,
+      "sha256": "c1b40b6b9ed36a22c2dd3c9eba7dca9d30140da95b9aa272338ad0446a3f3313",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/logs/TRANSFER_LEDGER.json",
+      "bytes": 622,
+      "sha256": "971a31bd600a393f83765ec4b8b2d3a940adb72b2f0074b16cc75f43c344ceb1",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/logs/TRANSFER_LEDGER_CURL.json",
+      "bytes": 1084,
+      "sha256": "2ad80935fba3634aaf0c4804c38390a309f38ba3edde804f8328525d71347492",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/logs/curl_0_headers.txt",
+      "bytes": 399,
+      "sha256": "721864b3a5b930f0ebadffba48de5e4a77c2b224da2a03bc5ea73f46c2c4dbf8",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/logs/curl_0_stats.json",
+      "bytes": 331,
+      "sha256": "8dfcd7fda3d51b347f6fb79e288e5fedc9cf520a5f3690c95b80369d14bd08dc",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/logs/curl_0_stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/logs/curl_1_headers.txt",
+      "bytes": 372,
+      "sha256": "239fce34eb48abdf38ec9f1cd849cd2af8ee6faeeebcfa522e0686dd233e1ffa",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/media/P01-20240202-110250.mp4.partial",
+      "bytes": 17821696,
+      "sha256": "7639ef70768aba2c8af4652056bdf95183636e44b4738e22b2b2bb8c136fc6ee",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+      "full_expected_bytes": 357839862,
+      "full_expected_md5": "c981eab775c96858da313acef769b014",
+      "license_status": "HD-EPIC NC terms and catalog conflict; incomplete bytes are not complete video evidence; preserve prefix"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/media/range_head_0_65535.bin",
+      "bytes": 65536,
+      "sha256": "804e0c8645010f7674c5fb07f052af6bdd222a60653480d043d84f51780157ad",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "source_url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+      "full_expected_bytes": 357839862,
+      "full_expected_md5": "c981eab775c96858da313acef769b014",
+      "license_status": "HD-EPIC NC terms and catalog conflict; incomplete bytes are not complete video evidence; preserve prefix"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/tmp/av_audit",
+      "bytes": 154504,
+      "sha256": "fb40c5adbcdb93088b790811d4513a21184150cfad8faba66cbacccc28dae714",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_VIDEO_VERIFICATION_2026-10-23_ID4370/tmp/contact_sheet",
+      "bytes": 102976,
+      "sha256": "bc9f2da466ad20a1692030ec72d2b5f1ffb3e1e413137446592ac5cba0ae37d1",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_FINAL_RESUME_PREFLIGHT_2026-10-23_ID4370/PROTECTION_BEFORE.json",
+      "bytes": 176290,
+      "sha256": "e2208adc1af7899bf7b7b25fc19bce093210d807fea4224e875c71dd9d33c124",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_FINAL_RESUME_PREFLIGHT_2026-10-23_ID4370/logs/completion_short_by_one/result_0000.json",
+      "bytes": 557,
+      "sha256": "0dc0dbeed8e51667e1cfd74790a19e70889220aeb721fda967c47d019fd2ae3f",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_FINAL_RESUME_PREFLIGHT_2026-10-23_ID4370/logs/current_balance/result_0000.json",
+      "bytes": 517,
+      "sha256": "49ab9f251ca65c02d3a12a81867f3f7aa1f4dcb9a8c21c60adeb371658f3d44c",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_FINAL_RESUME_PREFLIGHT_2026-10-23_ID4370/logs/exact_completion_balance/result_0000.json",
+      "bytes": 517,
+      "sha256": "49ab9f251ca65c02d3a12a81867f3f7aa1f4dcb9a8c21c60adeb371658f3d44c",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_SINGLE_CASE_2026-10-23_ID4370/.gitignore",
+      "bytes": 164,
+      "sha256": "79f12964c2926decfb2523342f0e9d8991bc618df7b30d9f7a2fdc886de97bff",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_SINGLE_CASE_2026-10-23_ID4370/HEAD_ATTEMPT_1.json",
+      "bytes": 1639,
+      "sha256": "e0b418fc495b4c8a81f80b78d575a23d211bb9ba676e2c51d5b1dcd63ef3b511",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_SINGLE_CASE_2026-10-23_ID4370/HEAD_ATTEMPT_1.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_SINGLE_CASE_2026-10-23_ID4370/HEAD_ATTEMPT_2.json",
+      "bytes": 24711,
+      "sha256": "fc4a9b1dde26b16bcbbaf97689e66e2750795138e2e0353b4e0cb075b7339ad4",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_SINGLE_CASE_2026-10-23_ID4370/HEAD_ATTEMPT_2.txt",
+      "bytes": 372,
+      "sha256": "3441d970ae8a769cf1dc2baa7a058cc30dfb65a148b7e1d922b7303c22cd8c50",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_SINGLE_CASE_2026-10-23_ID4370/LOCAL_ENVIRONMENT.json",
+      "bytes": 723,
+      "sha256": "ec4ba17b959951ef591cdddc2a11c884fc289dac22089f509312187f66cbc978",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_SINGLE_CASE_2026-10-23_ID4370/PROTECTION_BEFORE.json",
+      "bytes": 10440,
+      "sha256": "396a3a3f9159e3d22cc9e58edacf576d17e8bd6bf67879a1e615d7baf638d193",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/PROTECTION_BEFORE.json",
+      "bytes": 4061,
+      "sha256": "58d2399199f4647911f564dc15b4b9f13d00bfee72a02c81920a0a2a4db17521",
+      "status": "LOCAL_PRIVATE_RETAINED_NOT_PUBLIC",
+      "reason": "Private provenance/config, raw diagnostics, original approval, protection snapshot or reproducible intermediate; not necessary for public report"
+    }
+  ],
+  "private_originals_also_retained": [
+    "D3_SINGLE_CASE_2026-10-23_ID4370/FROZEN_CASE.json",
+    "D3_VIDEO_RESUME_ID4370/APPROVED_CONFIG.json",
+    "D3_VIDEO_RESUME_ID4370/journal.jsonl"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-10-23T14:56:16.346485+08:00",
+  "prefix_size": 17821696,
+  "prefix_sha256": "7639ef70768aba2c8af4652056bdf95183636e44b4738e22b2b2bb8c136fc6ee",
+  "prefix_probe_match": true,
+  "downloader_sha256": "9375e83a8cd043ae9d93eb61415979ec2000650b012a47a2737ebe319f425d30",
+  "protected_entry_count": 749,
+  "new_media_budget": 342115318,
+  "historical_body_lower": 17887232,
+  "historical_body_upper": 357905398,
+  "combined_conservative_cap": 700020716,
+  "missing_file_bytes": 340018166,
+  "first_range": "bytes=17821696-18870271",
+  "local_budget_bytes": 536870912,
+  "disk_free_bytes": 906618859520,
+  "additional_probe_requests_planned": 0,
+  "automatic_retry": false,
+  "ffmpeg": null,
+  "ffprobe": null
+}

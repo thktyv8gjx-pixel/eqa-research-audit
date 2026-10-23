@@ -1,0 +1,66 @@
+{
+  "timestamp": "2026-10-23T15:27:46.069610+08:00",
+  "decision": "HOLD",
+  "reason": "READ_TIMEOUT_STOPPED_NO_RETRY",
+  "head": "e8627bc729579268cb6c54cdb00f6a484f3e8ede",
+  "protected_existing_entries": 749,
+  "changed_existing_entries": [],
+  "tracked_diff": "",
+  "reports": {
+    "RESOURCE_AND_LICENSE.md": {
+      "bytes": 6738,
+      "sha256": "cbc800e549a7eda89843f40b01fe3523b718a88b3d9129bd3ea4b9b322d14451"
+    },
+    "PTS_AND_FRAME_AUDIT.md": {
+      "bytes": 4038,
+      "sha256": "96a48d627d74d611481bedc1bd1018b4bdcd21b48c6917922d67b9f0acb36aa3"
+    },
+    "EVIDENCE_JUDGMENTS.md": {
+      "bytes": 3870,
+      "sha256": "7bf705ea04117684212a84b7437cbf4b9fc4c8735cbc415f727a4b4d4fec1194"
+    },
+    "D3_SINGLE_CASE_DECISION.md": {
+      "bytes": 4902,
+      "sha256": "c7aaada016ba3e9ed9b5abcc6d71ed9916d628b9ba8db988d81ab93b98273a97"
+    }
+  },
+  "journal_sha256": "1124a494b7ab6c0a6e228e5a0fd6822740dbad689a5dc7dbe940084c12280286",
+  "candidate_bytes": 94875356,
+  "candidate_sha256": "93a895270832fc42d1a4f447f748c3d1bb4750f8041a671ec07dddc51bf8006f",
+  "candidate_md5_partial_only": "3a7e5de623c262677ae16bdeedb55ca0",
+  "full_md5_verified": false,
+  "new_observed_body_bytes": 77053660,
+  "new_body_conservative_upper": 77594624,
+  "combined_body_lower": 94940892,
+  "combined_body_upper": 435500022,
+  "next_offset": 94875356,
+  "missing_file_bytes": 262964506,
+  "budget_remaining_conservative": 264520694,
+  "requests": 74,
+  "completed_responses": 73,
+  "failed_responses": 1,
+  "retry_after_timeout": false,
+  "decode_executed": false,
+  "pts_verified": false,
+  "frames_created": 0,
+  "evidence_judgments": {
+    "A": "无法判断",
+    "B": "无法判断",
+    "C": "无法判断",
+    "D": "无法判断",
+    "E": "无法判断"
+  },
+  "candidate_git_ignored": true,
+  "installed_packages": 0,
+  "git_commit_push": false,
+  "local_budget_bytes": 536870912,
+  "logical_disk_bytes": 122057479,
+  "allocated_disk_bytes": 131395584,
+  "logical_mib": 116.403083,
+  "allocated_mib": 125.308594,
+  "disk_roots": [
+    "${EQA_WORKSPACE}/D3_VIDEO_VERIFICATION_2026-10-23_ID4370",
+    "${EQA_WORKSPACE}/D3_DOWNLOADER_OFFLINE_2026-10-23",
+    "${EQA_WORKSPACE}/D3_VIDEO_RESUME_ID4370"
+  ]
+}

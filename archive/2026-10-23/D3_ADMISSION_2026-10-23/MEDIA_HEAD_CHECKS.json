@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240203-184045.mp4",
+    "method": "HEAD",
+    "status": 200,
+    "content_length": "59698967",
+    "content_type": "video/mp4",
+    "accept_ranges": "bytes",
+    "last_modified": "Fri, 24 May 2024 00:01:39 GMT",
+    "etag": "\"664fd8e3-38eef17\"",
+    "media_bytes_read": 0
+  },
+  {
+    "url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240204-124504.mp4",
+    "method": "HEAD",
+    "status": 200,
+    "content_length": "105605454",
+    "content_type": "video/mp4",
+    "accept_ranges": "bytes",
+    "last_modified": "Fri, 24 May 2024 00:00:53 GMT",
+    "etag": "\"664fd8b5-64b694e\"",
+    "media_bytes_read": 0
+  },
+  {
+    "url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240204-160230.mp4",
+    "method": "HEAD",
+    "status": 200,
+    "content_length": "150103036",
+    "content_type": "video/mp4",
+    "accept_ranges": "bytes",
+    "last_modified": "Fri, 24 May 2024 00:00:10 GMT",
+    "etag": "\"664fd88a-8f263fc\"",
+    "media_bytes_read": 0
+  }
+]

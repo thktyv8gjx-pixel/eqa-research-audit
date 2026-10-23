@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-10-23T14:29:53.378248+08:00",
+  "engineering_gate": "OFFLINE_TESTS_PASS",
+  "research_gate": "HOLD_NO_PIXEL_PTS_RESULT",
+  "remote_authorized": false,
+  "remote_resume_directory_created": false,
+  "protected_existing_files": 132,
+  "changed_existing_files": [],
+  "real_prefix_bytes": 17821696,
+  "real_prefix_sha256": "7639ef70768aba2c8af4652056bdf95183636e44b4738e22b2b2bb8c136fc6ee",
+  "head": "e8627bc729579268cb6c54cdb00f6a484f3e8ede",
+  "tracked_diff": "",
+  "test_methods_passed": 26,
+  "test_failures": 0,
+  "test_errors": 0,
+  "real_signal_subcases": 14,
+  "hard_exit_windows": 4,
+  "final_loopback_requests": 97,
+  "external_requests_this_turn": 0,
+  "real_media_requests_this_turn": 0,
+  "real_media_body_bytes_this_turn": 0,
+  "recommended_new_body_budget": 342115318,
+  "conservative_combined_upper": 700020716,
+  "local_disk_limit": 536870912,
+  "preserved_video_directory_bytes": 18211101,
+  "offline_directory_bytes_before_record": 5544024,
+  "projected_future_bytes_including_16MiB_metadata_and_96MiB_review": 499035499,
+  "source_hashes": {
+    "scripts/bounded_resume.py": "9375e83a8cd043ae9d93eb61415979ec2000650b012a47a2737ebe319f425d30",
+    "tests/worker.py": "f5a590642710b1a75ac57c359608303e6d88dad784dbd131b5313428a84b337d",
+    "tests/test_offline.py": "b77fd93d150c5c3ef179de2d37aeb14b528f06c2aa325c70afdac0f1d95e8e17"
+  },
+  "reports": {
+    "OFFLINE_REPAIR_REPORT.md": {
+      "bytes": 4941,
+      "sha256": "bc95da024fdf9c55365d3f7f62747298d56845372d400b4065de46f0932a139a"
+    },
+    "OFFLINE_TEST_RESULTS.md": {
+      "bytes": 3636,
+      "sha256": "f2f9ebe7c0453717b64f6c90c655e54358911fa8b8bbd125974da910f024ad18"
+    },
+    "RESUME_BUDGET_AND_VERIFICATION.md": {
+      "bytes": 5450,
+      "sha256": "3f21baf484bc72f8f3a0dc5a5a1a24d5c1706278dab37ca6426b17080a4045de"
+    }
+  },
+  "packages_installed": 0,
+  "git_commit_push": false,
+  "status": "?? ../D3_ADMISSION_2026-10-23/\n?? ./\n?? ../D3_SINGLE_CASE_2026-10-23_ID4370/\n?? ../D3_VIDEO_VERIFICATION_2026-10-23_ID4370/\n?? ../local_migration/\n"
+}

@@ -1,0 +1,37 @@
+{
+  "timestamp": "2026-10-23T14:25:13.992920+08:00",
+  "approved_for_remote": false,
+  "old_media_lower": 17887232,
+  "old_media_upper": 357905398,
+  "original_total_authorization": 359937014,
+  "proven_old_remaining": 2031616,
+  "prefix_bytes": 17821696,
+  "missing_bytes": 340018166,
+  "minimum_new_body_budget": 340018166,
+  "recommended_additional_body_allowance": 2097152,
+  "recommended_new_body_budget": 342115318,
+  "conservative_combined_upper_minimum": 697923564,
+  "conservative_combined_upper_recommended": 700020716,
+  "increase_over_original_total_limit": 340083702,
+  "chunk_requests_without_retry": 325,
+  "first_range": [
+    17821696,
+    18870271
+  ],
+  "last_range": [
+    357560320,
+    357839861
+  ],
+  "last_range_bytes": 279542,
+  "new_probe_requests": 0,
+  "retry_policy": "No automatic retry; any later resumed attempt uses the same approved ledger and remaining conservative budget",
+  "disk_limit": 536870912,
+  "retained_old_directory_bytes": 18211101,
+  "offline_directory_snapshot_bytes": 5528648,
+  "new_complete_candidate_bytes": 357839862,
+  "log_and_tool_reserve": 16777216,
+  "proposed_future_review_materials_cap": 100663296,
+  "future_disk_estimate": 499020123,
+  "historical_interval_remains_uncertain": true,
+  "wire_traffic_measured": false
+}

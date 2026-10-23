@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-10-23T13:33:55.123269+08:00",
+  "request_method": "HEAD",
+  "url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+  "status": 200,
+  "headers": {
+    "date": "Fri, 23 Oct 2026 05:32:04 GMT",
+    "content-type": "video/mp4",
+    "content-length": "357839862",
+    "last-modified": "Fri, 24 May 2024 00:02:04 GMT",
+    "etag": "\"664fd8fc-155433f6\"",
+    "accept-ranges": "bytes"
+  },
+  "http_response_body_bytes": 0,
+  "http_response_header_bytes": 372,
+  "tls_tcp_dns_wire_bytes": "NOT_MEASURED",
+  "range_requests_executed": 0,
+  "media_get_requests_executed": 0,
+  "range_independent_decode_status": "UNVERIFIED_PENDING_EXPLICIT_DOWNLOAD_APPROVAL",
+  "prior_dns_attempt": {
+    "exitcode": 6,
+    "response_body_bytes": 0,
+    "response_header_bytes": 0
+  },
+  "approval_requested_scope": {
+    "only_video": "P01-20240202-110250.mp4",
+    "full_file_bytes": 357839862,
+    "range_probe_body_bytes_max": 2097152,
+    "total_media_body_bytes_max": 359937014,
+    "disk_bytes_max": 536870912,
+    "derivative_materials_bytes_max": 134217728,
+    "automatic_full_redownload": false,
+    "model_execution": false,
+    "future_pixels_as_inputs": false,
+    "extra_videos": false,
+    "package_installation": false
+  },
+  "approval_granted": false
+}

@@ -1,0 +1,6 @@
+{
+  "source": "${EQA_WORKSPACE}/D3_VIDEO_VERIFICATION_2026-10-23_ID4370/scripts/mp4_timing.py",
+  "source_sha256": "f2c8f15801e22a1a6284cd29b53db6a2e0f6d53adc3f5dff26021fafd94eaa8c",
+  "adaptation": "Only latest transfer-result gate path, full-size/MD5 gate, and candidate path changed. Container parser preserved; all outputs in new resume directory.",
+  "adapted_sha256": "84e74c5bb77dc02a12447dd68d300e89c91f13708c8292882a2f74dc95873ce6"
+}

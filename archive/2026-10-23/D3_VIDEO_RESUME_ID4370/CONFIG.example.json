@@ -1,0 +1,24 @@
+{
+  "mode": "archived_example_not_authorized",
+  "approved": false,
+  "approval_reference": null,
+  "url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+  "prefix": "${EQA_WORKSPACE}/private/prefix.partial",
+  "prefix_bytes": 17821696,
+  "prefix_sha256": "7639ef70768aba2c8af4652056bdf95183636e44b4738e22b2b2bb8c136fc6ee",
+  "work_dir": "${EQA_WORKSPACE}/private/example",
+  "total_bytes": 357839862,
+  "expected_md5": "c981eab775c96858da313acef769b014",
+  "etag": "\"664fd8fc-155433f6\"",
+  "content_type": "video/mp4",
+  "request_bytes": 1048576,
+  "read_bytes": 65536,
+  "timeout_seconds": 30,
+  "body_budget_bytes": 342115318,
+  "disk_budget_bytes": 536870912,
+  "metadata_reserve_bytes": 16777216,
+  "disk_roots": [
+    "${EQA_WORKSPACE}/private"
+  ],
+  "archive_notice": "Historic parameters only; downloader development and execution stopped."
+}

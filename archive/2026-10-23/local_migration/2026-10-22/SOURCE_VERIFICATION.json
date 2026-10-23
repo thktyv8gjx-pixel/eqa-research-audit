@@ -1,0 +1,172 @@
+{
+  "started": "2026-10-22",
+  "completed": "2026-10-23",
+  "timezone": "Asia/Shanghai",
+  "scope": "Read-only primary-source verification; no model, dataset archive, video, simulation or paid API use.",
+  "repositories": {
+    "eqa": "e8627bc729579268cb6c54cdb00f6a484f3e8ede",
+    "streameqa": "01dc44aaef2a450ff245e9056fa39ee59bf75d5f",
+    "habitat_main": "57ee4941dc4765240f0f91f70b2c97a919bf9038"
+  },
+  "official_files": [
+    {
+      "label": "StreamEQA README",
+      "url": "https://github.com/MrYF-Wang/StreamEQA/blob/main/README.md",
+      "content_characters": 9094,
+      "read_status": "READ"
+    },
+    {
+      "label": "StreamEQA video utils",
+      "url": "https://github.com/MrYF-Wang/StreamEQA/blob/main/streameqa/utils/video.py",
+      "content_characters": 3681,
+      "read_status": "READ"
+    },
+    {
+      "label": "Habitat build instructions",
+      "url": "https://github.com/facebookresearch/habitat-sim/blob/main/BUILD_FROM_SOURCE.md",
+      "content_characters": 6869,
+      "read_status": "READ"
+    },
+    {
+      "label": "Habitat workflow",
+      "url": "https://github.com/facebookresearch/habitat-sim/blob/main/.github/workflows/install_and_test.yml",
+      "content_characters": 20912,
+      "read_status": "READ"
+    },
+    {
+      "label": "StreamEQA requirements",
+      "url": "https://github.com/MrYF-Wang/StreamEQA/blob/01dc44aaef2a450ff245e9056fa39ee59bf75d5f/requirements.txt",
+      "content_characters": 64,
+      "read_status": "READ"
+    },
+    {
+      "label": "StreamEQA Qwen3VL adapter",
+      "url": "https://github.com/MrYF-Wang/StreamEQA/blob/01dc44aaef2a450ff245e9056fa39ee59bf75d5f/streameqa/models/qwen3vl.py",
+      "content_characters": 2394,
+      "read_status": "READ",
+      "key_findings": "inputs.to(\"cuda\" if torch.cuda.is_available() else \"cpu\"); no explicit MPS path"
+    },
+    {
+      "label": "3D-Mem README",
+      "url": "https://github.com/UMass-Embodied-AGI/3D-Mem/blob/f445e0828a2c5d5845ccdbd0992fc5eed871d19a/README.md",
+      "content_characters": 5380,
+      "read_status": "READ"
+    },
+    {
+      "label": "Habitat matrix builder",
+      "url": "https://github.com/facebookresearch/habitat-sim/blob/main/conda-build/matrix_builder.py",
+      "content_characters": 5224,
+      "read_status": "READ"
+    }
+  ],
+  "literature": [
+    {
+      "id": "2608.13605v1",
+      "name": "Active Perception for Embodied Disambiguation",
+      "submitted": "2026-08-11",
+      "url": "https://arxiv.org/abs/2608.13605",
+      "depth": "Current identity/abstract verified; detailed method evidence inherited from repository counterevidence report."
+    },
+    {
+      "id": "2602.15513v2",
+      "name": "HIMM",
+      "version_date": "2026-03-02",
+      "url": "https://arxiv.org/html/2602.15513",
+      "depth": "Relevant method and experiment-setting sections; not entire bibliography or code."
+    },
+    {
+      "id": "2603.19137v1",
+      "name": "GSMem",
+      "submitted": "2026-03-19",
+      "url": "https://arxiv.org/html/2603.19137",
+      "depth": "Relevant section 3 and author project page; implementation availability not confirmed."
+    },
+    {
+      "id": "2602.15813v1",
+      "name": "FAST-EQA",
+      "submitted": "2026-02-17",
+      "url": "https://arxiv.org/abs/2602.15813",
+      "depth": "Primary abstract."
+    },
+    {
+      "id": "2606.16353v2",
+      "name": "SelectStream",
+      "version_date": "2026-09-26",
+      "url": "https://arxiv.org/html/2606.16353v2",
+      "depth": "Abstract and relevant method structure/passages; no code or weights verified."
+    },
+    {
+      "id": "2609.37345v1",
+      "name": "WRWS",
+      "submitted": "2026-09-29",
+      "url": "https://arxiv.org/html/2609.37345v1",
+      "depth": "Problem/method setting, efficiency, qualitative failure and limitations sections."
+    },
+    {
+      "id": "2609.37559v2",
+      "name": "APM-Bench",
+      "version_date": "2026-10-12",
+      "url": "https://arxiv.org/abs/2609.37559",
+      "depth": "Primary abstract and version metadata."
+    },
+    {
+      "id": "2610.12561v1",
+      "name": "MeMoREval",
+      "submitted": "2026-10-08",
+      "url": "https://arxiv.org/html/2610.12561v1",
+      "depth": "Abstract and experience-request protocol relevant passages."
+    },
+    {
+      "id": "2610.24767v1",
+      "name": "DialogMem",
+      "submitted": "2026-10-17",
+      "url": "https://arxiv.org/abs/2610.24767",
+      "depth": "Primary abstract."
+    },
+    {
+      "id": "2610.26554v1",
+      "name": "BetaMem",
+      "submitted": "2026-10-19",
+      "url": "https://arxiv.org/abs/2610.26554",
+      "depth": "Primary abstract."
+    },
+    {
+      "id": "2609.28236v1",
+      "name": "EmbodiedMemory-Bench",
+      "submitted": "2026-09-23",
+      "url": "https://arxiv.org/abs/2609.28236",
+      "depth": "Primary abstract."
+    }
+  ],
+  "query_families": [
+    "StreamEQA streaming embodied question answering",
+    "HIMM GSMem memory",
+    "embodied question answering fixed memory capacity interference 2026",
+    "streaming video budget evidence retention memory 2026",
+    "Recent/October 2026 embodied memory and streaming video evidence",
+    "Cross-date refresh October 22/23 2026"
+  ],
+  "limits": [
+    "Not an exhaustive systematic review.",
+    "Search result crawl dates were not treated as submission dates.",
+    "No claim that no newer work exists.",
+    "All three directions remain unconfirmed for novelty."
+  ],
+  "annotation_metadata_only": [
+    {
+      "name": "Perception.json",
+      "bytes": 4992994,
+      "blob": "7f02fbd2422cbbec1b05aa7facab074bcd946f5d"
+    },
+    {
+      "name": "Interaction.json",
+      "bytes": 8525036,
+      "blob": "80d0c20b86e1853c7328250972a6a3735952f41e"
+    },
+    {
+      "name": "Planning_all.json",
+      "bytes": 10483686,
+      "blob": "ee2521db0d8a09334d9c463e129b188b40cdc720"
+    }
+  ]
+}

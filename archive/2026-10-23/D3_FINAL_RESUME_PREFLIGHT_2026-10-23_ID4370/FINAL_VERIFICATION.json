@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-10-23T15:47:44.346725+08:00",
+  "decision": "HOLD",
+  "stop_stage": "PREFLIGHT_NO_REQUEST",
+  "reason": "Cannot prove strict receive bound for abnormal full response/prefetch in the original transport",
+  "head": "e8627bc729579268cb6c54cdb00f6a484f3e8ede",
+  "new_media_requests": 0,
+  "new_media_body_bytes": 0,
+  "new_request_reservations": 0,
+  "existing_prefix_bytes": 94875356,
+  "existing_prefix_md5_partial_only": "3a7e5de623c262677ae16bdeedb55ca0",
+  "existing_prefix_sha256": "93a895270832fc42d1a4f447f748c3d1bb4750f8041a671ec07dddc51bf8006f",
+  "journal_sha256": "1124a494b7ab6c0a6e228e5a0fd6822740dbad689a5dc7dbe940084c12280286",
+  "protected_existing_entries": 772,
+  "changed_existing_entries": [],
+  "tracked_diff": "",
+  "reports": {
+    "EVIDENCE_JUDGMENTS.md": {
+      "bytes": 2025,
+      "sha256": "4bb82de5dc9aa3029df7114b4470b8ee772756fe94cb9f811a65ce3a7cf59173"
+    },
+    "RESOURCE_AND_LICENSE.md": {
+      "bytes": 5125,
+      "sha256": "011e244fdc669985e9f953110b20a1ea39db14286217a08b56e69047af19fd4d"
+    },
+    "D3_SINGLE_CASE_DECISION.md": {
+      "bytes": 3570,
+      "sha256": "80133d4b3823a96c6a02d19ba165b6aba3eacc948c621f86b31a0eed4a04fbb8"
+    },
+    "PTS_AND_FRAME_AUDIT.md": {
+      "bytes": 1507,
+      "sha256": "e0bec4145c30e8d514148999d20fccec752f76968bb4a695c4d83dbf2d71b935"
+    },
+    "BUDGET_BOUNDARY_DIAGNOSIS.md": {
+      "bytes": 6316,
+      "sha256": "8c24aedf9341becb49dc505b1ec2a9d2c6663f72457f17c4f42a740ed87086e9"
+    }
+  },
+  "budget_balance": 264520694,
+  "missing_file_bytes": 262964506,
+  "margin_bytes": 1556188,
+  "combined_existing_conservative_upper": 435500022,
+  "combined_authorized_upper": 700020716,
+  "full_md5_verified": false,
+  "server_identity_live_revalidated": false,
+  "decode_executed": false,
+  "pts_verified": false,
+  "frames_created": 0,
+  "A_to_E": {
+    "A": "无法判断",
+    "B": "无法判断",
+    "C": "无法判断",
+    "D": "无法判断",
+    "E": "无法判断"
+  },
+  "guard_tests_passed": 4,
+  "guard_tests_network_connections": 0,
+  "original_offline_tests_historical_passed": 26,
+  "new_transport_fix_implemented": false,
+  "installed_packages": 0,
+  "git_commit_push": false,
+  "local_limit": 536870912,
+  "local_logical_bytes": 122266624,
+  "local_allocated_bytes": 131633152,
+  "local_allocated_mib": 125.535156,
+  "disk_roots": [
+    "${EQA_WORKSPACE}/D3_VIDEO_VERIFICATION_2026-10-23_ID4370",
+    "${EQA_WORKSPACE}/D3_DOWNLOADER_OFFLINE_2026-10-23",
+    "${EQA_WORKSPACE}/D3_VIDEO_RESUME_ID4370",
+    "${EQA_WORKSPACE}/D3_FINAL_RESUME_PREFLIGHT_2026-10-23_ID4370"
+  ],
+  "free_bytes_at_check": 906376679424,
+  "independent_read_only_review": "No blocking factual issues; supports zero-request HOLD; reviewed server-write distinction and timeout interpretation."
+}

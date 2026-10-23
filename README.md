@@ -1,33 +1,30 @@
-# EQA 研究选题与独立审计
+# EQA 研究档案
 
-面向具身问答（EQA）论文选题的中文研究记录。核验截止 **2026-10-21**。这些是文献、公开资源与协议审查，**没有训练、模型推理、benchmark或仿真实验结果**。
+**截至 2026-10-23：论文研究准入 NO_GO。** 尚未确认可发表的新机制或方法；没有完整模型复现、训练、具身仿真或视觉证据实验。当前工作已收束为归档，不再继续下载器开发、视频续传或算法研发。
 
-## 先读最新结论
+唯一当前决策入口：[EQA_RESEARCH_DECISION.md](EQA_RESEARCH_DECISION.md)。
 
-**D1“缺失证据的可恢复性”仍为HOLD；PTP单条记录准入为PARTIAL_ONLY。** 已取得真实JSON与部分图像引用，但没有完整动作—观察链、同状态替代结果和可核剩余预算，不能进入D1最小实验。图片路径、坏前沿标签和一次失败都不能证明不可恢复。
+| 方向 | 保留的历史证据状态 | 当前投入决策 |
+| --- | --- | --- |
+| D1 缺失证据的行动可恢复性 | HOLD；直接近邻强，缺乏可重置交互与反事实证据 | DROP 当前提案 |
+| PTP 单条证据链 | PARTIAL_ONLY；审查已完成 | 关闭重复审查，不进入实验 |
+| D2 固定容量跨题记忆 | 尚无独立机制证据 | DROP 宽泛提案；容量限制本身不构成创新 |
+| D3 视频前缀证据保留 | HOLD；id4370 没有完整视频、像素/PTS及替代证据核验 | DROP 当前资源路线；停止工程投入 |
 
-1. [最新准入结论](EQA_STAGE2_GATE/PTP_SINGLE_TRACE_GATE/GATE_DECISION.md)
-2. [单条真实记录与源码核对](EQA_STAGE2_GATE/PTP_SINGLE_TRACE_GATE/TRACE_EVIDENCE.md)
-3. [仍缺材料与唯一下一步](EQA_STAGE2_GATE/PTP_SINGLE_TRACE_GATE/MISSING_REQUIREMENTS.md)
-4. [阶段二整体审计](EQA_STAGE2_GATE/STAGE2_GATE_REPORT.md)、[新颖性反证](EQA_STAGE2_GATE/NOVELTY_COUNTEREVIDENCE.md)、[条件性最小协议](EQA_STAGE2_GATE/MINIMAL_EXPERIMENT_PLAN.md)
+DROP 是本项目的投入决定，不是证明整个研究领域没有机会，也不篡改旧报告中的 HOLD / PARTIAL_ONLY。
 
-阶段一曾优先讨论D1；后续审计撤销了“已有方法创新依据”的优先推荐。保留历史报告用于追溯，阅读时以后续证据和准入结论为准。HOLD不表示创新已经成立，PARTIAL_ONLY也不自动授权算法开发。
+## 归档导航
 
-## 既有成果
+- [阶段一报告](reports/phase1.md)、[研究笔记](notes/README.md)、[候选](tables/candidates.csv)与[限制表](tables/limitations.csv)：保留当时记录。
+- [阶段二与 D1](EQA_STAGE2_GATE/STAGE2_GATE_REPORT.md)、[查新反证](EQA_STAGE2_GATE/NOVELTY_COUNTEREVIDENCE.md)、[已完成 PTP 审查](EQA_STAGE2_GATE/PTP_SINGLE_TRACE_GATE/GATE_DECISION.md)。
+- [Mac 迁移与研究恢复](archive/2026-10-23/local_migration/2026-10-22/RESEARCH_STATE_RECOVERY.md)。
+- [D3 文献/协议准入](archive/2026-10-23/D3_ADMISSION_2026-10-23/D3_GATE_REPORT.md)及[最终中止原因](archive/2026-10-23/D3_FINAL_RESUME_PREFLIGHT_2026-10-23_ID4370/D3_SINGLE_CASE_DECISION.md)。中间下载器与离线测试仅作失败过程留档，不作为科学贡献。
+- [本次发布清单与转换记录](archive/2026-10-23/PUBLICATION_MANIFEST.json)、[新增受限资产来源索引](archive/2026-10-23/SOURCE_INDEX.json)。
 
-- [阶段一报告](reports/phase1.md)：三个有条件方向；[候选筛选](reports/screening.md)、[公开评审](reports/public_reviews.md)、[检索边界](reports/search_audit.md)。
-- [八篇阅读笔记](notes/README.md)。每篇区分论文原文、作者局限、已报告失败和审计者解释；阅读范围有边界。
-- [16项候选](tables/candidates.csv)、[24项局限/协议记录](tables/limitations.csv)、[170行阶段二字段矩阵](EQA_STAGE2_GATE/DATA_FIELD_MATRIX.csv)。不同任务单元和字段计数不构成统一性能排行榜或数据可用率。
-- [来源索引](SOURCE_INDEX.json)、[发布转换清单](RELEASE_MANIFEST.json)、各阶段工作日志。论文均保留ID或官方URL；未核实内容仍标为未核实。
+## 完整性与使用边界
 
-## 发布范围
+本仓库是原创审计成果的发布副本，不是完整 Windows 科研工作区。原始 [RELEASE_MANIFEST.json](RELEASE_MANIFEST.json) 和 [SOURCE_INDEX.json](SOURCE_INDEX.json) 保持不变；来源索引的 192 条记录不等于已恢复 192 份资产。
 
-本仓库是26份原创成果的发布副本，并附首页、来源与转换索引。已移除本机绝对路径；未包含老师资料、无关旧项目、论文全文/PDF、第三方源码镜像、原始数据行/图包、模型和本机配置。单条PTP报告的公开副本列schema及结论，完整原始数值摘录留在本地，官方JSON可按固定commit/question/step定位。
+本次历史发布副本去除了本机路径及完整第三方问题/答案摘录，原始哈希、发布哈希与转换范围逐项登记。历史报告内的哈希对应原件，旧授权或后续建议不继续生效。预算报告 `D3_DOWNLOADER_OFFLINE_2026-10-23/RESUME_BUDGET_AND_VERIFICATION.md` 已发现空文件，未宣称恢复。
 
-未打包的本地证据链接已转为官方来源或来源索引；报告中的215/138份hash检查数描述本地审查范围，不表示这些文件已上传。CSV字段名保持原样，其中`local_evidence_file`的机器路径在发布副本中改为官方来源URL。原始材料未覆盖。
-
-这里只分享审计文字和来源定位；没有为上游论文、软件、HM3D或派生图像授予额外许可，未添加未经授权的LICENSE。
-
-## 下一步
-
-停止依赖PTP公开记录推进D1，向导师申请具备同状态重置、合法动作与预算记账能力的交互仿真资源。在许可、可执行环境和记录契约通过核验之前，不开始D1实验。
+第三方论文、原始标注、视频前缀、真实账本、有效配置与私有诊断不上传；仅记录来源、版本、哈希和许可状态。HD-EPIC 项目/存放说明为 CC BY-NC 4.0，而 Bristol 目录字段为 CC BY 4.0，此差异未获权利人澄清。归档不授予这些资产的再发布权。

@@ -1,0 +1,209 @@
+{
+  "scope": "two downloaded splits only; named intervals are not reclassified as true supports",
+  "audited_total_rows": 14496,
+  "splits": {
+    "Perception": {
+      "rows": 6500,
+      "tasks": {
+        "ARB": {
+          "total": 500,
+          "parsed_basis_start/end": 500
+        },
+        "ARF": {
+          "total": 500,
+          "parsed_basis_start/end": 500,
+          "ends_after_query_basis_start/end": 495,
+          "starts_after_query_basis_start/end": 495,
+          "unparsed_start_time/end_time": 500
+        },
+        "ARR": {
+          "total": 500,
+          "parsed_basis_start/end": 500,
+          "ends_after_query_basis_start/end": 500
+        },
+        "OPB": {
+          "total": 500,
+          "parsed_basis_start/end": 500
+        },
+        "OPF": {
+          "total": 500,
+          "parsed_basis_start/end": 500,
+          "ends_after_query_basis_start/end": 500,
+          "starts_after_query_basis_start/end": 500,
+          "default_helper_short_window_skip": 1
+        },
+        "OPR": {
+          "total": 500,
+          "parsed_basis_start/end": 500,
+          "ends_after_query_basis_start/end": 495
+        },
+        "ORQ": {
+          "total": 500,
+          "parsed_basis_start/end": 500,
+          "ends_after_query_basis_start/end": 500,
+          "starts_after_query_basis_start/end": 496
+        },
+        "RRB": {
+          "total": 500,
+          "parsed_basis_start/end": 500,
+          "parsed_start_time/end_time": 500,
+          "crosses_recent64_basis_start/end": 1,
+          "crosses_recent64_start_time/end_time": 1
+        },
+        "RRF": {
+          "total": 500,
+          "parsed_basis_start/end": 500,
+          "ends_after_query_basis_start/end": 500,
+          "starts_after_query_basis_start/end": 500,
+          "parsed_start_time/end_time": 500,
+          "ends_after_query_start_time/end_time": 500,
+          "starts_after_query_start_time/end_time": 500,
+          "default_helper_short_window_skip": 2
+        },
+        "RRR": {
+          "total": 500,
+          "parsed_basis_start/end": 500,
+          "ends_after_query_basis_start/end": 500,
+          "parsed_start_time/end_time": 500,
+          "ends_after_query_start_time/end_time": 500,
+          "starts_after_query_basis_start/end": 1,
+          "default_helper_short_window_skip": 1
+        },
+        "SUB": {
+          "total": 500,
+          "parsed_basis_start/end": 500
+        },
+        "SUF": {
+          "total": 500,
+          "parsed_basis_start/end": 500,
+          "ends_after_query_basis_start/end": 500,
+          "starts_after_query_basis_start/end": 500,
+          "default_helper_short_window_skip": 2
+        },
+        "SUR": {
+          "total": 500,
+          "parsed_basis_start/end": 500,
+          "ends_after_query_basis_start/end": 500
+        }
+      },
+      "unique_ids": 6500,
+      "duplicate_ids": [],
+      "short_window_check": "int(query)-int(max(0,query-64)) <= 1, reproducing the static helper condition"
+    },
+    "Interaction": {
+      "rows": 7996,
+      "tasks": {
+        "AIP": {
+          "total": 500,
+          "parsed_start_timestamp/end_timestamp": 500,
+          "ends_after_query_start_timestamp/end_timestamp": 500,
+          "starts_after_query_start_timestamp/end_timestamp": 498,
+          "default_helper_short_window_skip": 4
+        },
+        "AIR": {
+          "total": 500,
+          "parsed_action_start_time/action_end_time": 383,
+          "parsed_start_timestamp/end_timestamp": 117
+        },
+        "AIU": {
+          "total": 500,
+          "parsed_start_timestamp/end_timestamp": 118,
+          "ends_after_query_start_timestamp/end_timestamp": 118,
+          "parsed_action_start_time/action_end_time": 382,
+          "ends_after_query_action_start_time/action_end_time": 382
+        },
+        "AR": {
+          "total": 499,
+          "parsed_start_timestamp/end_timestamp": 499,
+          "crosses_recent64_start_timestamp/end_timestamp": 260,
+          "ends_after_query_start_timestamp/end_timestamp": 161,
+          "entirely_before_recent64_start_timestamp/end_timestamp": 8,
+          "basis_numeric_pair_absent_or_unparsed": 499
+        },
+        "ARC": {
+          "total": 499,
+          "parsed_start_timestamp/end_timestamp": 499,
+          "ends_after_query_start_timestamp/end_timestamp": 499,
+          "crosses_recent64_start_timestamp/end_timestamp": 1,
+          "default_helper_short_window_skip": 1
+        },
+        "ARP": {
+          "total": 500,
+          "parsed_action_start_time/action_end_time": 408,
+          "ends_after_query_action_start_time/action_end_time": 408,
+          "starts_after_query_action_start_time/action_end_time": 222,
+          "parsed_start_timestamp/end_timestamp": 93,
+          "ends_after_query_start_timestamp/end_timestamp": 93,
+          "starts_after_query_start_timestamp/end_timestamp": 56,
+          "default_helper_short_window_skip": 2
+        },
+        "ART": {
+          "total": 500,
+          "parsed_start_timestamp/end_timestamp": 500,
+          "crosses_recent64_start_timestamp/end_timestamp": 189
+        },
+        "ASR": {
+          "total": 499,
+          "parsed_start_timestamp/end_timestamp": 499,
+          "ends_after_query_start_timestamp/end_timestamp": 467,
+          "crosses_recent64_start_timestamp/end_timestamp": 172,
+          "entirely_before_recent64_start_timestamp/end_timestamp": 20,
+          "basis_numeric_pair_absent_or_unparsed": 499
+        },
+        "BRC": {
+          "total": 500,
+          "parsed_start_timestamp/end_timestamp": 500,
+          "crosses_recent64_start_timestamp/end_timestamp": 334
+        },
+        "EMM": {
+          "total": 499,
+          "parsed_start_timestamp/end_timestamp": 499,
+          "crosses_recent64_start_timestamp/end_timestamp": 62,
+          "entirely_before_recent64_start_timestamp/end_timestamp": 56
+        },
+        "EPD": {
+          "total": 500,
+          "parsed_start_timestamp/end_timestamp": 500,
+          "ends_after_query_start_timestamp/end_timestamp": 500,
+          "starts_after_query_start_timestamp/end_timestamp": 500
+        },
+        "ERD": {
+          "total": 500,
+          "parsed_start_timestamp/end_timestamp": 500,
+          "ends_after_query_start_timestamp/end_timestamp": 368,
+          "starts_after_query_start_timestamp/end_timestamp": 189,
+          "default_helper_short_window_skip": 5
+        },
+        "FRC": {
+          "total": 500,
+          "parsed_start_timestamp/end_timestamp": 500,
+          "crosses_recent64_start_timestamp/end_timestamp": 258,
+          "ends_after_query_start_timestamp/end_timestamp": 500
+        },
+        "NAP": {
+          "total": 500,
+          "parsed_start_timestamp/end_timestamp": 500,
+          "ends_after_query_start_timestamp/end_timestamp": 470,
+          "crosses_recent64_start_timestamp/end_timestamp": 131,
+          "entirely_before_recent64_start_timestamp/end_timestamp": 20,
+          "basis_numeric_pair_absent_or_unparsed": 500
+        },
+        "OER": {
+          "total": 500,
+          "parsed_start_timestamp/end_timestamp": 500,
+          "ends_after_query_start_timestamp/end_timestamp": 500
+        },
+        "OMP": {
+          "total": 500,
+          "parsed_start_timestamp/end_timestamp": 500,
+          "ends_after_query_start_timestamp/end_timestamp": 500,
+          "default_helper_short_window_skip": 6
+        }
+      },
+      "unique_ids": 7996,
+      "duplicate_ids": [],
+      "short_window_check": "int(query)-int(max(0,query-64)) <= 1, reproducing the static helper condition"
+    }
+  },
+  "Planning_all": "NOT_READ: bounded text transfer exceeded deadline; no claims about its rows"
+}

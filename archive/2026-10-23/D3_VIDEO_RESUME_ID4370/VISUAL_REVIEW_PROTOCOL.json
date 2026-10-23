@@ -1,0 +1,53 @@
+{
+  "recorded_at": "2026-10-23T15:00:37.066660+08:00",
+  "status": "PLAN_ONLY_NO_PIXEL_VIEW_BEFORE_FULL_HASH",
+  "case": "StreamEQA Interaction id4370 / P01-20240202-110250",
+  "query_time_seconds": 288.65,
+  "windows": {
+    "candidate_history": [
+      187.89,
+      200.78
+    ],
+    "recent": [
+      224.65,
+      288.65
+    ],
+    "intervening": [
+      200.78,
+      224.65
+    ],
+    "earlier": [
+      0,
+      187.89
+    ]
+  },
+  "evidence_propositions": [
+    "cone supports/touches orange",
+    "cone participates in rotation associated with dial/control",
+    "cone used with orange in the earlier event"
+  ],
+  "criteria": {
+    "A": "Identify visible support for each reference proposition in 187.89-200.78; activity labels alone are not evidence.",
+    "B": "Inspect the whole recent window with a recorded sampling grid, refine visible actions; equivalent support invalidates a claim that the old span is necessary.",
+    "C": "Separate plausible commonsense guessing from measured reliability; answer already exposed, so this observer cannot supply an independent blinded question-only test.",
+    "D": "Review intervening and earlier legal prefix for repeated juicing/equivalent evidence; sparse sampling cannot establish absence.",
+    "E": "Explicitly track object identity, orange-vs-other-fruit, motion, dial association and any causal inference not visible."
+  },
+  "judgment_labels": [
+    "证据充分",
+    "部分支持",
+    "不足",
+    "无法判断"
+  ],
+  "input_boundary": "Only actual movie presentation PTS <=288.65 for pixel inspection; no use of future activity end 318.45.",
+  "timing_requirement": "Independent MP4 sample/edit-list parser and AVFoundation exact-rational PTS comparison; annotation uses MP4 timeline per saved official readme.",
+  "initial_review_plan": "Historical candidate about 2 fps, recent about 1 fps, other prefix coarser overview; adaptively inspect denser local intervals, record exact actual PTS and coverage limits.",
+  "derived_material_internal_target_bytes": 100663296,
+  "no_claims": [
+    "No model experiment",
+    "No benchmark score",
+    "No independent blinded human reliability measurement",
+    "No novelty claim",
+    "No automatic expansion to another video"
+  ]
+}

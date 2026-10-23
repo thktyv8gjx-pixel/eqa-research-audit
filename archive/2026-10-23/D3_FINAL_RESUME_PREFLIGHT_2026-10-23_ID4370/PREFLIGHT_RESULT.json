@@ -1,0 +1,90 @@
+{
+  "timestamp": "2026-10-23T15:39:07.327059+08:00",
+  "decision": "HOLD_PREFLIGHT_RECEIVE_BOUND_UNPROVEN",
+  "journal_hash_chain_passed": true,
+  "journal_events": 9924,
+  "journal_sha256": "1124a494b7ab6c0a6e228e5a0fd6822740dbad689a5dc7dbe940084c12280286",
+  "committed_chunks_verified": 4850,
+  "prefix_bytes": 94875356,
+  "prefix_sha256": "93a895270832fc42d1a4f447f748c3d1bb4750f8041a671ec07dddc51bf8006f",
+  "original_prefix_bytes": 17821696,
+  "original_prefix_sha256": "7639ef70768aba2c8af4652056bdf95183636e44b4738e22b2b2bb8c136fc6ee",
+  "previous_observed_body_bytes": 77053660,
+  "previous_conservative_charge": 77594624,
+  "previous_failed_request_reserved": 1048576,
+  "previous_failed_request_observed": 507612,
+  "previous_failed_request_uncertainty": 540964,
+  "missing_file_bytes": 262964506,
+  "budget_remaining": 264520694,
+  "margin_bytes": 1556188,
+  "original_resume_body_cap": 342115318,
+  "combined_historical_upper": 435500022,
+  "combined_authorized_cap": 700020716,
+  "new_media_requests": 0,
+  "new_media_body_bytes": 0,
+  "new_request_reservations": 0,
+  "server_identity_revalidated_live": false,
+  "last_recorded_etag": "\"664fd8fc-155433f6\"",
+  "last_valid_response_utc": "2026-10-23T07:17:33Z",
+  "timeout_seconds": 30,
+  "last_commit_utc": "2026-10-23T07:17:51Z",
+  "timeout_utc": "2026-10-23T07:18:21Z",
+  "timeout_root_cause": "Unknown; consistent with 30-second blocking read timeout, not a total-request deadline.",
+  "guard_checks": [
+    {
+      "case": "current_balance",
+      "passed": true,
+      "intercepted_request_calls": [
+        [
+          94875356,
+          95923931
+        ]
+      ],
+      "network_calls": 0
+    },
+    {
+      "case": "exact_completion_balance",
+      "passed": true,
+      "intercepted_request_calls": [
+        [
+          94875356,
+          95923931
+        ]
+      ],
+      "network_calls": 0
+    },
+    {
+      "case": "completion_short_by_one",
+      "passed": true,
+      "intercepted_request_calls": [],
+      "network_calls": 0
+    },
+    {
+      "case": "single_request_short_by_one",
+      "passed": true,
+      "network_calls": 0
+    }
+  ],
+  "guard_check_limit": "Arithmetic/control flow only; no live connection, actual server response, or receive-prefetch bound tested.",
+  "existing_ignore_range_fixture": [
+    {
+      "path": "/ignore_range",
+      "range": "bytes=4096-20479",
+      "if_match": "\"fixture\"",
+      "mode": "ignore_range",
+      "server_body_written": 53760
+    }
+  ],
+  "fallback_fixture_limit": "Server write is not client receive. Existing test does not measure actual client prefetch or prove its upper bound.",
+  "strict_receive_budget_proved": false,
+  "decode_executed": false,
+  "pts_verified": false,
+  "frames_created": 0,
+  "evidence_judgments": {
+    "A": "无法判断",
+    "B": "无法判断",
+    "C": "无法判断",
+    "D": "无法判断",
+    "E": "无法判断"
+  }
+}

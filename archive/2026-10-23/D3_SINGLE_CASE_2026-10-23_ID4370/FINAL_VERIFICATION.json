@@ -1,0 +1,45 @@
+{
+  "timestamp": "2026-10-23T13:44:07.115705+08:00",
+  "phase": "PRE_DOWNLOAD_AWAITING_EXPLICIT_USER_APPROVAL",
+  "decision": "HOLD",
+  "head": "e8627bc729579268cb6c54cdb00f6a484f3e8ede",
+  "protected_existing_files": 88,
+  "changed_existing_files": [],
+  "tracked_diff": "",
+  "status": "?? D3_ADMISSION_2026-10-23/\n?? D3_SINGLE_CASE_2026-10-23_ID4370/\n?? local_migration/\n",
+  "reports": {
+    "RESOURCE_AND_LICENSE.md": {
+      "bytes": 6922,
+      "sha256": "205235c1fb07e87e95d4b2d5d76c2e5d55ae9f6646440a3def3dbe2c878c419b"
+    },
+    "PTS_AND_FRAME_AUDIT.md": {
+      "bytes": 4758,
+      "sha256": "ed302b8d43babc0499bbb3a081a2bc75142b2a2f21e95185391e94fe1319f43f"
+    },
+    "EVIDENCE_JUDGMENTS.md": {
+      "bytes": 4368,
+      "sha256": "f49ea4e51a4f4c180906f6a879042df77dccede5841c30b72b72200db77b69e4"
+    },
+    "D3_SINGLE_CASE_DECISION.md": {
+      "bytes": 4515,
+      "sha256": "3ffcd8c4f2365143429601e3639f4c328a90612da7a918c1fc14c6cd1a478b66"
+    }
+  },
+  "media_response_body_bytes": 0,
+  "http_response_header_bytes": 372,
+  "network_wire_bytes": "NOT_MEASURED",
+  "local_video_hash": null,
+  "expected_video_md5": "c981eab775c96858da313acef769b014",
+  "pixel_and_pts_verified": false,
+  "evidence_ratings": {
+    "sufficient": 0,
+    "partial": 0,
+    "insufficient": 0,
+    "undetermined": 5
+  },
+  "new_directory_bytes_before_this_record": 69336,
+  "media_files": [],
+  "model_runs": 0,
+  "packages_installed": 0,
+  "commit_or_push_performed": false
+}

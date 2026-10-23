@@ -1,0 +1,191 @@
+{
+  "timestamp": "2026-10-23T13:31:39.822031+08:00",
+  "verified_files": [
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/EXTRA_ANNOTATION_FETCH_LOG.json",
+      "sha256": "7ee9e3e50867c32d6e2922ee772fa60e1e65164184b17e8630c5baf9c8c041a9",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/FETCH_LOG.json",
+      "sha256": "c2864881196733ed226126c4162ce525f289ec65f266186278c486be1d0000f3",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/GITHUB_RELEASE_METADATA.json",
+      "sha256": "db4971a789649c77c0bb1020d0cbaa36df69b2213440bca459d21b2504f8dc17",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/RESOURCE_FETCH_LOG.json",
+      "sha256": "13e341d2e13fe0a617ff745250b2b13250678b2f95903293f6b293d27bbf1b99",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/apm.html",
+      "sha256": "9df1c6e2775e5bc00e6f6cf14ea8e33ab8c0e799d35452bfce6b9d1e1b2ffa47",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/apm.txt",
+      "sha256": "236643013df344972b9469dec288f99eed5c0698e07077a915055d228744108a",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/apm_hf_info.json",
+      "sha256": "b6c416d691a9c5638bd67fa907d78c6831667a3b91957db3366730854655b87e",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/apm_hf_tree.json",
+      "sha256": "8d4a0302258c7cb640b2070754710c9388c0f6a4d5c28fb5a894f5a434f9ccac",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/apm_readme.md",
+      "sha256": "46700f1533ab21ba5ee1a516096810ba94e128ff8856e2d10d66f5e623d275a9",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_dataset_record.html",
+      "sha256": "a883d1e27fc09c66b7077728f92dcc82e41f32823d11d7b650542bfaaa152ca6",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_deposit_readme.txt",
+      "sha256": "a1441ed07b5dda8b3cd8491f84df307b8fcfc515eabcc42d9d0e2a2cc6e0c0d0",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_downloader.py",
+      "sha256": "1eaf10cbd9b7cbbefc7936c6732b3e0ae61a0ed6bfe2d39feb69a656867cc1b6",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_downloader_readme.md",
+      "sha256": "929108d99e8b4217e97a21b7e4b30c534bff02ccc9044983080facce48ca2d72",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_md5.txt",
+      "sha256": "a2b0f5945114f4af28c87df9d51fab58a71cde33650b4616b5acc5846103d824",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_p01_durations.txt",
+      "sha256": "986e2513538389d0cebcc30d584662e9bcd13ab0ee0c79b35b6ba226d5614aa7",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hd_videos_p01_listing.html",
+      "sha256": "daae68a87aebfe100e40c45042a3c168e0e911e94283a23f482d061ff00db4ef",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hdepic.html",
+      "sha256": "81b46d5cfb1b58015c3d553192c6de469056d53e367d16bbc5c72205bbdd3777",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/hdepic.txt",
+      "sha256": "397e26d07aaff6afa8862baba54744b12af97956a70ddc89546624e6b152aea5",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/oasis.html",
+      "sha256": "43f1cab7edba02686bce091292804bbd593b00fb05381af8ad2d6da4e1f7b4da",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/oasis.txt",
+      "sha256": "8b6c27180ec0b00d71db0919b410d47f96c1710bf6f102426310d084515d11fc",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/oasis_forest.py",
+      "sha256": "d37d5ede24f98974616e05b9062b193ef7212159ba52fa9786daed05fe0f718e",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/oasis_readme.md",
+      "sha256": "057a787e7ed580bceafbf183599c44145b72bff6c7e17d8a5e22846fe08bcd7b",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/oasis_types.py",
+      "sha256": "60c056e8f26ce35676467f312b0dcb1e8bc33de41db1d3970f630e5dc5770966",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/selectstream.html",
+      "sha256": "b98fef2d041bcea3eb3c3f9dc2687e4b8f61622243ea7c8ebc26af52514d4b5f",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/selectstream.txt",
+      "sha256": "dffdf8167f654c3445491511b558b1eae2dbd0f98551e8c495a0d1e984625e5c",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/selectstream_config.yaml",
+      "sha256": "2d0d5a8e527c72ebdb4eb9a61de95625988ea95901fb67ef4b83cac150c34dcd",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/selectstream_lvm.py",
+      "sha256": "584223717ca0b6031140859599b8dd6baa1db27c5ab23ab40546c67d7aee0a5a",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/selectstream_readme.md",
+      "sha256": "ef2765ef5a116855f89e8fa79efbae7ac9587e0ec7123beeddb4e55258348339",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/stream_Interaction.json",
+      "sha256": "f3ce6abe46f3bfc91542cad97051a74c433b13539436e500f1384587a4186e9e",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/stream_infer.py",
+      "sha256": "77db1230eaf3ece3b5c035f32ca5a53dc8c3bfa2b0cfe3e0a4367bb05d1d4fba",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/stream_metrics.py",
+      "sha256": "b34ecd492dce95e881de4e6cc868ab0b8f568c8e4570fd8f6ab32d3fa824bec7",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/stream_perception.json",
+      "sha256": "9feb623954d8da035e7c19abdcfcd80dceac0a63fe9543e256c3ae52f161ce08",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/stream_video.py",
+      "sha256": "3528db41d742a6a15162d0a9c8af66209bb99a1c4fa46bd8d3e9e28de930c61f",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/streameqa.html",
+      "sha256": "4d4a3c45ad9f8133d878e1dbb2fae4b23c1f34ee6b001cd97d23c6f2a591b2db",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/streameqa.txt",
+      "sha256": "655bd320753cbed74eeb5b669b84561f499cf8332b8798b780748f3b0b2704ae",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/wrws.html",
+      "sha256": "4de8ddd42d7f42182fd2e5d1797c8f1a585433a40289baec0a87ecf111a37832",
+      "match": true
+    },
+    {
+      "path": "D3_ADMISSION_2026-10-23/sources/wrws.txt",
+      "sha256": "7e3dba910021cd3e874619298bb1907ccdb25eb85da8e997c8fabd36bf2de2a7",
+      "match": true
+    }
+  ],
+  "literature_or_metadata_review_reexecuted": false
+}

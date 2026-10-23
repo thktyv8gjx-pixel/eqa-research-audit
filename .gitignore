@@ -9,3 +9,15 @@
 .env*
 node_modules/
 __pycache__/
+
+# Private original audit material; publish reviewed copies only.
+/.private_archive/
+/D3_ADMISSION_2026-10-23/
+/D3_DOWNLOADER_OFFLINE_2026-10-23/
+/D3_FINAL_RESUME_PREFLIGHT_2026-10-23_ID4370/
+/D3_SINGLE_CASE_2026-10-23_ID4370/
+/D3_VIDEO_RESUME_ID4370/
+/D3_VIDEO_VERIFICATION_2026-10-23_ID4370/
+/local_migration/
+*.mp4
+*.partial

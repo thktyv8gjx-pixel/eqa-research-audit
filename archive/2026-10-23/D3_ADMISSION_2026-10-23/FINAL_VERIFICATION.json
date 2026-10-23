@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-23",
+  "decision": "HOLD",
+  "baseline": "e8627bc729579268cb6c54cdb00f6a484f3e8ede",
+  "protected_existing_files": 37,
+  "changed_existing_files": [],
+  "tracked_diff": "",
+  "status": "?? D3_ADMISSION_2026-10-23/\n?? local_migration/\n",
+  "annotation_rows_read": 14496,
+  "metadata_panel_samples": 12,
+  "pixel_verified_samples": 0,
+  "media_bytes_read": 0,
+  "model_runs": 0,
+  "official_protocol_changes": 0,
+  "reports": {
+    "PROTOCOL_AUDIT.md": {
+      "bytes": 6752,
+      "sha256": "3579dcaf08ae5e432bdee72f37617dbaf2e7d439f417e6755b61d5eee723dbf6"
+    },
+    "RESOURCE_ACCESS_AUDIT.md": {
+      "bytes": 5661,
+      "sha256": "737d65e6803992fc93ce2253d4b24eb607fef010f5e29bcf59e0eda1766e5bef"
+    },
+    "D3_GATE_REPORT.md": {
+      "bytes": 6068,
+      "sha256": "1c066a50287b62543b7693d528153b8248429798f40528184c2ca16782cd9c24"
+    },
+    "NEAREST_NEIGHBORS.md": {
+      "bytes": 5782,
+      "sha256": "6c973a69ad2ea21f33ac3b13c522aa6bb806c8e8e5a48531d09797cfbc10d307"
+    }
+  }
+}

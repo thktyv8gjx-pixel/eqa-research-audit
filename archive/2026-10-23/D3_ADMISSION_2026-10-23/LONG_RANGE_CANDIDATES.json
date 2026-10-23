@@ -1,0 +1,71 @@
+{
+  "scope": "Interaction; P01 directory metadata; start/end fields only; not proven necessary supports",
+  "selection": "Candidates with 0 <= start <= end <= query - 64; rank videos by independent byte metadata then ID; no predictions used",
+  "candidates": [
+    {
+      "id": 4370,
+      "task": "EMM",
+      "video": "P01-20240202-110250",
+      "candidate_interval": [
+        187.89,
+        200.78
+      ],
+      "query_time": 288.65,
+      "file_bytes": 357839862,
+      "basis_type": "NoneType",
+      "status": "TEMPORAL_CANDIDATE_NOT_VISUAL_SUPPORT"
+    },
+    {
+      "id": 4122,
+      "task": "EMM",
+      "video": "P01-20240203-132119",
+      "candidate_interval": [
+        788.59,
+        840.87
+      ],
+      "query_time": 912.76,
+      "file_bytes": 1016350245,
+      "basis_type": "NoneType",
+      "status": "TEMPORAL_CANDIDATE_NOT_VISUAL_SUPPORT"
+    },
+    {
+      "id": 6516,
+      "task": "AR",
+      "video": "P01-20240204-121042",
+      "candidate_interval": [
+        820.0,
+        933.0
+      ],
+      "query_time": 1254.51,
+      "file_bytes": 1608837359,
+      "basis_type": "dict",
+      "status": "TEMPORAL_CANDIDATE_NOT_VISUAL_SUPPORT"
+    },
+    {
+      "id": 7756,
+      "task": "NAP",
+      "video": "P01-20240204-121042",
+      "candidate_interval": [
+        820.0,
+        933.0
+      ],
+      "query_time": 1017.37,
+      "file_bytes": 1608837359,
+      "basis_type": "dict",
+      "status": "TEMPORAL_CANDIDATE_NOT_VISUAL_SUPPORT"
+    },
+    {
+      "id": 4187,
+      "task": "EMM",
+      "video": "P01-20240203-135502",
+      "candidate_interval": [
+        2130.22,
+        2235.79
+      ],
+      "query_time": 2327.35,
+      "file_bytes": 2439974759,
+      "basis_type": "NoneType",
+      "status": "TEMPORAL_CANDIDATE_NOT_VISUAL_SUPPORT"
+    }
+  ]
+}

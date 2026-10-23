@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-10-23T14:06:42.881449+08:00",
+  "decision": "HOLD",
+  "work_completed": "Resource acquisition attempt and truthful stop report; pixel evidence audit NOT completed",
+  "stop_reason": "Exact response-byte accounting lost when assistant interrupted curl; no further media requests",
+  "baseline": "e8627bc729579268cb6c54cdb00f6a484f3e8ede",
+  "protected_existing_files": 103,
+  "original_88_protected": true,
+  "changed_existing_files": [],
+  "tracked_diff": "",
+  "status": "?? ../D3_ADMISSION_2026-10-23/\n?? ../D3_SINGLE_CASE_2026-10-23_ID4370/\n?? ./\n?? ../local_migration/\n",
+  "media_response_bytes_exact": null,
+  "media_response_bytes_lower_bound": 17887232,
+  "media_response_bytes_upper_bound": 357905398,
+  "authorized_response_limit": 359937014,
+  "range_probe_bytes_exact": 65536,
+  "original_complete": false,
+  "full_video_md5": null,
+  "full_video_sha256": null,
+  "media_files": [
+    {
+      "path": "media/range_head_0_65535.bin",
+      "bytes": 65536,
+      "sha256": "804e0c8645010f7674c5fb07f052af6bdd222a60653480d043d84f51780157ad"
+    },
+    {
+      "path": "media/P01-20240202-110250.mp4.partial",
+      "bytes": 17821696,
+      "sha256": "7639ef70768aba2c8af4652056bdf95183636e44b4738e22b2b2bb8c136fc6ee"
+    }
+  ],
+  "pixel_pts_verified": false,
+  "frame_images_generated": 0,
+  "future_frames_viewed": 0,
+  "evidence_counts": {
+    "sufficient": 0,
+    "partial": 0,
+    "insufficient": 0,
+    "undetermined": 5
+  },
+  "local_bytes_before_this_record": 18208894,
+  "local_limit": 536870912,
+  "reports": {
+    "RESOURCE_AND_LICENSE.md": {
+      "bytes": 5550,
+      "sha256": "5cb73396af918eafeb2353568b057fc69625b2287724c5e8c7c45a8412b3f46c"
+    },
+    "PTS_AND_FRAME_AUDIT.md": {
+      "bytes": 3373,
+      "sha256": "1e17c31b3c958251104237eb4f7b62bdb82c8d2d75a72c88a931a9cedbfa540c"
+    },
+    "EVIDENCE_JUDGMENTS.md": {
+      "bytes": 3095,
+      "sha256": "bd7f2833b5f8f02926f8efde6143c8bfd02f2091fc95f3e5c80ed3b44dc4ea8b"
+    },
+    "D3_SINGLE_CASE_DECISION.md": {
+      "bytes": 4296,
+      "sha256": "8be89ff3c0cb0db75a797dd98e1ae4e6b92578629dcf2823bb9b69541377f52e"
+    }
+  },
+  "model_runs": 0,
+  "packages_installed": 0,
+  "commit_push": false
+}

@@ -1,0 +1,54 @@
+{
+  "frozen_at": "2026-10-23T13:31:39.822031+08:00",
+  "split": "Interaction",
+  "stream_commit": "01dc44aaef2a450ff245e9056fa39ee59bf75d5f",
+  "annotation_source_relative": "../D3_ADMISSION_2026-10-23/sources/stream_Interaction.json",
+  "annotation_git_blob": "80d0c20b86e1853c7328250972a6a3735952f41e",
+  "annotation_sha256": "f3ce6abe46f3bfc91542cad97051a74c433b13539436e500f1384587a4186e9e",
+  "selected_video": {
+    "url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240202-110250.mp4",
+    "expected_bytes": 357839862,
+    "expected_md5": "c981eab775c96858da313acef769b014",
+    "md5_source_commit": "d3431a3a9051cbcadeca98fbb86137605a017525",
+    "md5_source_path": "data/md5.txt",
+    "md5_exact_line": "c981eab775c96858da313acef769b014  ./Videos/P01/P01-20240202-110250.mp4",
+    "declared_duration_seconds": 396.266667,
+    "download_authorized": false,
+    "local_md5": null,
+    "local_sha256": null
+  },
+  "windows_seconds": {
+    "candidate_history": [
+      187.89,
+      200.78
+    ],
+    "recent": [
+      224.65,
+      288.65
+    ],
+    "intervening": [
+      200.78,
+      224.65
+    ],
+    "other_earlier": [
+      0,
+      187.89
+    ],
+    "legal_prefix": [
+      0,
+      288.65
+    ]
+  },
+  "future_pixels_allowed": false,
+  "publication_notice": "Locator only; third-party question, answer, options and activity text omitted. No visual evidence or permission to resume.",
+  "locator_metadata": {
+    "id": 4370,
+    "task": "EMM",
+    "video": "P01-20240202-110250",
+    "realtime": 288.65,
+    "start_timestamp": "187.89",
+    "end_timestamp": "200.78",
+    "task_start_timestamp": "187.89",
+    "task_end_timestamp": "318.45"
+  }
+}

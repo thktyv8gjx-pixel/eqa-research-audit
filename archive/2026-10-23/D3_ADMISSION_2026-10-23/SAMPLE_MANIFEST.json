@@ -1,0 +1,290 @@
+{
+  "date": "2026-10-23",
+  "scope": "metadata/linkage sample only, not a visually validated evidence set",
+  "selection": "Fix P01 as the first participant; choose 3 smallest independently indexed MP4 files with Perception rows; take first 4 rows per video by SHA256(D3_METADATA_V1|split|id), without using question/answer/inference prose or model results",
+  "files": [
+    {
+      "video": "P01-20240203-184045",
+      "bytes": 59698967,
+      "qa_count": 14,
+      "url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240203-184045.mp4",
+      "upstream_md5": "ad322e2a651638b1217da16909fc759d",
+      "duration": 52.833333,
+      "downloaded": false
+    },
+    {
+      "video": "P01-20240204-124504",
+      "bytes": 105605454,
+      "qa_count": 17,
+      "url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240204-124504.mp4",
+      "upstream_md5": "0f67dc87609f0a24720cb7ff68d279bb",
+      "duration": 88.633333,
+      "downloaded": false
+    },
+    {
+      "video": "P01-20240204-160230",
+      "bytes": 150103036,
+      "qa_count": 24,
+      "url": "https://data.bris.ac.uk/datasets/3cqb5b81wk2dc2379fx1mrxh47/Videos/P01/P01-20240204-160230.mp4",
+      "upstream_md5": "7ffe066ecde8f6feb3b9630de20a7b7e",
+      "duration": 132.766667,
+      "downloaded": false
+    }
+  ],
+  "proposed_total_bytes": 315407457,
+  "media_downloaded_bytes": 0,
+  "samples": [
+    {
+      "split": "Interaction",
+      "id": 1779,
+      "task": "ARP",
+      "video": "P01-20240203-184045",
+      "query_time": 33.69,
+      "default_window_continuous": [
+        0,
+        33.69
+      ],
+      "code_nominal_integer_cut": [
+        0,
+        33
+      ],
+      "declared_video_duration": 52.833333,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    },
+    {
+      "split": "Perception",
+      "id": 2681,
+      "task": "OPR",
+      "video": "P01-20240203-184045",
+      "query_time": 10.64,
+      "default_window_continuous": [
+        0,
+        10.64
+      ],
+      "code_nominal_integer_cut": [
+        0,
+        10
+      ],
+      "declared_video_duration": 52.833333,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    },
+    {
+      "split": "Interaction",
+      "id": 1305,
+      "task": "AIU",
+      "video": "P01-20240203-184045",
+      "query_time": 17.12,
+      "default_window_continuous": [
+        0,
+        17.12
+      ],
+      "code_nominal_integer_cut": [
+        0,
+        17
+      ],
+      "declared_video_duration": 52.833333,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    },
+    {
+      "split": "Interaction",
+      "id": 7980,
+      "task": "NAP",
+      "video": "P01-20240203-184045",
+      "query_time": 39.06,
+      "default_window_continuous": [
+        0,
+        39.06
+      ],
+      "code_nominal_integer_cut": [
+        0,
+        39
+      ],
+      "declared_video_duration": 52.833333,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    },
+    {
+      "split": "Perception",
+      "id": 4463,
+      "task": "RRF",
+      "video": "P01-20240204-124504",
+      "query_time": 57.88,
+      "default_window_continuous": [
+        0,
+        57.88
+      ],
+      "code_nominal_integer_cut": [
+        0,
+        57
+      ],
+      "declared_video_duration": 88.633333,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    },
+    {
+      "split": "Interaction",
+      "id": 1147,
+      "task": "AIU",
+      "video": "P01-20240204-124504",
+      "query_time": 10.45,
+      "default_window_continuous": [
+        0,
+        10.45
+      ],
+      "code_nominal_integer_cut": [
+        0,
+        10
+      ],
+      "declared_video_duration": 88.633333,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    },
+    {
+      "split": "Interaction",
+      "id": 1383,
+      "task": "AIU",
+      "video": "P01-20240204-124504",
+      "query_time": 80.52,
+      "default_window_continuous": [
+        16.519999999999996,
+        80.52
+      ],
+      "code_nominal_integer_cut": [
+        16,
+        80
+      ],
+      "declared_video_duration": 88.633333,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    },
+    {
+      "split": "Perception",
+      "id": 4367,
+      "task": "RRF",
+      "video": "P01-20240204-124504",
+      "query_time": 4.23,
+      "default_window_continuous": [
+        0,
+        4.23
+      ],
+      "code_nominal_integer_cut": [
+        0,
+        4
+      ],
+      "declared_video_duration": 88.633333,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    },
+    {
+      "split": "Interaction",
+      "id": 981,
+      "task": "AIR",
+      "video": "P01-20240204-160230",
+      "query_time": 107.26,
+      "default_window_continuous": [
+        43.260000000000005,
+        107.26
+      ],
+      "code_nominal_integer_cut": [
+        43,
+        107
+      ],
+      "declared_video_duration": 132.766667,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    },
+    {
+      "split": "Perception",
+      "id": 1426,
+      "task": "ARR",
+      "video": "P01-20240204-160230",
+      "query_time": 93.73,
+      "default_window_continuous": [
+        29.730000000000004,
+        93.73
+      ],
+      "code_nominal_integer_cut": [
+        29,
+        93
+      ],
+      "declared_video_duration": 132.766667,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    },
+    {
+      "split": "Interaction",
+      "id": 3872,
+      "task": "OMP",
+      "video": "P01-20240204-160230",
+      "query_time": 92.14,
+      "default_window_continuous": [
+        28.14,
+        92.14
+      ],
+      "code_nominal_integer_cut": [
+        28,
+        92
+      ],
+      "declared_video_duration": 132.766667,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    },
+    {
+      "split": "Interaction",
+      "id": 3907,
+      "task": "OMP",
+      "video": "P01-20240204-160230",
+      "query_time": 33.49,
+      "default_window_continuous": [
+        0,
+        33.49
+      ],
+      "code_nominal_integer_cut": [
+        0,
+        33
+      ],
+      "declared_video_duration": 132.766667,
+      "query_within_declared_duration": true,
+      "paper_event_start_mapping": "UNVERIFIED",
+      "pixel_support_status": "UNVERIFIED_NO_MEDIA_READ",
+      "necessity_and_sufficiency": "NOT_ESTABLISHED",
+      "actual_pts": "NOT_CHECKED"
+    }
+  ]
+}
