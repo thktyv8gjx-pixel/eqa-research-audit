@@ -1,0 +1,40 @@
+{
+  "dataset": "TianweiBao/ActionEQA",
+  "config": "bridge_mid_forward",
+  "split": "train",
+  "expected_population_rows": 438,
+  "selection_rule": "12 lowest SHA256(seed + | + zero-based row index); before any selected rows, images, answers or model outputs are read",
+  "seed": "ActionEQA-2026-10-24-bridge_mid_forward-v1",
+  "selected_row_indices": [
+    96,
+    297,
+    330,
+    293,
+    160,
+    200,
+    237,
+    416,
+    113,
+    341,
+    346,
+    291
+  ],
+  "camera_mode": "side1",
+  "direction": "state_prediction",
+  "source_code_revision": "86ada083bd7d8a7553536f48c1bdbc680e11c22b",
+  "no_replacement_rule": "Keep all selected rows, including failed fetch, ambiguous visual evidence, parse failure and model errors; no substitution",
+  "evaluation_status": "HOLD_RESOURCES_NOT_RUN",
+  "expected_dataset_revision": "53474b2f569d01af880c4a0515d211a1e0873596",
+  "dataset_revision_status": "EXPECTED_FROM_PUBLIC_TREE_WEB_CACHE_NOT_CONFIRMED_BY_LIVE_API_OR_RAW_DATA",
+  "source_count_status": "438 from official code README; live data count not verified",
+  "planned_input_order": [
+    "frame1",
+    "option_A",
+    "option_B",
+    "option_C",
+    "option_D"
+  ],
+  "planned_answer_mapping": "0=A,1=B,2=C,3=D",
+  "planned_prompt": "official bridge_fwd_mid_qa_prompt + no_cot_instruction; side1 crop each image; no answer sent as input",
+  "selection_commit_baseline": "3b96dad7b445a9b5f44611cc226164cce2d7e62e"
+}

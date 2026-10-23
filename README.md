@@ -4,6 +4,8 @@
 
 唯一当前决策入口：[EQA_RESEARCH_DECISION.md](EQA_RESEARCH_DECISION.md)。
 
+2026-10-24 独立小样本探索：[ActionEQA 决策](ACTIONEQA_EXPLORE_2026-10-24/DECISION.md)为 `HOLD_RESOURCES`；12 个索引已固定，但真实数据未取得、本地模型未就绪，预测为 0。它不重启已关闭的 D1/D2/D3。
+
 | 方向 | 保留的历史证据状态 | 当前投入决策 |
 | --- | --- | --- |
 | D1 缺失证据的行动可恢复性 | HOLD；直接近邻强，缺乏可重置交互与反事实证据 | DROP 当前提案 |
