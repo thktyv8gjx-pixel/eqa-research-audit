@@ -1,0 +1,4 @@
+tfrecord==1.14.6
+protobuf==7.36.2
+crc32c==2.9.post0
+# Also requires Pillow and NumPy; both reused from the existing bundled runtime.

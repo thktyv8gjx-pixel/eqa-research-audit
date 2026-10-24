@@ -1,0 +1,13 @@
+row_index,official_type,image_count,complete_record_crc,image_decoded,manual_condition,interpretation_limit,model_runs
+0,Trajectory Reasoning,1,PASS,PASS,visible trajectory and stepped target,related scene to row 3; endpoint inference is not executed physics,0
+1,Action Reasoning,1,PASS,PASS,object orientation and holder affordance,rotation axis and viewpoint need explicit interpretation; label not independently adjudicated,0
+2,Action Reasoning,1,PASS,PASS,camera attached to gripper and alignment target,camera motion versus image displacement requires reference-frame care,0
+3,Trajectory Reasoning,1,PASS,PASS,visible trajectory and target height,related scene to row 0; no execution feedback,0
+4,Pointing,1,PASS,PASS,marked points on inclined rail surfaces,tests visual surface localization rather than dynamics,0
+5,Action Reasoning,1,PASS,PASS,wrist view and handle alignment,direction and movement magnitude may depend on camera convention,0
+6,Trajectory Reasoning,1,PASS,PASS,colored candidate paths and between relation,arrow grounding and spatial relation must be distinguished,0
+7,Action Reasoning,1,PASS,PASS,dial orientations and quarter-turn operation,rotation direction must be grounded in the visible viewpoint,0
+8,Action Reasoning,1,PASS,PASS,gripper and tool arrangement,single view does not specify calibrated robot motion axes,0
+9,Pointing,1,PASS,PASS,marked mushroom boundary,primarily visual boundary localization; no causal physics evidence,0
+10,Trajectory Reasoning,1,PASS,PASS,numbered arrows and extraction geometry,static geometry supports a task constraint but not force or friction claims,0
+11,Trajectory Reasoning,1,PASS,PASS,numbered movements and fruit configuration,small annotations require original-resolution input; goal interpretation not independently adjudicated,0
