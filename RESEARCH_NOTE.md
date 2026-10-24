@@ -1,6 +1,6 @@
 # 具身空间关系：从 RoboSpatial 的公开组件开始
 
-2026-10-25。**只保留 RoboSpatial 一条活跃组件研究线。已运行 12 次原函数＋6 次配对诊断，1 个官方场景；VLM 调用为 0。** 不重跑 ERQA 开发题，不重试 MLX/模型获取。旧提案退出不等于本方法不值得学习。
+2026-10-25。**只保留 RoboSpatial 一条组件研究线。既有结果为 12 次原函数＋6 次配对诊断、1 个官方场景；本轮新增原生调用 0 次，结论为 `BLOCKED`。VLM 调用为 0。** 不重跑 ERQA 开发题，不重试 MLX/模型获取。旧提案退出不等于本方法不值得学习。
 
 ## 两篇母论文与取舍
 
@@ -14,7 +14,7 @@
 
 源码固定 [NVlabs/RoboSpatial@7a1b901](https://github.com/NVlabs/RoboSpatial/tree/7a1b901cd86ad980ff6d14c0c1fc9d556ccabb19)。[官方示例图](https://raw.githubusercontent.com/NVlabs/RoboSpatial/7a1b901cd86ad980ff6d14c0c1fc9d556ccabb19/example_data/images/example_dataset/example_scene/example_image.jpg)和相应 `example_input.json` 均取得；图像 162,745 字节，匹配官方 Git blob。它是作者的示例输入，不是独立测试集；3D 标注语义未全面独立裁决。
 
-入口对应：`annotation_generator.py → relationships.get_spatial_configuration → configuration.check_spatial_configuration_relationships`，并调用 `get_object_metrics`、投影占用和可见深度函数。本次直接执行最后这些原函数，**函数体未改写**。缺少 Open3D，因此仅用 NumPy OBB 容器适配其中心/旋转/角点接口；角点顺序和 ZXY 旋转顺序对照 [Open3D v0.19.0 源码](https://github.com/isl-org/Open3D/tree/v0.19.0/cpp/open3d/geometry)。通过 AST 只载入所需函数，跳过模块级 Open3D 导入及不使用的功能。这是明确的组件后端适配，不是完整官方管线原生复现。
+入口对应：`annotation_generator.py → relationships.get_spatial_configuration → configuration.check_spatial_configuration_relationships`，并调用 `get_object_metrics`、投影占用和可见深度函数。前一轮直接执行最后这些原函数，**函数体未改写**。缺少 Open3D，因此仅用 NumPy OBB 容器适配其中心/旋转/角点接口；角点顺序和 ZXY 旋转顺序对照 [Open3D v0.19.0 源码](https://github.com/isl-org/Open3D/tree/v0.19.0/cpp/open3d/geometry)。通过 AST 只载入所需函数，跳过模块级 Open3D 导入及不使用的功能。这是明确的组件后端适配，不是完整官方管线原生复现。
 
 只读复用已存在的 Python/NumPy/SciPy/Matplotlib 环境，没有安装包或修改其他项目。版本、来源/输入 hash、冻结条件、完整关系输出保存在 [本轮结果](runs/20261025_robospatial_configuration/config.json)。作者源码、原图、原始场景文件仅在被忽略的 `local_runtime/robospatial_component/`，按 NVIDIA research/evaluation 非商业条款本地使用，不随结果重新发布。
 
@@ -42,7 +42,27 @@ strict 的两个框高度范围相交，不应拿 strict/lenient 差异冒充错
 - H0a：NumPy 适配/投影错误。原生 Open3D 后端尚未对照；极小投影差、X 平移对照及只改截断的结果限制了此解释，但不等于完成原生验证。
 - H0b：作者要求地面 z=0，官方示例需预处理；此时问题在输入约定/适配，而不是新的空间推理机制。已读 loader 与调用链未看到对应平移，尚未端到端运行，不能扩大为训练集或模型错误结论。
 
-**CONTINUE_PILOT，仅限核实 RoboSpatial 的输入约定；不提出新算法。唯一下一行动：对同一官方示例核对原生 loader/Open3D 链的地面对齐与输出，区分组件实现问题与输入前提。** 若统一预处理即可解释，就关闭“新推理机制”主张，保留这次组件学习结果。原生 Open3D 未安装；当前只能声明 NumPy 适配组件结果，不为此启动第二个大环境。
+### 本轮原生路径核验：`BLOCKED`
+
+固定官方 commit 仍为 `7a1b901cd86ad980ff6d14c0c1fc9d556ccabb19`，目标仍是同一示例中时钟（4）相对土豆（0）、`lenient`、原坐标与所有对象及相机共同 Z+1 m。本轮没有重新运行 NumPy 适配实验，也没有执行其他平移或场景。
+
+只读检查了已定位的 **5 个不同 Python 环境**；`importlib.util.find_spec("open3d")` 全部返回 `None`，命令本身均正常退出。Homebrew 的两个命令别名指向同一解释器，不重复计数：
+
+| 解释器/环境 | Python | Open3D |
+| --- | --- | --- |
+| `/opt/homebrew/opt/python@3.15/bin/python3.15`（`/opt/homebrew/bin/python3`） | 3.15.0 | 未找到 |
+| `/Users/renyaocheng/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3` | 3.12.14 | 未找到 |
+| `/Users/renyaocheng/Research/MathorCup/q2_overnight/.venv/bin/python` | 3.12.14 | 未找到 |
+| `/Users/renyaocheng/Research/MathorCup/q2_delivery/.venv/bin/python` | 3.12.14 | 未找到 |
+| `/Users/renyaocheng/Research/eqa-research-audit/ERQA_EXPLORE_2026-10-24/private/.venv/bin/python` | 3.12.14 | 未找到 |
+
+同时查看常见 Conda、uv、pipx、Poetry/virtualenv 位置，未定位其他可直接使用的原生环境；这不是全盘安装清单。不安装依赖、不迁移环境。**原生 ExampleLoader、Open3D OBB 和 `get_spatial_configuration` 调用均为 0；没有 Loader 输出、实际传入原生关系函数的 Z 或原生最终关系输出。** 不用适配数据填补这些缺失项。
+
+可核实的静态事实：本地 `configuration.py` SHA256 为 `51b4a3f5ed6b4533019fadc92cd0839f8a4a270d5c61579299891a7f836f306b`，与既有固定 commit 来源记录一致；第 63–71 行把负 `world_z_min/max/avg` 各自截为 0。原始 JSON 的 8 个对象中心 Z 全为负，相机 camera-to-world 平移为 `(0,0,0)`。原始 9DOF 框保留在被忽略的 `local_runtime/robospatial_component/example_input.json`，不随本笔记重新发布；上文已记录土豆与时钟的相关高度。这些是原始输入及既有适配计算记录，不是本轮原生读取结果。
+
+用户独立核对与前轮源码阅读一致：ExampleLoader 读取相机和框，`_9dof_to_box` 构造 OBB，均未显式执行地面 Z 归零。这与截断的绝对零点假设之间存在待解释的不一致；但“nothing is below ground”的代码注释不等于已证实的强制输入契约，负中心 Z 本身也不能证明数据违约。因此 **不判为 `INPUT_CONTRACT`**。同样，原生路径未运行，不能判为 `NATIVE_CONFIRMED` 或 `ADAPTER_ARTIFACT`。既有适配版 `above=False→True` 仍只证明适配组件中的现象。
+
+**本轮决策：`BLOCKED`，暂停执行，不追加环境工程。** 唯一能解除这个特定阻塞的证据，是在直接可用的原生 Open3D 环境中完成上述同样两条件的 Loader/OBB/关系输入输出对照；本轮不启动安装或替代实验。即使日后复现翻转，若坐标约定或简单归一化即可消除，也只记为输入/实现问题，不作为论文创新。没有新增模型、数据、源码修改或临时媒体；本轮临时材料为 0，需清理空间为 0。保留此前仍用于精确对照的本地来源和实际实验结果，仅归档本笔记更新。
 
 完整 VLM 作者结果的共同资源问题一次记录：已有 MLX/Qwen 2B 授权，但先前安装与固定 revision 获取失败，本次未重试；它也不能代替母论文原底模/微调权重。合法解阻需在可达官方来源的既有授权环境取得相符版本/离线包并导入，或作者提供相应合法缓存输出。未取得前，完整模型结果复现仍是 `BLOCKED_RESOURCES`；不换基准、不申请付费服务。
 
