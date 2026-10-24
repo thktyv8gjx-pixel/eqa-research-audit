@@ -1,0 +1,75 @@
+{
+  "scope": "official configuration functions with NumPy OBB adapter; not full pipeline or VLM",
+  "source_commit": "7a1b901cd86ad980ff6d14c0c1fc9d556ccabb19",
+  "scene": "example_dataset/example_scene/example_image.jpg",
+  "source_index": {
+    "configuration.py": {
+      "url": "https://raw.githubusercontent.com/NVlabs/RoboSpatial/7a1b901cd86ad980ff6d14c0c1fc9d556ccabb19/robospatial/spatial_analysis/configuration/configuration.py",
+      "git_blob": "6ab5b7ee28d9d2fffd5597d7567e19b374174761",
+      "sha256": "51b4a3f5ed6b4533019fadc92cd0839f8a4a270d5c61579299891a7f836f306b"
+    },
+    "configuration_utils.py": {
+      "url": "https://raw.githubusercontent.com/NVlabs/RoboSpatial/7a1b901cd86ad980ff6d14c0c1fc9d556ccabb19/robospatial/spatial_analysis/configuration/configuration_utils.py",
+      "git_blob": "933f28258ceafb0fde5f14216790a8c7f6bc221a",
+      "sha256": "1d8e5d905474e6cba7386c599c98eae2cb60a0f6db2cdd29f937688e9b49f4ee"
+    },
+    "relationship_utils.py": {
+      "url": "https://raw.githubusercontent.com/NVlabs/RoboSpatial/7a1b901cd86ad980ff6d14c0c1fc9d556ccabb19/robospatial/spatial_analysis/relationship_utils.py",
+      "git_blob": "fad8890192f98fdbc97baa20dc276c2dde4ba851",
+      "sha256": "86bfc12dc813c76dc2f02054d887d925cc8d6e83134a0e872da6424744968176"
+    },
+    "example_input.json": {
+      "url": "https://raw.githubusercontent.com/NVlabs/RoboSpatial/7a1b901cd86ad980ff6d14c0c1fc9d556ccabb19/example_data/annotations/example_input.json",
+      "git_blob": "4bc5c709df5e43077a3edde3de82362226b1cb3b",
+      "sha256": "76a533b5a59e4bef2d55a91c149296462120f7783d6e88858f87736120ce5931"
+    },
+    "example_image.jpg": {
+      "url": "https://raw.githubusercontent.com/NVlabs/RoboSpatial/7a1b901cd86ad980ff6d14c0c1fc9d556ccabb19/example_data/images/example_dataset/example_scene/example_image.jpg",
+      "git_blob": "2b8bf7f8bdeb7d9e55cd9c68be1cf27c51b2067a",
+      "sha256": "41a2e6e44896d0197b6eb7da55612e742b613ceff1d571eb08b98f25f2e36c6b"
+    }
+  },
+  "conditions": {
+    "native": [
+      0,
+      0,
+      0
+    ],
+    "joint_x_plus_1m": [
+      1,
+      0,
+      0
+    ],
+    "joint_z_plus_1m": [
+      0,
+      0,
+      1
+    ]
+  },
+  "pair_ids": [
+    [
+      0,
+      1,
+      "potato_relative_to_banana"
+    ],
+    [
+      4,
+      0,
+      "clock_relative_to_potato"
+    ]
+  ],
+  "strictness": [
+    "strict",
+    "lenient"
+  ],
+  "model_calls": 0,
+  "python": "3.12.14",
+  "architecture": "arm64",
+  "versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "reference": "raw box Z interval/centroid comparisons; a geometry diagnostic, not independent human labels",
+  "registered_before_first_execution": true
+}
