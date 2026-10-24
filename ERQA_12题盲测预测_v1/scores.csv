@@ -1,0 +1,13 @@
+row_index,predicted_answer,official_answer,correct,comparison_status,uncertainty_flag
+0,A,A,True,COMPARED,
+1,A,B,False,COMPARED,POSSIBLE_MULTIPLE_VALID_ROTATIONS
+2,A,A,True,COMPARED,
+3,A,A,True,COMPARED,
+4,D,D,True,COMPARED,
+5,A,A,True,COMPARED,
+6,B,B,True,COMPARED,
+7,C,C,True,COMPARED,
+8,B,B,True,COMPARED,REFERENCE_FRAME_AND_DEPTH_AMBIGUITY
+9,C,C,True,COMPARED,
+10,D,C,False,COMPARED,
+11,C,C,True,COMPARED,

@@ -1,0 +1,25 @@
+{
+  "run_id": "ERQA_CHAT_VISUAL_BLIND_V1",
+  "scoring_rule": "literal predicted_answer == official answer; no normalization",
+  "denominator": 12,
+  "compared_rows": 12,
+  "correct": 10,
+  "incorrect_row_indices": [
+    1,
+    10
+  ],
+  "uncertain_rows_included": [
+    1,
+    8
+  ],
+  "exceptions": [],
+  "predictions_sha256": "fd3ebf60be48bd1dc8ff540afd1cb84f75dc2d149ca5afae8d185688bc44e909",
+  "official_local_source_sha256": "6fc11d7af8a92fc9a85fc121e7fd0ea19c0ab10be1602163c98eb1090bcfac69",
+  "run_info_sha256": "e4f15ee624010152b376ccf777983aa850a76ea230ab717eae46ad1491719041",
+  "prediction_method_as_supplied": "Visual answering in the current ChatGPT conversation; not a local Qwen or API baseline.",
+  "new_model_calls_during_scoring": 0,
+  "provenance_note": "run_info.json is preserved as submitted, including its pre-scoring NOT_SCORED state; blinding claims are supplied metadata, not independently verified here.",
+  "official_source": "https://github.com/embodiedreasoning/ERQA/tree/5bba488252c5b345a43335bfb9239b6bf12bd91c",
+  "official_license": "CC BY 4.0; images and full question bank are not republished.",
+  "accuracy": 0.8333333333333334
+}

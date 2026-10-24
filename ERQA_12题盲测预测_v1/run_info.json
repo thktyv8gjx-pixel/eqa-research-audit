@@ -1,0 +1,25 @@
+{
+  "run_id": "ERQA_CHAT_VISUAL_BLIND_V1",
+  "source_archive": "blind_inputs.zip",
+  "source_archive_sha256": "dd1d1239fbe47599b025dc0df3cfb2021e622656c1b15763a2a9d439841d2afb",
+  "questions_jsonl_sha256": "367b8073f1d2af8e3bc07d9e2ac93b3fe3b38cb9d9cc31c75c5e8fb0e2c05f2b",
+  "prediction_count": 12,
+  "predictions_sha256": "fd3ebf60be48bd1dc8ff540afd1cb84f75dc2d149ca5afae8d185688bc44e909",
+  "prediction_method": "Visual answering in the current ChatGPT conversation; not a local Qwen or API baseline.",
+  "ground_truth_accessed_in_this_run": false,
+  "web_or_repository_answer_lookup": false,
+  "scoring_status": "NOT_SCORED",
+  "input_inspection": "All 12 original images viewed individually. Rows 1 and 8 additionally viewed at 2x display magnification; originals were not altered.",
+  "uncertainty_rows": [
+    1,
+    8
+  ],
+  "scoring_contract": "Join with locally held official answers on row_index; compare predicted_answer. Score all 12 rows, including uncertain ones. Do not revise this prediction file after seeing labels.",
+  "limitations": [
+    "This is one exploratory conversational response, not 12 isolated controlled API calls.",
+    "The conversation contains earlier task/category discussion; official labels were not supplied in the blind archive.",
+    "Potential pretraining exposure to the public benchmark is unknown.",
+    "Uncertainty flags are subjective, not calibrated probabilities or evidence of faulty labels.",
+    "The first 12 rows are not a representative or necessarily independent sample; results do not establish research novelty."
+  ]
+}
