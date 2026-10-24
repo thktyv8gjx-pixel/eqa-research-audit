@@ -1,95 +1,96 @@
 # OVERNIGHT_RESEARCH
 
-**NO_GO — 本轮没有获得同时满足机制证据、近邻差异和资源可执行性的论文候选。** 最值得保留供讨论的线索是 I-FailSense 的“移位指令负例是否真的不满足目标”，但尚无真实反例，不能据源码缺少检查就宣布数据有错或创新成立。
+**NO_GO（本轮论文研究准入）。三个独立方向已完成实质筛选；没有找到同时具有机制特异的失败证据、足够近邻差异与可执行最小验证的论文候选。** 最值得带给颜老师讨论的是 ArtiPoint 的“真值交互边界反而降低旋转轴精度”现象，但只建议讨论一次有界因果诊断，**不建议据此启动新算法研发**。没有把缺 CUDA、一次网络超时或缺数据单独当作科学反证。
 
-2026-10-25，Asia/Shanghai。截至本次检索日；定向查重，不声称穷尽。先读了 `RESEARCH_NOTE.md`、`EQA_RESEARCH_DECISION.md`、ActionEQA/ERQA 决策和候选表。D1/D2/D3、RoboSpatial Z 原点提案均未重启。历史笔记、数据、代码没有修改。
+2026-10-25，Asia/Shanghai。遵循本次三轮目标；`d9324db` 只是[首批记录](https://github.com/thktyv8gjx-pixel/eqa-research-audit/blob/d9324db1f2718af30c7891371ae3161a84cea78b/OVERNIGHT_RESEARCH.md)，不是整个任务的终点。其来源、CPU 表格核算和未运行记录继续保留在 Git 历史，不重复执行。D1/D2/D3、RoboSpatial Z 原点及 inside/under 宽泛提案均未重启。本文件是本轮唯一维护的报告。
 
-## 1. 有界筛选与唯一深入对象
+## 一、三轮实际筛选与科学判断
 
-| 研究入口与固定官方版本 | 实际门槛与决定 |
+“未准入”表示目前不值得按该主张立项，不表示论文方法无效，也不表示假设已被实验否定。每轮不超过三篇主候选；用于反证的近邻未另列为实现候选。
+
+### 第一轮：操作失败检测与目标完成验证
+
+| 主候选、公开算法 | 决定性内容与判断 |
 | --- | --- |
-| [GeoManip，2025](https://arxiv.org/abs/2501.09783)；[官方实现](https://github.com/CUHKWilliam/GeoManip-release/tree/34e5c859534bbf93e777f73483e99416ee559566) | 有算法文件，但官方 README 明示正在重构、不可使用；没有许可文件可据以重新发布。停止运行尝试，未安装、未下载数据；不据此否定方法。 |
-| [RoboHarness 公开研究实现，2026-10](https://github.com/BinceQu/RoboHarness/tree/25338a77cfca11c20fdc719752609d6292379a05) | README 有算法、复现协议和论文版本入口；未独立取得论文正文，不把它当已深入的母论文。官方栈要求 Linux x86-64、NVIDIA/CUDA、BEHAVIOR 和模型服务，未通过本轮资源门；立即换候选。 |
-| [I-FailSense，ICRA 2026；正文 v2](https://arxiv.org/html/2509.16072v2)；[官方实现](https://github.com/clemgris/I-FailSense/tree/0c71f564cece59816733a8d9ac58ee62b264bf8c) | 唯一深入对象：读方法、实验、消融，以及数据构造、评估、推理与分类头/投票源码。保留问题线索，未准入算法研发。 |
+| [I-FailSense，ICRA 2026 / v2](https://arxiv.org/html/2509.16072v2)；[官方 0c71f56](https://github.com/clemgris/I-FailSense/tree/0c71f564cece59816733a8d9ac58ee62b264bf8c) | 延续已核实线索：DROID 负例生成把下一组 task 移给当前轨迹，却不在该函数中验证目标确实未实现。仍没有真实矛盾标签样本。RoboReward 已有反事实标签复核，RoboRMBench 已研究目标同义性；“增加去重/清洗”不是独立方法贡献。**当前负例污染提案未准入，不能把源码少检查当成已观察到污染。** |
+| [Robometer，RSS 2026 / v2](https://arxiv.org/html/2603.02115v2)；[官方 352d160](https://github.com/robometer/robometer/tree/352d160389daa964788de1ec933d1925f3a6de4f) | 联合帧级进度/成功与轨迹偏好。§V 承认稀有失败、长历史、不可见接触状态仍困难；B-2 以数据源统一完成比例修正时间标签。读了 `samplers/base.py`、`progress.py`、`pref.py` 与 `datasets/helpers.py`：标签依赖帧索引和 cutoff，不能自动等同物理完成。但这一问题已有 SARM 阶段标注及 RynnValue 时序捷径控制直接覆盖。**不以“时间进度有偏”重新立题。** |
+| [SARM，ICLR 2026 / v2](https://arxiv.org/html/2509.25358v2)；[官方 opensarm 9978198](https://github.com/xdofai/opensarm/tree/9978198d4c6601f34063fa40e63f9ddc5baf7f68) | §3.1 明确处理同状态因示范时长不同而得到不同进度的问题。读了 `models/stage_estimator.py`、`subtask_estimator.py`、`workspace/sarm_ws.py`。作者不仅加入阶段标注，还用 rewind；附录已展示真实回退、误抓和“假完成”的对照。单一 dense 模型在真实 rollout 较差，也已有消融解释；后续 SARM2 扩展多任务。**泛称阶段/记忆/回退改进没有剩余差异。** |
 
-三者的版本均核对官方 branch ref；没有克隆整个项目或运行其安装脚本。Code-as-Monitor 项目页未提供可核实的算法代码入口，因此未占用运行候选名额，也未据其演示做实验。
+最强反证链：[RoboReward §4.2/A.2.3/A.3](https://arxiv.org/html/2601.00675v2) 已验证反事实标签；[SARM §3.1/4.1](https://arxiv.org/html/2509.25358v2) 已处理进度标签不一致；[RynnValue §3.2](https://arxiv.org/html/2608.09853v1) 已针对采样顺序和跨查询外推捷径设计干预。另有 [FailBench §4.2/B.1](https://arxiv.org/html/2609.03611v1) 直接研究检测器跨源退化和类别偏置。因此，“专用检测器会失效”或“换更好进度信号”都不足以形成新的科学问题。
 
-## 2. 作者已报告的不足，与我们尚未证明的解释
+资源与科学门分开：当前没有相应可运行模型或真实负例配对；不重试上一轮 DROID 地址。Robometer 官方 Git 树确有三个很小的示例视频及缓存奖励数组，**没有下载**：它们缺少当前假设需要的逐帧完成真值/反事实目标，读取它们只为增加运行计数没有判别力。完整模型不是本轮必须准备的工程任务。
 
-I-FailSense 用 LoRA 表征和多层分类头投票。作者已报告仿真到真实迁移不足，且真实数据训练分类头优于混合训练；这是 [§VI-D/Table II](https://arxiv.org/html/2509.16072v2#S6.SS4) 的已有结论。§VII 已做训练阶段消融，不能把“增加分类头”或“加入真实数据”称为我们的改进。
+### 第二轮：主动感知与操作决策
 
-源码中的具体前提更值得核实：[load_dataset.py L8–34](https://github.com/clemgris/I-FailSense/blob/0c71f564cece59816733a8d9ac58ee62b264bf8c/src/load_dataset.py#L8-L34) 的 `augment_droid_dataset` 保留成功记录，每三行一组，把下一组首行的 task 循环移给当前图像并标为 fail；函数内没有检查指令不同、语义不等价或目标确实未完成。[evaluate.py](https://github.com/clemgris/I-FailSense/blob/0c71f564cece59816733a8d9ac58ee62b264bf8c/src/evaluate.py#L37-L42) 确实在 DROID 评测调用它。论文 §IV-A 描述的是同任务类别内错配，不能仅凭文字描述确认代码所构造标签全部有效。
-
-**可证伪问题：** 同一真实轨迹是否可能同时满足原目标和移位目标，却被强制赋予相反标签？若相邻任务文本恰好相同，该函数逻辑会产生相同输入、相反标签；这是条件推论，**没有观察到实际发生的样本**。不同文本也未必意味着互斥目标。问题关乎检测器学到“原配指令身份”还是“实际目标完成”，而非新的视觉模块。
-
-竞争解释：数据本已排除所有重合目标；错误来自低分辨率拼图、视觉歧义、域差异或阈值偏置。当前没有样本可区分这些解释，也不能将公开结果的误差归因于负例污染。
-
-## 3. 最强三篇近邻的反证
-
-| 近邻 | 已覆盖什么；本问题还剩什么 |
+| 主候选、公开算法 | 决定性内容与判断 |
 | --- | --- |
-| [RoboReward，2026，§4.2/A.2.3/A.3](https://arxiv.org/html/2601.00675v2) | 已做反事实目标改写、逐例视频/分数验证，并人工复核测试集。因此“给错配标签加检查/人工清洗”本身没有方法新意。尚未证明本次问题超出这些已有措施。 |
-| [FailBench，2026-09，§4.2/B.1](https://arxiv.org/html/2609.03611v1) | 已直接测 FailSense 跨源接近随机、专用检测器偏置、原分布准确率与平衡准确率的差异；也人工排除错误/歧义标签。因此迁移差、总准确率不可靠都不是新发现。它没有证明 I-FailSense 某条移位目标实际仍成立。 |
-| [RoboRMBench，2026-09，§3.2/4.4](https://arxiv.org/html/2609.05401v1) | 已固定轨迹、验证同义目标、测成功/失败翻转，并做改写聚合及方差惩罚训练。不得再以同义改写稳定性或多提示投票立题。“不同且可同时满足的目标”与同义改写不同，但只有措辞差异，没有真实机制证据仍不足准入。 |
+| [Vision in Action，CoRL 2025](https://arxiv.org/html/2506.15666)；[官方 1588edb](https://github.com/haoyu-x/vision-in-action/tree/1588edb2ed4e4fb8f19562d3a36e4e8cb993b4e5) | 联合学习头部与双臂动作；作者报告增加腕部视角后平均下降 18.33%，并明确不支持搜索记忆。这里是可研究的真实局限，但“加视角/加记忆”已有明确结果和后续，不是本项目的新机制。 |
+| [Act, Sense, Act / CoMe-VLA，2026-07 v2](https://arxiv.org/html/2602.04600v2)；[官方 786d59c](https://github.com/Joringell/ASA/tree/786d59cd84af08470eafc68445dddd32af7153fa) | 唯一深入对象：认知头控制探索与操作切换。§5.1把标签解释为信息已充分，但公开数据处理监督 `current/complete`；读了 data processor、TaskStateHead、focal loss 和 sigmoid 返回。提出“信息充分是否混同阶段完成”的待检验解释，**没有把它当成已证实失效**。 |
+| [ActiveArena，2026-09 v2](https://arxiv.org/html/2609.24124v2)；[官方评估 1bf2c77](https://github.com/leeibo/ActiveArena/tree/1bf2c77b8d3ab978fc5b4599a69d017f593edbe8)、[VLA abaea42](https://github.com/leeibo/ActiveArena-VLA/tree/abaea42b223d40f7b763cd879ce926c8c0c906a1) | §4.3 已实测预测依赖的稀疏触发会错过记忆写入时机，比较周期采样、阶段监督、记忆和独立规划器。核心部署代码有阶段变化写入及历史选择。**“更可靠的阶段触发/记忆写入”已有直接邻居。** |
 
-另读 [Guardian v4，2026-08，Table 2/5 与 Appendix B](https://arxiv.org/html/2512.01946v4)：已比较 I-FailSense，研究多视角分开输入、空间状态失败和跨源训练。增加视角、裁剪或重新拼图也不自动构成创新。本轮对最新后续与相邻奖励建模工作主动查重，未将近邻称为本轮新增算法候选。
+对 CoMe-VLA 的关键反证：
+- [§6.6](https://arxiv.org/html/2602.04600v2) 已做 10 分钟目标消失/移位测试，禁用抓取，报告持续搜索、再锁定和恢复搜索。这削弱了“末尾监督必然学成倒计时”的推论。
+- Table 5 的 83.3% 对 22.7% 不能隔离信息充分性头：§12.1.1 的消融同时替换整任务指令并禁用切换。
+- [官方 README](https://github.com/Joringell/ASA/blob/786d59cd84af08470eafc68445dddd32af7153fa/README.md) 未公开完整推理/部署代码；已核到分数返回，未声称核到真实切换闭环。标签时间窗还涉及末尾扩展，未用局部公式差异宣布协议错误。
 
-**可能新增的科学认识，仅为待证命题：** 合成目标错配中，“另一目标也已实现”的比例是否会改变检测器排序与迁移解释。需在真实轨迹上证明，且要超过简单去重/语义过滤的解释力；目前没有。若仅是标签清洗或阈值修正足够，作为数据/复现勘误留档，不包装为新算法论文。
+最强三个近邻：[ActiveArena §4.3–4.5](https://arxiv.org/html/2609.24124v2) 已比较阶段与周期写入；[SaPaVe，CVPR 2026](https://arxiv.org/html/2603.12193) 已解耦相机/操作并重搜目标；[Gaze-Guided Task Decomposition，IROS 2025，§IV-D](https://arxiv.org/html/2501.15071) 已报告真实 MoveFlask 示范 1/106：抓住瓶子前就看向目的地，造成分段错误。因而“提前看不等于当前动作完成”本身不是新发现。
 
-## 4. 实际运行与原始结果
+本方向未准入的科学理由是：没有机制特异的真实失败，消融不能识别所提原因，且宽泛改法已有直接覆盖。ASA 的小型缓存认知分数未取得，网页及一次小目录请求未成功；这只是额外资源门，**不是上述科学判断的依据**。未假定 GazeTaskDecomp 的公开示范一定含那条失败。
 
-**新取得真实轨迹/图像 0，模型推理 0，作者性能结果复现 0。** 没有用合成场景、伪输入、原有 ERQA 图像或源码条件分支冒充失败样本。
+### 第三轮：空间表示与物理交互
 
-公开 DROID 前 12 行预览请求：先在沙箱 DNS 失败（curl 6，未发出 HTTP 请求），随后仅一次获授权外网请求，8 秒连接超时（curl 28）；媒体/数据响应体为 0。网页工具亦未取得预览。停止获取，未重试、未改代理、未开发下载器。无新增依赖或权重。
+| 主筛选入口、公开算法 | 判断与边界 |
+| --- | --- |
+| [CCA，T-RO 2025](https://ieeexplore.ieee.org/document/11049010)；[官方 76b6d6e](https://github.com/UTNuclearRoboticsPublic/closed-chain-affordance/tree/76b6d6e8f8086657974c92200f152a2f917a6410) | C++ 闭链规划实现公开。关节轴、接触和目标是输入，不把缺视觉模块说成方法错误。未取得全文具体失败证据，止于入口筛查；**不借它否定该研究方向**。 |
+| [IAAO，CVPR 2025](https://arxiv.org/html/2504.06827)；[官方 5b24d6e](https://github.com/lulusindazc/IAAO/tree/5b24d6e86dbcc6652c937e6f7cba2a1004a84023) | 实质特征场、跨状态匹配与融合算法存在；两状态多视图和刚性部件是任务设定。公开依赖中存在空文件，完整复现未验证；此为资源边界。泛称加三维/语义/关节约束没有独立主张，未据此制造新提案。 |
+| [ArtiPoint，CoRL 2025](https://proceedings.mlr.press/v305/werby25a.html)；[官方 ec88e43](https://github.com/robot-learning-freiburg/artipoint/tree/ec88e43e178616697fbc948d0fdda48c0c880702) | 深入母论文、补充、前端、逐点平滑、可见点配对与关节后端。找到了作者明确未解释的反常消融；下面给出唯一保留的诊断问题。 |
 
-唯一 CPU 计算是**公开表格的算术再分析**，不是轨迹级验证。按 §V-A 的 276 条、正负各 138 条，以及 Table II 四位小数，枚举能同时匹配 accuracy/precision/recall/F1 的混淆矩阵；每行恰有一个兼容解。标签 success=1 由 [官方 evaluate.py](https://github.com/clemgris/I-FailSense/blob/0c71f564cece59816733a8d9ac58ee62b264bf8c/src/evaluate.py#L47-L49) 确认。
+## 二、唯一值得带给颜老师讨论的问题：ArtiPoint 边界负收益
 
-| Table II，1 PoV | 公开 A/P/R/F1 | 兼容 TP/FP/TN/FN（成功为正） | 推导成功召回 | 推导失败召回 | 推导预测失败比例 |
-| --- | --- | --- | --- | --- | --- |
-| PaliGemma2-mix-3B zs | .5399/.5304/.6957/.6019 | 96/85/53/42 | .695652 | .384058 | .344203 |
-| I-FailSense，CALVIN FS | .5580/.6250/.2899/.3960 | 40/24/114/98 | .289855 | .826087 | .768116 |
-| I-FailSense，CALVIN+DROID FS | .6594/.7075/.5435/.6148 | 75/31/107/63 | .543478 | .775362 | .615942 |
+**问题：为什么更准确的人类交互边界不一定带来更准确的关节轴？能否把前端样本变化、运动可辨识性与平滑边界效应分开？**
 
-这些整数是**在论文样本数及舍入约定下反推的兼容值**，不是取回的逐题预测。它们澄清：纯仿真版本的成功召回降低、失败召回升高；不能把该 recall 下降直接解释为漏检失败变多。它也没有证明导致偏置的机制。FailBench 已研究检测偏置，所以这项核算不构成论文创新。
+原文证据固定为[arXiv:2509.01708v1，S.1.3/Table S.2](https://arxiv.org/html/2509.01708#A1.SS3)：GT segments 下旋转轴角误差 **17.14→20.24°**，而平移轴角误差 **14.54→11.99°**；作者写 “not allowing a clear interpretation”。这是作者结果，**不是本轮复现**。反证也必须保留：同版 Table 3 中去平滑反而使旋转轴误差 **17.14→19.38°**，不能说平滑普遍有害。不混用数值不同的旧 OpenReview 版本；正式发表页确认 CoRL 2025，本文数字严格引用上述可读取的 v1。
 
-等价复算代码（标准库；表格保留本轮计算得到的全部计数结果，无模型、网络或文件写入）：
+源码支持的范围：
+1. [artipoint.py L522–606](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L522)：GT 区间在 query 选择、tracker、深度投影之前确定。换区间会改变前端上下文和点集，不只是改变轴拟合窗口。
+2. [L274–291](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L274)：逐点可见性与手部遮挡、有效深度相交。[L743–801](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L743) 在每段内平滑后拟合。
+3. [arti_estimator.py L516–620](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/arti_estimator.py#L516)：求解 `(V + λvel Lvel + λjerk Ljerk) P' = V P`。按点分块，不同可见性会产生不同滤波算子；此处没有跨点刚性项，后端另有共享关节约束。
+4. [L167–195](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/arti_estimator.py#L167) 取最早共同可见帧构造点对；论文 S.1.1 又按区间 IoU>0.5 匹配。Table S.2 没有证明两条件使用相同交互/点集，故均值差不是配对机制证据。
 
-```python
-from decimal import Decimal, ROUND_HALF_UP
-rows = [
-    ("base", (.5399, .5304, .6957, .6019)),
-    ("CALVIN", (.5580, .6250, .2899, .3960)),
-    ("CALVIN+DROID", (.6594, .7075, .5435, .6148)),
-]
-def rounded(x):
-    return float(Decimal(str(x)).quantize(Decimal(".0001"),
-                                         rounding=ROUND_HALF_UP))
-for name, target in rows:
-    matches = []
-    for tp in range(139):
-        for fp in range(139):
-            tn, fn = 138-fp, 138-tp
-            if not tp+fp:
-                continue
-            metrics = ((tp+tn)/276, tp/(tp+fp), tp/138,
-                       2*tp/(2*tp+fp+fn))
-            if tuple(map(rounded, metrics)) == target:
-                matches.append((tp, fp, tn, fn))
-    print(name, matches)
-# 实际计算所得：
-# base [(96, 85, 53, 42)]
-# CALVIN [(40, 24, 114, 98)]
-# CALVIN+DROID [(75, 31, 107, 63)]
-```
+**待证伪假设 H：** 固定真实原始点轨迹 X、可见性 M 和 query 身份后，先截窗再逐点平滑与先平滑再截窗，会因可见性异质性破坏跨点刚性，造成旋转轴偏差。
 
-## 5. 唯一有判别力的下一实验与止损条件
+这是源码推导出的解释，**没有真实因果验证**。更简单的竞争解释包括：前端点集变了、匹配交互集合变了、旋转范围变小、共视数下降、深度质量差，或普通有限窗口正则化效应。没有排除它们前，不谈新机制。
 
-**仅在既有合法渠道能直接提供真实 DROID 图像/轨迹及目标配对时**，冻结前 12 个独立轨迹，按官方代码确定各自移位目标；先不看模型预测，人工分别判断原目标、移位目标是否完成或无法判断，保留所有歧义，再核查同义/包含关系。无需模型训练、真机或仿真。这是条件性的决定实验，不是继续排查网络的任务。
+## 三、最强三个直接后续与创新否定
 
-若没有可确认的错误负例，或只靠相同文本去重/现成语义过滤即可解释，关闭这个提案；即使找到误标，也只先证明标签问题。只有发现过滤后仍稳定存在、影响真实检测结论且未被近邻覆盖的机制，才有理由讨论算法实验。当前不启动新的环境、数据工程或算法开发。
+| 近邻 | 已覆盖什么；为何不能直接立项 |
+| --- | --- |
+| [MoMa-SG，2026，§3.2](https://arxiv.org/html/2602.16356#S3.SS2)；[官方 fc4a417](https://github.com/robot-learning-freiburg/MoMa-SG/tree/fc4a417e1859f84ace1dde3f4d6f71ce45e9e569) | 继承轨迹平滑，随后做 arc-fit、rigidity DBSCAN 及 twist 正则。已读 [filtering.py L53–119](https://github.com/robot-learning-freiburg/MoMa-SG/blob/fc4a417e1859f84ace1dde3f4d6f71ce45e9e569/moma_sg/articulation/filtering.py#L53) 与 [L787–830](https://github.com/robot-learning-freiburg/MoMa-SG/blob/fc4a417e1859f84ace1dde3f4d6f71ce45e9e569/moma_sg/articulation/filtering.py#L787)：已用共同可见帧的点间距离变化过滤不刚性。只展示平滑后非刚性不够新。 |
+| [PAWS，2026-03，§3.1–3.2/App A.2](https://arxiv.org/html/2603.25539) | 已用接触过滤、OU/RTS 轨迹平滑、全局视角与静态几何轴先验；不等同于逐点滤波，但排除了“加接触/几何先验就是创新”。公开算法/数据入口仍有限，不冒称可运行基线。 |
+| [Articulation in Prime，2026-05，§3 Eq.18](https://arxiv.org/html/2605.18645#S3) | 已联合形状与关节拟合，并直接平滑关节量 θ；“改成关节空间平滑”已有明确方法先例。代码尚未核实可用，不以此否定其方法贡献。 |
 
-## 6. 归档与清理
+因此，截窗/缺失观测的非交换性本身是预期滤波效应，刚性或关节空间拟合也已有先例。**当前剩下的是因果解释价值，不是有充分新颖性依据的新算法。** 如果仅证明已知替代能修复流程，结论应是复现/评测解释，而不是论文创新。只有同等运动激励与观测质量下、跨场景稳定存在、强已有对照仍不能解释的机制，才值得重新评估科研准入；本轮没有这类证据。
 
-本轮唯一新增持久文件为本文件；原创计算与输出一并内嵌。第三方论文、源码、图片、题库、模型均未作为附件落盘或上传。读取到的第三方文本只在工具会话中；本轮没有候选专属临时文件，因此待删除文件数为 0、可归因释放空间为 0。历史唯一原件、既有环境及原实验材料保留。
+## 四、下一步唯一最低成本验证（条件性，不启动工程）
 
-仅以本文件归档到已有 GitHub；收尾核对远端 main、父提交、文件树及文件原文/SHA256，实际提交链接见本轮最终交付。归档前基线为 `c3923505eef1080b4977821e561add5151deb376`。本次 NO_GO 是不准入当前新算法提案，不是宣称失败检测或具身智能领域没有研究价值。
+仅当合法且完整的真实小缓存已到手，固定最多 3 个独立场景、12 次交互的同一 `X/M/query`、GT 轴、相机姿态、GT/预测窗口及全部失败；不得按结果挑轨迹。
+
+在共同真实帧上比较 **crop-before-smooth、full-smooth-then-crop、no-smooth**。先控制交互配对、旋转激励、共视数和深度质量，再看点间距漂移是否与轴误差变化一致；强对照为已有 rigidity 过滤与原始点直接关节拟合。共享可见帧也须作为简单解释检查，不能只挑最有利平滑条件。
+
+第一步 CPU 诊断只需判断刚性变化；完整轴误差仍须相符的官方后端或作者缓存结果，不能用自建拟合冒称原方法复现。若不存在配对反常，或无平滑/共享可见帧/rigidity 过滤/标准关节拟合/更大运动激励足以解释，则**关闭算法题**。即使发现误差，也先判断是已有方法能解释的流程效应。
+
+官方仓库没有核实到可直接取用的真实 tracks/visibility/GTjoint 小包；README 主要提供整场景 raw ZIP 与相机姿态包。不是“数据不存在”，而是所需小缓存未发布/未取得。可供导师决定是否索取合法缓存；**本轮未联系作者、未下载整包、未启动前端网络或新环境。**
+
+## 五、实际实验、资源与归档
+
+| 项目 | 本轮真实状态 |
+| --- | --- |
+| 新真实样本 / 模型推理 / 作者性能复现 / 真实轨迹实验 | **0 / 0 / 0 / 0** |
+| 旧 CPU 结果 | d9324db 的 I-FailSense 表 II 算术核算保留，未重跑；不能算本轮新实验。 |
+| 现成 CPU 条件 | 只读检查 q2_overnight Python 3.12.14：可定位 NumPy/SciPy；未找到 GTSAM、Open3D、Torch。仅用于评估小型线性代数可行性，不声称官方后端已运行。 |
+| 安装 / 大型模型数据 / GPU / 付费 API / 真机仿真 | **均为 0**。没有以模拟或 mock 输入制造结果。 |
+| 本轮文件与清理 | 仅本文件更新。没有候选专属媒体、缓存、源码副本落盘；删除 0 文件，释放 0 字节。原有唯一资料、环境和未跟踪用户文件全部保留。 |
+
+归档基线 `d9324db1f2718af30c7891371ae3161a84cea78b`。只提交本文件，核对远端 main、提交父子关系、tree 和文件原文/SHA256；最终提交链接见本轮交付。未上传第三方数据或原始源码。
+
+**给颜老师的一句话：** ArtiPoint 确有作者未解释的边界消融反常，但现有证据还无法区分前端/配对混杂、运动可辨识性与已知滤波效应。是否值得取得一份小型真实缓存做一次因果诊断，可以讨论；把它当成已成立的创新点或立即投入新算法，当前依据不足。
