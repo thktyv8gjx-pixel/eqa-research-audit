@@ -1,96 +1,89 @@
 # OVERNIGHT_RESEARCH
 
-**NO_GO（本轮论文研究准入）。三个独立方向已完成实质筛选；没有找到同时具有机制特异的失败证据、足够近邻差异与可执行最小验证的论文候选。** 最值得带给颜老师讨论的是 ArtiPoint 的“真值交互边界反而降低旋转轴精度”现象，但只建议讨论一次有界因果诊断，**不建议据此启动新算法研发**。没有把缺 CUDA、一次网络超时或缺数据单独当作科学反证。
+**当前决定：ArtiPoint 是唯一“有条件复现候选”。本轮交付②：已核实的资源缺口、可直接发给作者的请求草稿（未发送）、一页导师讨论问题。** 创新性尚未确认；缺少缓存不构成假设失败。下一步先排除计分集合变化，暂不进入轨迹、可见性、运动范围或平滑的机制比较。
 
-2026-10-25，Asia/Shanghai。遵循本次三轮目标；`d9324db` 只是[首批记录](https://github.com/thktyv8gjx-pixel/eqa-research-audit/blob/d9324db1f2718af30c7891371ae3161a84cea78b/OVERNIGHT_RESEARCH.md)，不是整个任务的终点。其来源、CPU 表格核算和未运行记录继续保留在 Git 历史，不重复执行。D1/D2/D3、RoboSpatial Z 原点及 inside/under 宽泛提案均未重启。本文件是本轮唯一维护的报告。
+更新：2026-10-25，Asia/Shanghai。仅维护本文件；停止新增候选，不重启 D1/D2/D3、下载器或 RoboSpatial Z 原点提案。此前三轮筛选、淘汰理由和未运行记录完整保存在 [85bd3a 版历史笔记](https://github.com/thktyv8gjx-pixel/eqa-research-audit/blob/85bd3a431757b2d4015dc7b6da7460ff054df0ed/OVERNIGHT_RESEARCH.md)。本次调整的是小规模探索的优先级与准入顺序，不改写历史结果，也不沿用旧版顶端 NO_GO 作为当前决定。
 
-## 一、三轮实际筛选与科学判断
+## 1. 需要解释的结果与当前证据边界
 
-“未准入”表示目前不值得按该主张立项，不表示论文方法无效，也不表示假设已被实验否定。每轮不超过三篇主候选；用于反证的近邻未另列为实现候选。
+母论文：[Articulated Object Estimation in the Wild，CoRL 2025](https://proceedings.mlr.press/v305/werby25a.html)。数字固定引用可读取的 [arXiv:2509.01708v1，S.1.3 / Table S.2](https://arxiv.org/html/2509.01708#A1.SS3)，不混用旧 OpenReview 稿或声称已独立核对最终 PDF 的表格。
 
-### 第一轮：操作失败检测与目标完成验证
+| 作者报告的总体角误差（度） | predicted segments | GT segments |
+| --- | ---: | ---: |
+| Revolute | 17.14 | 20.24 |
+| Prismatic | 14.54 | 11.99 |
 
-| 主候选、公开算法 | 决定性内容与判断 |
+作者称结果 “not allowing a clear interpretation”。这些是论文汇总值，**不是我们的复现或配对结果**。论文 §5 / S.1.1 使用交互窗口的一维 IoU>0.5 关联预测和 GT；Table S.2 未给逐交互 ID、两条件各自计分集合及失败明细。仅凭上述均值不能确定同一次交互是否变差，也不能确定变化来自平滑。
+
+本轮唯一待回答的问题：**在同一 GT 交互、沿用作者原始匹配与有效性规则时，GT segments 条件的轴误差劣化是否仍存在？** 两条件都获得有效估计的配对差，与覆盖率和失败状态变化，必须分开报告。
+
+## 2. 已核实的公开资源与缺口
+
+官方代码固定为 [`ec88e43e178616697fbc948d0fdda48c0c880702`](https://github.com/robot-learning-freiburg/artipoint/tree/ec88e43e178616697fbc948d0fdda48c0c880702)；本次读取 main ref 与该 SHA 一致。
+
+| 已实际检查的入口 | 能取得什么；不能据此取得什么 |
 | --- | --- |
-| [I-FailSense，ICRA 2026 / v2](https://arxiv.org/html/2509.16072v2)；[官方 0c71f56](https://github.com/clemgris/I-FailSense/tree/0c71f564cece59816733a8d9ac58ee62b264bf8c) | 延续已核实线索：DROID 负例生成把下一组 task 移给当前轨迹，却不在该函数中验证目标确实未实现。仍没有真实矛盾标签样本。RoboReward 已有反事实标签复核，RoboRMBench 已研究目标同义性；“增加去重/清洗”不是独立方法贡献。**当前负例污染提案未准入，不能把源码少检查当成已观察到污染。** |
-| [Robometer，RSS 2026 / v2](https://arxiv.org/html/2603.02115v2)；[官方 352d160](https://github.com/robometer/robometer/tree/352d160389daa964788de1ec933d1925f3a6de4f) | 联合帧级进度/成功与轨迹偏好。§V 承认稀有失败、长历史、不可见接触状态仍困难；B-2 以数据源统一完成比例修正时间标签。读了 `samplers/base.py`、`progress.py`、`pref.py` 与 `datasets/helpers.py`：标签依赖帧索引和 cutoff，不能自动等同物理完成。但这一问题已有 SARM 阶段标注及 RynnValue 时序捷径控制直接覆盖。**不以“时间进度有偏”重新立题。** |
-| [SARM，ICLR 2026 / v2](https://arxiv.org/html/2509.25358v2)；[官方 opensarm 9978198](https://github.com/xdofai/opensarm/tree/9978198d4c6601f34063fa40e63f9ddc5baf7f68) | §3.1 明确处理同状态因示范时长不同而得到不同进度的问题。读了 `models/stage_estimator.py`、`subtask_estimator.py`、`workspace/sarm_ws.py`。作者不仅加入阶段标注，还用 rewind；附录已展示真实回退、误抓和“假完成”的对照。单一 dense 模型在真实 rollout 较差，也已有消融解释；后续 SARM2 扩展多任务。**泛称阶段/记忆/回退改进没有剩余差异。** |
+| [该 commit 的完整递归 Git 树](https://api.github.com/repos/robot-learning-freiburg/artipoint/git/trees/ec88e43e178616697fbc948d0fdda48c0c880702?recursive=1) | `truncated=false`，26 个文件，包括源码、配置、README、teaser；没有两设置的运行结果或交互匹配表。 |
+| [README](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/README.md) | 提供场景 raw ZIP、metadata ZIP、相机里程计包。`matched_cues.csv` 是 GT 交互窗口，不能替代两条件预测/失败/误差结果；ToDo 的 Evaluation protocol 尚未勾选。未下载这些包。 |
+| [官方项目页](https://artipoint.cs.uni-freiburg.de/) | 介绍数据与方法，Code & Dataset 栏仍写 coming soon，没有结果表下载入口。该栏滞后于已发布代码，不能据此说代码/数据不存在。网页与 README 均列 Martin Büchner 的联系邮箱。 |
+| [Releases](https://api.github.com/repos/robot-learning-freiburg/artipoint/releases)；[全部 Issues](https://github.com/robot-learning-freiburg/artipoint/issues?q=is%3Aissue)及两条回复 | Releases 返回空列表；Issues #1 是旧函数名修复，#2 是无效深度可视化说明，均未提供所需逐交互结果。 |
+| 论文、补充与本地工作区定向检索 | 论文声明会公开 model predictions，但上述入口未找到对应结果文件；本地未找到 ArtiPoint 运行缓存或结果表。原始数据服务器目录本次无法通过网页工具读取，未检查压缩包内部。 |
 
-最强反证链：[RoboReward §4.2/A.2.3/A.3](https://arxiv.org/html/2601.00675v2) 已验证反事实标签；[SARM §3.1/4.1](https://arxiv.org/html/2509.25358v2) 已处理进度标签不一致；[RynnValue §3.2](https://arxiv.org/html/2608.09853v1) 已针对采样顺序和跨查询外推捷径设计干预。另有 [FailBench §4.2/B.1](https://arxiv.org/html/2609.03611v1) 直接研究检测器跨源退化和类别偏置。因此，“专用检测器会失效”或“换更好进度信号”都不足以形成新的科学问题。
+**缺口结论的范围：在已核实且可读取的官方入口和当前工作区，没有取得可用于这项配对分析的小型结果表；不声称作者未保存结果，也不声称任何公开位置都不存在它。** 无需为核实这一缺口下载完整场景、模型或重跑前端。
 
-资源与科学门分开：当前没有相应可运行模型或真实负例配对；不重试上一轮 DROID 地址。Robometer 官方 Git 树确有三个很小的示例视频及缓存奖励数组，**没有下载**：它们缺少当前假设需要的逐帧完成真值/反事实目标，读取它们只为增加运行计数没有判别力。完整模型不是本轮必须准备的工程任务。
+源码进一步说明为什么“只要两个成功结果目录”仍不够：
 
-### 第二轮：主动感知与操作决策
+- [`artipoint.py L164–227`](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L164) 只返回有 queries 的 `valid_segments`；无 query 的原始分段被过滤。GT 输入另在 [L523–537](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L523) 仅取 `VERIFIED` 行。这些过滤是否与论文评测一致，需要作者确认。
+- [L342–418](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L342) 只将成功估计加入 `segments_results`，同时保存成功分段索引。它说明存在删选路径，**不证明 Table S.2 实际发生了计分集合变化**。
+- [L462–484](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L462) 导出 `segment_i/axis_info.json`、`metadata.json` 和可选 `poses.npy`；`segment_i` / `metadata.id` 按成功结果重新编号，不能作为两设置的稳定 GT 交互 ID。
+- [L549–588](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L549) 可保存 `segments.json`、`refined_segments.json`；[L804–823](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L804) 保存 `final_successful_segments.json` 及成功结果。它们是作者可能已有的小文件，仍需 GT 对应关系、最终匹配及失败说明才能恢复分母。
 
-| 主候选、公开算法 | 决定性内容与判断 |
-| --- | --- |
-| [Vision in Action，CoRL 2025](https://arxiv.org/html/2506.15666)；[官方 1588edb](https://github.com/haoyu-x/vision-in-action/tree/1588edb2ed4e4fb8f19562d3a36e4e8cb993b4e5) | 联合学习头部与双臂动作；作者报告增加腕部视角后平均下降 18.33%，并明确不支持搜索记忆。这里是可研究的真实局限，但“加视角/加记忆”已有明确结果和后续，不是本项目的新机制。 |
-| [Act, Sense, Act / CoMe-VLA，2026-07 v2](https://arxiv.org/html/2602.04600v2)；[官方 786d59c](https://github.com/Joringell/ASA/tree/786d59cd84af08470eafc68445dddd32af7153fa) | 唯一深入对象：认知头控制探索与操作切换。§5.1把标签解释为信息已充分，但公开数据处理监督 `current/complete`；读了 data processor、TaskStateHead、focal loss 和 sigmoid 返回。提出“信息充分是否混同阶段完成”的待检验解释，**没有把它当成已证实失效**。 |
-| [ActiveArena，2026-09 v2](https://arxiv.org/html/2609.24124v2)；[官方评估 1bf2c77](https://github.com/leeibo/ActiveArena/tree/1bf2c77b8d3ab978fc5b4599a69d017f593edbe8)、[VLA abaea42](https://github.com/leeibo/ActiveArena-VLA/tree/abaea42b223d40f7b763cd879ce926c8c0c906a1) | §4.3 已实测预测依赖的稀疏触发会错过记忆写入时机，比较周期采样、阶段监督、记忆和独立规划器。核心部署代码有阶段变化写入及历史选择。**“更可靠的阶段触发/记忆写入”已有直接邻居。** |
+本轮取得逐交互结果表 **0**，可用真实配对 **0**，已执行配对分析 **0**。新增/丢失/匹配失败/估计失败的实际数量均为**未知**，不能填成零。
 
-对 CoMe-VLA 的关键反证：
-- [§6.6](https://arxiv.org/html/2602.04600v2) 已做 10 分钟目标消失/移位测试，禁用抓取，报告持续搜索、再锁定和恢复搜索。这削弱了“末尾监督必然学成倒计时”的推论。
-- Table 5 的 83.3% 对 22.7% 不能隔离信息充分性头：§12.1.1 的消融同时替换整任务指令并禁用切换。
-- [官方 README](https://github.com/Joringell/ASA/blob/786d59cd84af08470eafc68445dddd32af7153fa/README.md) 未公开完整推理/部署代码；已核到分数返回，未声称核到真实切换闭环。标签时间窗还涉及末尾扩展，未用局部公式差异宣布协议错误。
+## 3. 可直接发送的作者材料请求（草稿，未发送）
 
-最强三个近邻：[ActiveArena §4.3–4.5](https://arxiv.org/html/2609.24124v2) 已比较阶段与周期写入；[SaPaVe，CVPR 2026](https://arxiv.org/html/2603.12193) 已解耦相机/操作并重搜目标；[Gaze-Guided Task Decomposition，IROS 2025，§IV-D](https://arxiv.org/html/2501.15071) 已报告真实 MoveFlask 示范 1/106：抓住瓶子前就看向目的地，造成分段错误。因而“提前看不等于当前动作完成”本身不是新发现。
+官方联系来源：[项目页 Contact](https://artipoint.cs.uni-freiburg.de/)；可发给 Martin Büchner，`buechner@cs.uni-freiburg.de`。这是公开联系地址，不据此推定唯一通讯作者。本轮没有发送邮件或创建 Issue。
 
-本方向未准入的科学理由是：没有机制特异的真实失败，消融不能识别所提原因，且宽泛改法已有直接覆盖。ASA 的小型缓存认知分数未取得，网页及一次小目录请求未成功；这只是额外资源门，**不是上述科学判断的依据**。未假定 GazeTaskDecomp 的公开示范一定含那条失败。
+**Subject: Request for per-interaction results behind ArtiPoint Table S.2**
 
-### 第三轮：空间表示与物理交互
+Dear Dr. Büchner and ArtiPoint authors,
 
-| 主筛选入口、公开算法 | 判断与边界 |
-| --- | --- |
-| [CCA，T-RO 2025](https://ieeexplore.ieee.org/document/11049010)；[官方 76b6d6e](https://github.com/UTNuclearRoboticsPublic/closed-chain-affordance/tree/76b6d6e8f8086657974c92200f152a2f917a6410) | C++ 闭链规划实现公开。关节轴、接触和目标是输入，不把缺视觉模块说成方法错误。未取得全文具体失败证据，止于入口筛查；**不借它否定该研究方向**。 |
-| [IAAO，CVPR 2025](https://arxiv.org/html/2504.06827)；[官方 5b24d6e](https://github.com/lulusindazc/IAAO/tree/5b24d6e86dbcc6652c937e6f7cba2a1004a84023) | 实质特征场、跨状态匹配与融合算法存在；两状态多视图和刚性部件是任务设定。公开依赖中存在空文件，完整复现未验证；此为资源边界。泛称加三维/语义/关节约束没有独立主张，未据此制造新提案。 |
-| [ArtiPoint，CoRL 2025](https://proceedings.mlr.press/v305/werby25a.html)；[官方 ec88e43](https://github.com/robot-learning-freiburg/artipoint/tree/ec88e43e178616697fbc948d0fdda48c0c880702) | 深入母论文、补充、前端、逐点平滑、可见点配对与关节后端。找到了作者明确未解释的反常消融；下面给出唯一保留的诊断问题。 |
+Thank you for releasing ArtiPoint and Arti4D. We are planning a small reproduction study of the interaction-segmentation ablation, before running the full frontend. In Table S.2 of arXiv:2509.01708v1, the reported revolute angular error is 17.14° with predicted segments and 20.24° with GT segments, while the prismatic trend is reversed. We would first like to establish whether the difference remains on the same GT interactions, rather than attributing it to any particular processing stage.
 
-## 二、唯一值得带给颜老师讨论的问题：ArtiPoint 边界负收益
+Could you share the existing small per-interaction evaluation tables (CSV/JSON or equivalent) for these two settings, ideally covering the full Table S.2 evaluation? We only need:
 
-**问题：为什么更准确的人类交互边界不一定带来更准确的关节轴？能否把前端样本变化、运动可辨识性与平滑边界效应分开？**
+1. Stable GT interaction identifiers (scene, sequence, object and interaction/annotation row ID), GT joint type and window, and the evaluation split/eligibility list. Please include all eligible GT interactions, even when no prediction was obtained.
+2. Each input/predicted segment's identifier and window, with its mapping through any query filtering and successful-result renumbering; the assigned GT ID and IoU, and unassigned or duplicate predictions. Please retain all attempted segments, not only successful estimates.
+3. Separate matching and estimation statuses, including no detected segment, no queries/other frontend exclusion, failed or not-attempted estimation, unmatched predictions and invalid/excluded results, with reasons where recorded. If matching is performed only after successful estimation, the pre-estimation segment windows and failure log would help distinguish these cases without changing your original scoring.
+4. The per-interaction axis angular error, revolute axis-position error, and predicted joint type for valid estimates; the original metric units/sign convention, treatment of wrong joint types and failures, and the denominator/weighting used for each Table S.2 aggregate. Missing errors can remain missing; we would not impute them as zero.
 
-原文证据固定为[arXiv:2509.01708v1，S.1.3/Table S.2](https://arxiv.org/html/2509.01708#A1.SS3)：GT segments 下旋转轴角误差 **17.14→20.24°**，而平移轴角误差 **14.54→11.99°**；作者写 “not allowing a clear interpretation”。这是作者结果，**不是本轮复现**。反证也必须保留：同版 Table 3 中去平滑反而使旋转轴误差 **17.14→19.38°**，不能说平滑普遍有害。不混用数值不同的旧 OpenReview 版本；正式发表页确认 CoRL 2025，本文数字严格引用上述可读取的 v1。
+Could you also confirm which code/config/data version produced these results (the currently available code is commit ec88e43e178616697fbc948d0fdda48c0c880702), the exact IoU>0.5 assignment rule (including one-to-many/duplicate and tie handling), and the frame/time convention used for windows? We would follow your original assignments rather than choose matches by axis error. If the table corresponds to a different manuscript revision, please identify it.
 
-源码支持的范围：
-1. [artipoint.py L522–606](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L522)：GT 区间在 query 选择、tracker、深度投影之前确定。换区间会改变前端上下文和点集，不只是改变轴拟合窗口。
-2. [L274–291](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L274)：逐点可见性与手部遮挡、有效深度相交。[L743–801](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L743) 在每段内平滑后拟合。
-3. [arti_estimator.py L516–620](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/arti_estimator.py#L516)：求解 `(V + λvel Lvel + λjerk Ljerk) P' = V P`。按点分块，不同可见性会产生不同滤波算子；此处没有跨点刚性项，后端另有共享关节约束。
-4. [L167–195](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/arti_estimator.py#L167) 取最早共同可见帧构造点对；论文 S.1.1 又按区间 IoU>0.5 匹配。Table S.2 没有证明两条件使用相同交互/点集，故均值差不是配对机制证据。
+Existing output files and logs are fine: for example, `segments.json`, `refined_segments.json`, `final_successful_segments.json`, and the small `axis_info.json` / `metadata.json` files, together with the GT association/evaluation output. We are not asking you to rerun the full pipeline. If complete tables are unavailable, an existing paired subset with its selection rule would still support a bounded exploratory check, although it could not establish the full-table explanation. A pointer to an already public result archive would also be very helpful.
 
-**待证伪假设 H：** 固定真实原始点轨迹 X、可见性 M 和 query 身份后，先截窗再逐点平滑与先平滑再截窗，会因可见性异质性破坏跨点刚性，造成旋转轴偏差。
+Only if an error difference persists on common GT interactions would we later ask about a few paired **pre-smoothing** 3D tracks and visibility masks from both settings, query identities, GT/predicted windows and GT axes, with the coordinate/frame mapping and relevant config. This second-stage request would be limited to a small, preselected subset; no full scenes, RGB-D videos or model weights are needed for the initial comparison.
 
-这是源码推导出的解释，**没有真实因果验证**。更简单的竞争解释包括：前端点集变了、匹配交互集合变了、旋转范围变小、共视数下降、深度质量差，或普通有限窗口正则化效应。没有排除它们前，不谈新机制。
+We would use any shared material within the permissions you specify and would not redistribute non-public data without consent. We are investigating the reported result, not assuming a smoothing failure or claiming a new method. Thank you for your time.
 
-## 三、最强三个直接后续与创新否定
+Best regards,
+Renyaocheng
 
-| 近邻 | 已覆盖什么；为何不能直接立项 |
-| --- | --- |
-| [MoMa-SG，2026，§3.2](https://arxiv.org/html/2602.16356#S3.SS2)；[官方 fc4a417](https://github.com/robot-learning-freiburg/MoMa-SG/tree/fc4a417e1859f84ace1dde3f4d6f71ce45e9e569) | 继承轨迹平滑，随后做 arc-fit、rigidity DBSCAN 及 twist 正则。已读 [filtering.py L53–119](https://github.com/robot-learning-freiburg/MoMa-SG/blob/fc4a417e1859f84ace1dde3f4d6f71ce45e9e569/moma_sg/articulation/filtering.py#L53) 与 [L787–830](https://github.com/robot-learning-freiburg/MoMa-SG/blob/fc4a417e1859f84ace1dde3f4d6f71ce45e9e569/moma_sg/articulation/filtering.py#L787)：已用共同可见帧的点间距离变化过滤不刚性。只展示平滑后非刚性不够新。 |
-| [PAWS，2026-03，§3.1–3.2/App A.2](https://arxiv.org/html/2603.25539) | 已用接触过滤、OU/RTS 轨迹平滑、全局视角与静态几何轴先验；不等同于逐点滤波，但排除了“加接触/几何先验就是创新”。公开算法/数据入口仍有限，不冒称可运行基线。 |
-| [Articulation in Prime，2026-05，§3 Eq.18](https://arxiv.org/html/2605.18645#S3) | 已联合形状与关节拟合，并直接平滑关节量 θ；“改成关节空间平滑”已有明确方法先例。代码尚未核实可用，不以此否定其方法贡献。 |
+## 4. 一页导师讨论：先问“同一交互是否变差”
 
-因此，截窗/缺失观测的非交换性本身是预期滤波效应，刚性或关节空间拟合也已有先例。**当前剩下的是因果解释价值，不是有充分新颖性依据的新算法。** 如果仅证明已知替代能修复流程，结论应是复现/评测解释，而不是论文创新。只有同等运动激励与观测质量下、跨场景稳定存在、强已有对照仍不能解释的机制，才值得重新评估科研准入；本轮没有这类证据。
+**讨论对象。** 只保留 ArtiPoint 的 GT / predicted segments 消融作为有条件复现入口。作者总体结果出现不同方向变化，值得用一项低成本分析澄清；当前没有真实配对证据，也没有理由把平滑预设为原因。目标是把“评价对象改变”与“同一对象估计改变”分开。
 
-## 四、下一步唯一最低成本验证（条件性，不启动工程）
+**为什么先看计分集合。** 换分段会改变 query 生成、前端保留的段和后端成功的段，IoU 匹配又可能改变参与误差平均的 GT 交互。两个总体均值可能在比较不同难度的样本。成功目录编号还经过压缩重排，直接按 `segment_0` 配对会产生错误对应。源码只证明这些通路存在，没有证明它们解释了论文结果。
 
-仅当合法且完整的真实小缓存已到手，固定最多 3 个独立场景、12 次交互的同一 `X/M/query`、GT 轴、相机姿态、GT/预测窗口及全部失败；不得按结果挑轨迹。
+**唯一分析及所需材料。** 先向作者索取两设置已有的小型结果表，不搭建前端。以同一 eligible GT 交互全集为基准，保留 scene/sequence/object/interaction 的稳定键，沿用作者最终关联；重复预测和匹配冲突单列，不按误差挑配对。逐 GT ID 建立两条件状态表：是否有候选段、能否匹配、估计成功/失败/未运行、是否纳入原指标。匹配失败和估计失败是独立维度；若作者只对成功估计做匹配，须保留此前窗口和日志，不能事后把所有缺失都叫估计失败。
 
-在共同真实帧上比较 **crop-before-smooth、full-smooth-then-crop、no-smooth**。先控制交互配对、旋转激励、共视数和深度质量，再看点间距漂移是否与轴误差变化一致；强对照为已有 rigidity 过滤与原始点直接关节拟合。共享可见帧也须作为简单解释检查，不能只挑最有利平滑条件。
+**怎样报告才有判别力。** 列出共同匹配 GT 集合、GT 设置新增匹配、GT 设置丢失匹配、两边均未匹配及未匹配预测；另列共同 GT 内的成功→失败、失败→成功、双方失败和前端过滤。错误类型预测及指标排除单列。对双方都有效的同一 GT 交互，逐项给出 Δθ＝GT-setting error−predicted-setting error，以及旋转轴位置误差差值；按 GT 关节类型分层，报告配对数、均值/中位数及变化方向。Prismatic 位置误差记不适用，失败/缺失不赋零。匹配集合与成功集合分别计数，缺失原因交叉展示，不混成可相加的重复类别。先核对原作者统计口径，再讨论配对结果；小子集不外推整表，也不宣称显著性。
 
-第一步 CPU 诊断只需判断刚性变化；完整轴误差仍须相符的官方后端或作者缓存结果，不能用自建拟合冒称原方法复现。若不存在配对反常，或无平滑/共享可见帧/rigidity 过滤/标准关节拟合/更大运动激励足以解释，则**关闭算法题**。即使发现误差，也先判断是已有方法能解释的流程效应。
+**讨论的三个决策分支。** 共同交互差异消失：支持计分构成解释，到此停止平滑因果猜测。差异主要体现在覆盖或失败转移：先解释检出、匹配与估计能力的不同，不能用成功样本均值代替总体性能。共同交互的有效误差差异仍存在：才进入第二道门，用少量预先固定的真实配对轨迹，区分前端点集/可见性、运动范围及平滑等解释；继续存在不等于平滑致因，更不等于创新成立。
 
-官方仓库没有核实到可直接取用的真实 tracks/visibility/GTjoint 小包；README 主要提供整场景 raw ZIP 与相机姿态包。不是“数据不存在”，而是所需小缓存未发布/未取得。可供导师决定是否索取合法缓存；**本轮未联系作者、未下载整包、未启动前端网络或新环境。**
+**请导师决定的一件事。** 是否值得发送上述小表请求，以一次共同交互比较决定后续机制诊断的投入？若暂时拿不到表，维持有条件复现、等待材料；这不是否定科学假设或小样本探索资格，不增加候选，也不以完整重跑替代缺失材料。
 
-## 五、实际实验、资源与归档
+## 5. 本轮执行与归档边界
 
-| 项目 | 本轮真实状态 |
-| --- | --- |
-| 新真实样本 / 模型推理 / 作者性能复现 / 真实轨迹实验 | **0 / 0 / 0 / 0** |
-| 旧 CPU 结果 | d9324db 的 I-FailSense 表 II 算术核算保留，未重跑；不能算本轮新实验。 |
-| 现成 CPU 条件 | 只读检查 q2_overnight Python 3.12.14：可定位 NumPy/SciPy；未找到 GTSAM、Open3D、Torch。仅用于评估小型线性代数可行性，不声称官方后端已运行。 |
-| 安装 / 大型模型数据 / GPU / 付费 API / 真机仿真 | **均为 0**。没有以模拟或 mock 输入制造结果。 |
-| 本轮文件与清理 | 仅本文件更新。没有候选专属媒体、缓存、源码副本落盘；删除 0 文件，释放 0 字节。原有唯一资料、环境和未跟踪用户文件全部保留。 |
+只读取公开论文、官方页面/源码/Issues及本地现有记录，修改本文件。未执行训练、前端、平滑比较或模拟实验；未安装依赖，未下载场景、媒体、模型或轨迹包，未联系作者。没有新增候选专属临时材料；清理 0 文件、释放 0 字节。现有未跟踪用户文档、旧实验及第三方资产均保留。
 
-归档基线 `d9324db1f2718af30c7891371ae3161a84cea78b`。只提交本文件，核对远端 main、提交父子关系、tree 和文件原文/SHA256；最终提交链接见本轮交付。未上传第三方数据或原始源码。
-
-**给颜老师的一句话：** ArtiPoint 确有作者未解释的边界消融反常，但现有证据还无法区分前端/配对混杂、运动可辨识性与已知滤波效应。是否值得取得一份小型真实缓存做一次因果诊断，可以讨论；把它当成已成立的创新点或立即投入新算法，当前依据不足。
+原创请求草稿、资源核实和讨论文字仅随本文件归档 GitHub；不上传第三方数据。归档父提交为 `85bd3a431757b2d4015dc7b6da7460ff054df0ed`；交付时核实远端 ref、父提交、tree 与本文件原文字节/SHA256，提交链接随最终回复提供。
