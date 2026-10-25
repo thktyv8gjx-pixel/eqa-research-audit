@@ -1,0 +1,130 @@
+{
+  "decision": "NO_GO",
+  "scope": "Close the innovation candidate based on this bounded diagnostic; not a universal refutation of visual distractor effects.",
+  "reviewer": "Assistant visual inspection; no independent human inter-rater labels.",
+  "cases": [
+    {
+      "id": 3084,
+      "observed": "B keeps answer cat but moves the box from the blurred cat to the cat-tree/wall-decoration region; C retains the original cat box. No recovery of the target device.",
+      "image": "private/ollama_run/constraint_blur/outcome_3084.png"
+    },
+    {
+      "id": 4153,
+      "observed": "B switches from metal case to backpack/black luggage region; C retains the metal case. The GT blue bag is not correctly selected; B GT IoU=0.1052.",
+      "image": "private/ollama_run/constraint_blur/outcome_4153.png"
+    },
+    {
+      "id": 4057,
+      "observed": "B still outputs (a) tissue box, but boxes the official toilet-paper target region (GT IoU=0.8935); C boxes the original tissue box. Preserve wrong MCQ and correct localization separately; do not relabel it to (d).",
+      "alternatives": [
+        "object-name/category confusion",
+        "answer-box inconsistency",
+        "local saliency change"
+      ],
+      "image": "private/ollama_run/constraint_blur/outcome_4057.png"
+    },
+    {
+      "id": 4005,
+      "observed": "Both B and C retain the correct refrigerator but change its extent identically; GT IoU falls from 0.8381 to 0.6501 in both. This shared change is not evidence for a distractor-specific effect.",
+      "image": "private/ollama_run/constraint_blur/outcome_4005.png"
+    }
+  ],
+  "bbox_pairwise": [
+    {
+      "id": 3084,
+      "cohort": "wrong_verified_distractor",
+      "A_B_iou": 0.0,
+      "A_C_iou": 1.0,
+      "B_C_iou": 0.0
+    },
+    {
+      "id": 2748,
+      "cohort": "wrong_verified_distractor",
+      "A_B_iou": 0.9226,
+      "A_C_iou": 1.0,
+      "B_C_iou": 0.9226
+    },
+    {
+      "id": 4153,
+      "cohort": "wrong_verified_distractor",
+      "A_B_iou": 0.1122,
+      "A_C_iou": 1.0,
+      "B_C_iou": 0.1122
+    },
+    {
+      "id": 4057,
+      "cohort": "wrong_verified_distractor",
+      "A_B_iou": 0.0,
+      "A_C_iou": 1.0,
+      "B_C_iou": 0.0
+    },
+    {
+      "id": 1193,
+      "cohort": "correct_background_control",
+      "A_B_iou": 1.0,
+      "A_C_iou": 1.0,
+      "B_C_iou": 1.0
+    },
+    {
+      "id": 764,
+      "cohort": "correct_background_control",
+      "A_B_iou": 1.0,
+      "A_C_iou": 1.0,
+      "B_C_iou": 1.0
+    },
+    {
+      "id": 2480,
+      "cohort": "correct_background_control",
+      "A_B_iou": 1.0,
+      "A_C_iou": 1.0,
+      "B_C_iou": 1.0
+    },
+    {
+      "id": 2089,
+      "cohort": "correct_background_control",
+      "A_B_iou": 1.0,
+      "A_C_iou": 1.0,
+      "B_C_iou": 1.0
+    },
+    {
+      "id": 4005,
+      "cohort": "correct_background_control",
+      "A_B_iou": 0.7721,
+      "A_C_iou": 0.7721,
+      "B_C_iou": 1.0
+    }
+  ],
+  "limitations": [
+    "9 examples were selected from existing model results; not representative of the benchmark.",
+    "Wrong-case B targets certified distractors; correct-case B targets background. These cohorts have different selection mechanisms and are not pooled.",
+    "Equal ROI area, shape and sigma do not equalize pixel-change energy, saliency or semantic information. Case4057 B/C patch MAE=27.7956/0.9587.",
+    "Blurred shapes/colors/parts can remain recognizable; zero rescue does not prove distractors are irrelevant.",
+    "Historical A uses JPEG, new B/C use PNG and a new native service session; shared codec/run/numeric differences remain unseparated.",
+    "Only final target GT exists, no complete intermediate or 3D truth. Cannot infer internal step failure.",
+    "Different hop/type cells are tiny and confounded with ROI size/content; no significance or generalization claim."
+  ],
+  "sources": [
+    {
+      "name": "CofactGVR",
+      "url": "https://proceedings.mlr.press/v306/zhang26ex.html",
+      "evidence": "Sections3.2-3.4/Fig3, Section4.3/Table5, Section4.4/Fig4: evidence interventions and misleading plausible-region controls. Original I/Q are retained while evidence crop/trace is intervened; this experiment instead blurs input-image ROIs without training.",
+      "pdf_sha256": "b60014335ee3b4eb95fe1b76bf28172f9c9401ac549b1529980d2f0ff1c44d32"
+    },
+    {
+      "name": "SATURN",
+      "url": "https://arxiv.org/html/2606.22694v2",
+      "evidence": "Section5.5/Fig6 and6.2/Table4 already separate predicate composition and earliest perception/semantic errors; not run on these nine items."
+    },
+    {
+      "name": "DiSR",
+      "url": "https://arxiv.org/html/2608.05242v2",
+      "evidence": "AppendixB/TablesA2-A4 explicitly control geometric shortcuts and perception evidence; not run here."
+    },
+    {
+      "name": "MultihopSpatial",
+      "url": "https://arxiv.org/html/2603.18892v2",
+      "evidence": "Fig15/Table8 and AppendixF cover ignored conditions and recognition failures; AppendixB.5 covers localization-metric differences."
+    }
+  ],
+  "added_evidence": "Independent, fixed-region A/B/C measurements for nine existing images: zero selective answer/joint rescue, one wrong-object switch, and answer/box dissociation. No independent novel mechanism or improved method established."
+}

@@ -1,0 +1,331 @@
+{
+  "frozen_utc": "2026-10-25T16:10:04.671565+00:00",
+  "radius_px": 12,
+  "method": "Pillow GaussianBlur on cropped ROI, pasted back only inside ROI; PNG RGB output",
+  "selection": "Exploratory, based on historical performance and manual safety review; not a random benchmark sample.",
+  "candidate_pool_size": 16,
+  "total_available": 72,
+  "not_pursued_after_metadata_screen": 56,
+  "excluded_after_visual_screen": [
+    {
+      "id": 2117,
+      "reason": "Pot shape obscured by plant/basket; cannot certify square/rectangular violation."
+    },
+    {
+      "id": 2656,
+      "reason": "Transparent cup takes red/pink reflections; color-condition violation not unambiguous."
+    },
+    {
+      "id": 2567,
+      "reason": "Tiny predicted ball against reference scoreboard; conservative exclusion from object-only/reference-preserving edit."
+    },
+    {
+      "id": 2782,
+      "reason": "Coffee machine partly occluded by person; cannot isolate only the predicted object reliably."
+    },
+    {
+      "id": 4208,
+      "reason": "Tray is rectangular; failure may be distance ranking, not a certified violated filter."
+    },
+    {
+      "id": 3733,
+      "reason": "Tiny clock and image-center placement do not support reliable shape/position certification."
+    },
+    {
+      "id": 2969,
+      "reason": "Light-object interpretation and target uniqueness not independently secure for a positive-control claim."
+    }
+  ],
+  "cohort_rules": {
+    "wrong_verified_distractor": "MCQ wrong, visible predicted object violates an explicit condition; no key-reference/target edit.",
+    "correct_background_control": "Originally joint correct; B/C are preselected non-key background regions, not failure-defined distractors. Never pool treatment-effect interpretation across cohorts."
+  },
+  "selected": [
+    {
+      "id": 3084,
+      "cohort": "wrong_verified_distractor",
+      "constraint": "category_device",
+      "B": [
+        112,
+        114,
+        165,
+        210
+      ],
+      "C": [
+        15,
+        5,
+        68,
+        101
+      ],
+      "object": "cat",
+      "protected": [
+        {
+          "name": "monitor reference",
+          "box": [
+            183,
+            80,
+            313,
+            220
+          ]
+        },
+        {
+          "name": "keyboard alternative",
+          "box": [
+            165,
+            245,
+            355,
+            305
+          ]
+        }
+      ],
+      "reason": "Cat is not a device; monitor, target laptop and keyboard remain unchanged. C is window/blind background.",
+      "coverage": "Visible cat within the original predicted region; rectangular ROI also contains immediate background."
+    },
+    {
+      "id": 2748,
+      "cohort": "wrong_verified_distractor",
+      "constraint": "camera_frame_left",
+      "B": [
+        395,
+        150,
+        408,
+        228
+      ],
+      "C": [
+        15,
+        12,
+        28,
+        90
+      ],
+      "object": "red folder",
+      "protected": [
+        {
+          "name": "mouse reference",
+          "box": [
+            345,
+            270,
+            395,
+            315
+          ]
+        }
+      ],
+      "reason": "Red binder is on image right, violating image-left; left wristwatch and mouse are outside both ROIs. C is wall/window background.",
+      "coverage": "Only visible red spine/label, not adjacent blue binders; object shape/color can remain recognizable."
+    },
+    {
+      "id": 4153,
+      "cohort": "wrong_verified_distractor",
+      "constraint": "category_blue",
+      "B": [
+        319,
+        191,
+        423,
+        284
+      ],
+      "C": [
+        0,
+        0,
+        104,
+        93
+      ],
+      "object": "silver motorcycle case",
+      "protected": [
+        {
+          "name": "helmet reference",
+          "box": [
+            242,
+            125,
+            312,
+            190
+          ]
+        }
+      ],
+      "reason": "Predicted silver metal case is not blue; blue bag and helmet untouched. C contains foliage and non-key windshield context.",
+      "coverage": "Visible metal case body, leaving peripheral edge/handle; not complete object removal."
+    },
+    {
+      "id": 4057,
+      "cohort": "wrong_verified_distractor",
+      "constraint": "category_round_or_cylindrical",
+      "B": [
+        190,
+        442,
+        239,
+        482
+      ],
+      "C": [
+        320,
+        140,
+        369,
+        180
+      ],
+      "object": "rectangular tissue box",
+      "protected": [
+        {
+          "name": "toilet bowl reference",
+          "box": [
+            280,
+            415,
+            479,
+            630
+          ]
+        },
+        {
+          "name": "sink pedestal",
+          "box": [
+            130,
+            420,
+            187,
+            550
+          ]
+        }
+      ],
+      "reason": "Rectangular tissue box violates shape condition. Toilet bowl and left toilet-paper target untouched. C is blank wall.",
+      "coverage": "Visible tissue-box face; protruding tissue and some box outline remain."
+    },
+    {
+      "id": 1193,
+      "cohort": "correct_background_control",
+      "constraint": "background_control",
+      "B": [
+        225,
+        285,
+        275,
+        335
+      ],
+      "C": [
+        340,
+        285,
+        390,
+        335
+      ],
+      "object": "pavement background",
+      "protected": [],
+      "reason": "Both patches are non-candidate pavement; mailbox and every comparison object remain visible.",
+      "coverage": "No error-defined object selection; two background placebos."
+    },
+    {
+      "id": 764,
+      "cohort": "correct_background_control",
+      "constraint": "background_control",
+      "B": [
+        20,
+        45,
+        70,
+        95
+      ],
+      "C": [
+        95,
+        45,
+        145,
+        95
+      ],
+      "object": "cabinet panel background",
+      "protected": [
+        {
+          "name": "standing man reference",
+          "box": [
+            365,
+            85,
+            505,
+            445
+          ]
+        }
+      ],
+      "reason": "Two upper-left cabinet panels; pot, standing man and listed alternatives unchanged.",
+      "coverage": "Two background placebos, selected without an incorrect prediction."
+    },
+    {
+      "id": 2480,
+      "cohort": "correct_background_control",
+      "constraint": "background_control",
+      "B": [
+        255,
+        418,
+        305,
+        438
+      ],
+      "C": [
+        535,
+        418,
+        585,
+        438
+      ],
+      "object": "placemat background",
+      "protected": [],
+      "reason": "Two patches below dishes/chopsticks, outside all four option objects; glass and left/right layout unchanged.",
+      "coverage": "Floral/blank placemat patches may have different texture energy; no claim of equal pixel damage."
+    },
+    {
+      "id": 2089,
+      "cohort": "correct_background_control",
+      "constraint": "background_control",
+      "B": [
+        60,
+        65,
+        100,
+        105
+      ],
+      "C": [
+        323,
+        65,
+        363,
+        105
+      ],
+      "object": "upper cabinet panel background",
+      "protected": [
+        {
+          "name": "refrigerator virtual-view anchor",
+          "box": [
+            397,
+            85,
+            639,
+            427
+          ]
+        }
+      ],
+      "reason": "White cabinet fronts; refrigerator anchor, microwave, oven, coffeemaker and decorative plate unchanged.",
+      "coverage": "Two background placebos."
+    },
+    {
+      "id": 4005,
+      "cohort": "correct_background_control",
+      "constraint": "background_control",
+      "B": [
+        570,
+        260,
+        620,
+        310
+      ],
+      "C": [
+        570,
+        325,
+        620,
+        375
+      ],
+      "object": "yellow wall background",
+      "protected": [
+        {
+          "name": "chair reference",
+          "box": [
+            465,
+            415,
+            640,
+            480
+          ]
+        },
+        {
+          "name": "calendar alternative",
+          "box": [
+            510,
+            175,
+            565,
+            295
+          ]
+        }
+      ],
+      "reason": "Two bare wall patches beyond calendar and above chair; fridge, frame and calendar unchanged.",
+      "coverage": "Two smooth-wall placebos; blur may have little pixel effect."
+    }
+  ]
+}

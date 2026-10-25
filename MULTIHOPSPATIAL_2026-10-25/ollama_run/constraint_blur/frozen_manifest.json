@@ -1,0 +1,580 @@
+{
+  "spec_sha256": "f9fa803ec6d94cf54432b693e43faf32d7d22c0dbb9b18c3419275be92a5343e",
+  "frozen_before_new_predictions": true,
+  "model": "qwen3-vl:4b-instruct-q4_K_M",
+  "digest": "sha256:84f7ed8042fa7cdbd902f7dcb7d0370e032095047cc3244179f263b77b5bc318",
+  "options": {
+    "temperature": 0,
+    "seed": 20261025,
+    "num_ctx": 8192,
+    "num_predict": 4096
+  },
+  "pillow": "12.3.0",
+  "numpy": "2.3.5",
+  "radius_px": 12,
+  "historical_sha256": {
+    "private/benchmark_qwen.py": "d4afdddcb9f027485b2dd0c9c1276e93359936bb6b6b7b1de2c39e438eff9555",
+    "ollama_run/run_ollama.py": "729fcfe25fb1fbb3ad8c37cbe7573b2dcbae3113337c7d78255b41e8bd70410d",
+    "ollama_run/first12_predictions.jsonl": "53d2f317d4a546444411d9d614a5419f1316bfd21d0d6979b6303f7566ef28d5",
+    "ollama_run/extra60_predictions.jsonl": "17fee7b85c3ce7ad4428328175adab67f1c1a74f461c00d57312552300e09aab",
+    "ollama_run/environment.json": "59367c0a2827cc58c41e10b72bce91bafc73c73690eb9d5441dfc66de25a7c60",
+    "ollama_run/circular12/predictions.jsonl": "9535f1bc76ee16d620b951e738c20a1afbfcba3c5e2c2735316976dea0039053"
+  },
+  "records": [
+    {
+      "id": 3084,
+      "cohort": "wrong_verified_distractor",
+      "constraint": "category_device",
+      "B": [
+        112,
+        114,
+        165,
+        210
+      ],
+      "C": [
+        15,
+        5,
+        68,
+        101
+      ],
+      "object": "cat",
+      "reason": "Cat is not a device; monitor, target laptop and keyboard remain unchanged. C is window/blind background.",
+      "coverage": "Visible cat within the original predicted region; rectangular ROI also contains immediate background.",
+      "hop": "3hop",
+      "view": "ego",
+      "source_image_sha256": "6d87cd89d1631c496ef2891f36e4391ca066faa40f3100ad08504466d9c36f3d",
+      "prompt_sha256": "83871fadd775ab79e98b7fb36763f9f078daf6a64fc68e12c87caa1092704edd",
+      "baseline_correct": false,
+      "baseline_joint_correct": false,
+      "original_distractor_letter": "b",
+      "edits": {
+        "B": {
+          "roi": [
+            112,
+            114,
+            165,
+            210
+          ],
+          "area_px": 5088,
+          "image_sha256": "048229076509636d30c8507cab769e60b85fd9ce165f60e5649eb4739e15d384",
+          "changed_pixels": 5088,
+          "patch_mean_absolute_rgb_change": 49.276729559748425,
+          "image_mean_absolute_rgb_change": 1.3371733333333333,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        },
+        "C": {
+          "roi": [
+            15,
+            5,
+            68,
+            101
+          ],
+          "area_px": 5088,
+          "image_sha256": "8a01c95b58c546dc30e34cfc23910a418b518b6bfbe8b709632189c6fa18f036",
+          "changed_pixels": 5088,
+          "patch_mean_absolute_rgb_change": 25.745610587002098,
+          "image_mean_absolute_rgb_change": 0.6986328888888889,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        }
+      }
+    },
+    {
+      "id": 2748,
+      "cohort": "wrong_verified_distractor",
+      "constraint": "camera_frame_left",
+      "B": [
+        395,
+        150,
+        408,
+        228
+      ],
+      "C": [
+        15,
+        12,
+        28,
+        90
+      ],
+      "object": "red folder",
+      "reason": "Red binder is on image right, violating image-left; left wristwatch and mouse are outside both ROIs. C is wall/window background.",
+      "coverage": "Only visible red spine/label, not adjacent blue binders; object shape/color can remain recognizable.",
+      "hop": "2hop",
+      "view": "exo",
+      "source_image_sha256": "6e5fbf6c196aaa49a6534f63657e131e87a0b62f6dae6adb90775b150af8da2b",
+      "prompt_sha256": "2997a72df0b1a7fbeb2e9b86a3dff91a01dfc51cdfc6b97465b01b7252b3eb42",
+      "baseline_correct": false,
+      "baseline_joint_correct": false,
+      "original_distractor_letter": "b",
+      "edits": {
+        "B": {
+          "roi": [
+            395,
+            150,
+            408,
+            228
+          ],
+          "area_px": 1014,
+          "image_sha256": "66978653556fc2e12564decbca5f3d06c877ee7b20fd3268b3fdab4e6e3aad23",
+          "changed_pixels": 1014,
+          "patch_mean_absolute_rgb_change": 43.29815910585141,
+          "image_mean_absolute_rgb_change": 0.23415644444444444,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        },
+        "C": {
+          "roi": [
+            15,
+            12,
+            28,
+            90
+          ],
+          "area_px": 1014,
+          "image_sha256": "810384c30c582c7bc80800adf8689398ced1e3a4f24f3dde64a75f16075fb469",
+          "changed_pixels": 1014,
+          "patch_mean_absolute_rgb_change": 54.97698882314267,
+          "image_mean_absolute_rgb_change": 0.29731555555555556,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        }
+      }
+    },
+    {
+      "id": 4153,
+      "cohort": "wrong_verified_distractor",
+      "constraint": "category_blue",
+      "B": [
+        319,
+        191,
+        423,
+        284
+      ],
+      "C": [
+        0,
+        0,
+        104,
+        93
+      ],
+      "object": "silver motorcycle case",
+      "reason": "Predicted silver metal case is not blue; blue bag and helmet untouched. C contains foliage and non-key windshield context.",
+      "coverage": "Visible metal case body, leaving peripheral edge/handle; not complete object removal.",
+      "hop": "3hop",
+      "view": "exo",
+      "source_image_sha256": "9abaa794b863c1bc4959d909166fca455f5beb8029eadf0484aa70841011e573",
+      "prompt_sha256": "601fe2854bf05de4035c23dbc95f81f898679c2f6ea6aae1de14f9417293f109",
+      "baseline_correct": false,
+      "baseline_joint_correct": false,
+      "original_distractor_letter": "c",
+      "edits": {
+        "B": {
+          "roi": [
+            319,
+            191,
+            423,
+            284
+          ],
+          "area_px": 9672,
+          "image_sha256": "c9a451356fa9ff4fef90bb74cf1f6d91f805167657338999a2a18c40dcedfdd0",
+          "changed_pixels": 9669,
+          "patch_mean_absolute_rgb_change": 26.440102012682658,
+          "image_mean_absolute_rgb_change": 1.345940350877193,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        },
+        "C": {
+          "roi": [
+            0,
+            0,
+            104,
+            93
+          ],
+          "area_px": 9672,
+          "image_sha256": "45b2b5260ef1290995a6c7d65a1af64769fb6bd4b96eb541c412e7592bd53cc2",
+          "changed_pixels": 9672,
+          "patch_mean_absolute_rgb_change": 19.227012682657843,
+          "image_mean_absolute_rgb_change": 0.9787561403508772,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        }
+      }
+    },
+    {
+      "id": 4057,
+      "cohort": "wrong_verified_distractor",
+      "constraint": "category_round_or_cylindrical",
+      "B": [
+        190,
+        442,
+        239,
+        482
+      ],
+      "C": [
+        320,
+        140,
+        369,
+        180
+      ],
+      "object": "rectangular tissue box",
+      "reason": "Rectangular tissue box violates shape condition. Toilet bowl and left toilet-paper target untouched. C is blank wall.",
+      "coverage": "Visible tissue-box face; protruding tissue and some box outline remain.",
+      "hop": "3hop",
+      "view": "exo",
+      "source_image_sha256": "5e2869504f1f11815465262e50036f41b575976ffdcd5162a85792d4011da527",
+      "prompt_sha256": "feb6cc030b995e3bf9d20cd512e627dfd11b5c6e229b8444789cdfc42c32b2ac",
+      "baseline_correct": false,
+      "baseline_joint_correct": false,
+      "original_distractor_letter": "a",
+      "edits": {
+        "B": {
+          "roi": [
+            190,
+            442,
+            239,
+            482
+          ],
+          "area_px": 1960,
+          "image_sha256": "e489e79390908135843de773eac3a4bbab7cd7d0a1972802778758ff982b7f2d",
+          "changed_pixels": 1960,
+          "patch_mean_absolute_rgb_change": 27.795578231292517,
+          "image_mean_absolute_rgb_change": 0.1773415798611111,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        },
+        "C": {
+          "roi": [
+            320,
+            140,
+            369,
+            180
+          ],
+          "area_px": 1960,
+          "image_sha256": "2c7f3749ff88e5c282b9bb50a1d791fd38fc0bb03683a700552971d443c7d6d6",
+          "changed_pixels": 1845,
+          "patch_mean_absolute_rgb_change": 0.9586734693877551,
+          "image_mean_absolute_rgb_change": 0.006116536458333334,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        }
+      }
+    },
+    {
+      "id": 1193,
+      "cohort": "correct_background_control",
+      "constraint": "background_control",
+      "B": [
+        225,
+        285,
+        275,
+        335
+      ],
+      "C": [
+        340,
+        285,
+        390,
+        335
+      ],
+      "object": "pavement background",
+      "reason": "Both patches are non-candidate pavement; mailbox and every comparison object remain visible.",
+      "coverage": "No error-defined object selection; two background placebos.",
+      "hop": "1hop",
+      "view": "exo",
+      "source_image_sha256": "c70d7d50a53911bbbf9e6da8a4f90383143a3cabad3acfaac8cef8057a29519a",
+      "prompt_sha256": "a29b757a78636fd513fba6f37026382e85d2ff035434797167d3a5f976b73308",
+      "baseline_correct": true,
+      "baseline_joint_correct": true,
+      "original_distractor_letter": null,
+      "edits": {
+        "B": {
+          "roi": [
+            225,
+            285,
+            275,
+            335
+          ],
+          "area_px": 2500,
+          "image_sha256": "6e8fc10e052087ad8211d6ff0bde283868f0ce7fd05ab30506e387fcd44e2375",
+          "changed_pixels": 2459,
+          "patch_mean_absolute_rgb_change": 3.2253333333333334,
+          "image_mean_absolute_rgb_change": 0.04300444444444444,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        },
+        "C": {
+          "roi": [
+            340,
+            285,
+            390,
+            335
+          ],
+          "area_px": 2500,
+          "image_sha256": "71b2be55740398cc990e536b51250856e3e952e784b4d3a0fd5464e68b4e628b",
+          "changed_pixels": 2448,
+          "patch_mean_absolute_rgb_change": 3.5168,
+          "image_mean_absolute_rgb_change": 0.046890666666666664,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        }
+      }
+    },
+    {
+      "id": 764,
+      "cohort": "correct_background_control",
+      "constraint": "background_control",
+      "B": [
+        20,
+        45,
+        70,
+        95
+      ],
+      "C": [
+        95,
+        45,
+        145,
+        95
+      ],
+      "object": "cabinet panel background",
+      "reason": "Two upper-left cabinet panels; pot, standing man and listed alternatives unchanged.",
+      "coverage": "Two background placebos, selected without an incorrect prediction.",
+      "hop": "1hop",
+      "view": "exo",
+      "source_image_sha256": "44876a98e68a92ffb7569831018c048d1215dace3d18726b3790ee0b5c98dba6",
+      "prompt_sha256": "0ba1c61548a498d468653e631f4dca13edd554ef455168c1d48a7184dfdc8eef",
+      "baseline_correct": true,
+      "baseline_joint_correct": true,
+      "original_distractor_letter": null,
+      "edits": {
+        "B": {
+          "roi": [
+            20,
+            45,
+            70,
+            95
+          ],
+          "area_px": 2500,
+          "image_sha256": "b8924562f5bfd58266624275e4c9b06e549f61a3d1f81b00ffcd7f66c91f4b03",
+          "changed_pixels": 2487,
+          "patch_mean_absolute_rgb_change": 3.308,
+          "image_mean_absolute_rgb_change": 0.026920572916666666,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        },
+        "C": {
+          "roi": [
+            95,
+            45,
+            145,
+            95
+          ],
+          "area_px": 2500,
+          "image_sha256": "402469b38740ed556f28cb5906bc3114e0d6498b6dc2e36e558c8304b0d3c562",
+          "changed_pixels": 2489,
+          "patch_mean_absolute_rgb_change": 5.752533333333333,
+          "image_mean_absolute_rgb_change": 0.04681423611111111,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        }
+      }
+    },
+    {
+      "id": 2480,
+      "cohort": "correct_background_control",
+      "constraint": "background_control",
+      "B": [
+        255,
+        418,
+        305,
+        438
+      ],
+      "C": [
+        535,
+        418,
+        585,
+        438
+      ],
+      "object": "placemat background",
+      "reason": "Two patches below dishes/chopsticks, outside all four option objects; glass and left/right layout unchanged.",
+      "coverage": "Floral/blank placemat patches may have different texture energy; no claim of equal pixel damage.",
+      "hop": "2hop",
+      "view": "exo",
+      "source_image_sha256": "c41d1ce84471526e2214705421d17ede0ab7ffed280d5c54c4c3612cd520f7ab",
+      "prompt_sha256": "62b8bfa77fe1fd85ab3a6ccd41204f89d7283edf1644a563d784793e6ff99e0b",
+      "baseline_correct": true,
+      "baseline_joint_correct": true,
+      "original_distractor_letter": null,
+      "edits": {
+        "B": {
+          "roi": [
+            255,
+            418,
+            305,
+            438
+          ],
+          "area_px": 1000,
+          "image_sha256": "ce2b68bb470537209a71fbe5ade1a8b16f270537f9309854932483c45d3f1054",
+          "changed_pixels": 1000,
+          "patch_mean_absolute_rgb_change": 6.798333333333333,
+          "image_mean_absolute_rgb_change": 0.022129991319444445,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        },
+        "C": {
+          "roi": [
+            535,
+            418,
+            585,
+            438
+          ],
+          "area_px": 1000,
+          "image_sha256": "266869acce9d30505861db009758cb007f53eea53bfbc40bf0ef9fbd77bafe91",
+          "changed_pixels": 1000,
+          "patch_mean_absolute_rgb_change": 4.7556666666666665,
+          "image_mean_absolute_rgb_change": 0.015480685763888889,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        }
+      }
+    },
+    {
+      "id": 2089,
+      "cohort": "correct_background_control",
+      "constraint": "background_control",
+      "B": [
+        60,
+        65,
+        100,
+        105
+      ],
+      "C": [
+        323,
+        65,
+        363,
+        105
+      ],
+      "object": "upper cabinet panel background",
+      "reason": "White cabinet fronts; refrigerator anchor, microwave, oven, coffeemaker and decorative plate unchanged.",
+      "coverage": "Two background placebos.",
+      "hop": "2hop",
+      "view": "ego",
+      "source_image_sha256": "802b9a623e060be4c325bab0e8f877944161cba4361ae4cb3336d078d4e30911",
+      "prompt_sha256": "ec2b8db50b95af07d2175bad5e720c8eb70bf3a94020841dbb313875e5f532f9",
+      "baseline_correct": true,
+      "baseline_joint_correct": true,
+      "original_distractor_letter": null,
+      "edits": {
+        "B": {
+          "roi": [
+            60,
+            65,
+            100,
+            105
+          ],
+          "area_px": 1600,
+          "image_sha256": "67b10dc974719f963e2b741f010574b7ddbada78cf105ddd9e757e180437c6fd",
+          "changed_pixels": 1600,
+          "patch_mean_absolute_rgb_change": 11.088333333333333,
+          "image_mean_absolute_rgb_change": 0.06476830218068536,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        },
+        "C": {
+          "roi": [
+            323,
+            65,
+            363,
+            105
+          ],
+          "area_px": 1600,
+          "image_sha256": "7f52fa4c208285f8d563fd1ea83b6f54e98feaa67b11c240594e2e2bc7e4d4ec",
+          "changed_pixels": 1600,
+          "patch_mean_absolute_rgb_change": 5.3,
+          "image_mean_absolute_rgb_change": 0.030957943925233645,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        }
+      }
+    },
+    {
+      "id": 4005,
+      "cohort": "correct_background_control",
+      "constraint": "background_control",
+      "B": [
+        570,
+        260,
+        620,
+        310
+      ],
+      "C": [
+        570,
+        325,
+        620,
+        375
+      ],
+      "object": "yellow wall background",
+      "reason": "Two bare wall patches beyond calendar and above chair; fridge, frame and calendar unchanged.",
+      "coverage": "Two smooth-wall placebos; blur may have little pixel effect.",
+      "hop": "3hop",
+      "view": "exo",
+      "source_image_sha256": "363b91fe4e1c68f0838262db5ddf259e31df2e5f7016d5986a8cc46aa6a3ffb2",
+      "prompt_sha256": "949caaef2bf24b22d8e41d7dd7089cb235706c70603b833744ae875e58925fea",
+      "baseline_correct": true,
+      "baseline_joint_correct": true,
+      "original_distractor_letter": null,
+      "edits": {
+        "B": {
+          "roi": [
+            570,
+            260,
+            620,
+            310
+          ],
+          "area_px": 2500,
+          "image_sha256": "7afda746bab8c5cb26911826d6c049dbbafb45bed332fa5c775c489212ee871a",
+          "changed_pixels": 2483,
+          "patch_mean_absolute_rgb_change": 2.0344,
+          "image_mean_absolute_rgb_change": 0.016555989583333333,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        },
+        "C": {
+          "roi": [
+            570,
+            325,
+            620,
+            375
+          ],
+          "area_px": 2500,
+          "image_sha256": "4e49769cbcce627a46332c20e49dc61fc438c1ccaaefb487cf944403ad1225c4",
+          "changed_pixels": 2476,
+          "patch_mean_absolute_rgb_change": 2.4664,
+          "image_mean_absolute_rgb_change": 0.020071614583333335,
+          "outside_roi_unchanged": true,
+          "protected_target_and_references_unchanged": true,
+          "format": "PNG"
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "A is a historical JPEG-input run; both new conditions use lossless PNG.",
+    "Equal ROI area and Gaussian radius do not imply equal texture energy, saliency or removed information.",
+    "Blur is not verified object erasure; some outlines, color and low-frequency features remain.",
+    "GT final box exists, but no complete intermediate or 3D truth."
+  ]
+}
