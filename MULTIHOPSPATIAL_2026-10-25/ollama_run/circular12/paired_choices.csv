@@ -1,0 +1,13 @@
+id,s0_original_id,s1_original_id,s2_original_id,s3_original_id,s0_letter,s1_letter,s2_letter,s3_letter,category,letter_stable,semantic_stable
+706,c,d,c,c,c,a,a,b,multiple_adjacent_changes,False,False
+403,b,b,b,b,b,c,d,a,all_same,False,True
+1193,a,a,a,a,a,b,c,d,all_same,False,True
+764,a,a,a,a,a,b,c,d,all_same,False,True
+1696,a,b,d,d,a,c,b,c,multiple_adjacent_changes,False,False
+1837,c,d,c,c,c,a,a,b,multiple_adjacent_changes,False,False
+2480,a,a,a,a,a,b,c,d,all_same,False,True
+2748,b,b,b,b,b,c,d,a,all_same,False,True
+3028,a,d,d,d,a,a,b,c,one_adjacent_change,False,False
+3084,b,b,b,d,b,c,d,c,one_adjacent_change,False,False
+4208,a,d,d,d,a,a,b,c,one_adjacent_change,False,False
+4153,c,c,c,a,c,d,a,d,one_adjacent_change,False,False

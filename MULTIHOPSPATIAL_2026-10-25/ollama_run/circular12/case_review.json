@@ -1,0 +1,55 @@
+{
+  "review_mode": "Assistant visual inspection of original-image overlays; not independent human inter-rater evaluation.",
+  "stable_semantics_correct_ids": [
+    1193,
+    764,
+    2480
+  ],
+  "stable_semantics_incorrect_ids": [
+    403,
+    2748
+  ],
+  "semantic_variation_among_new_shifts": [
+    706,
+    1696,
+    1837,
+    3084,
+    4153
+  ],
+  "variation_only_old_shift0_vs_new": [
+    3028,
+    4208
+  ],
+  "one_condition_outlier_count": 6,
+  "all_four_same_semantics_and_bbox_pair_iou_ge05": 4,
+  "cases": [
+    {
+      "id": 1193,
+      "observation": "All shifts select original A (mailbox); letters rotate A/B/C/D. All four predicted boxes are identical; GT IoU=0.8737. Consistent correct target and localization.",
+      "image": "private/ollama_run/circular12/case_1193_four_shifts.png"
+    },
+    {
+      "id": 2748,
+      "observation": "All shifts select original B (red folder), despite letters B/C/D/A. Every condition is wrong relative to the left-side target. Shift2 narrows the red box to a binder spine; same-choice pairwise box IoU reaches only 0.4015. Order stability of the option ID does not establish physical-region stability.",
+      "image": "private/ollama_run/circular12/case_2748_four_shifts.png"
+    },
+    {
+      "id": 1696,
+      "observation": "Original IDs A/B/D/D: pink top, camera, parasol, parasol. The boxes visibly switch entities. Only shift1 selects the camera with GT IoU=0.7656. The changed output is not a mere letter relabeling.",
+      "image": "private/ollama_run/circular12/case_1696_four_shifts.png"
+    },
+    {
+      "id": 3084,
+      "observation": "Original B/B/B/D: cat in shifts0/1/2; black laptop in shift3 with GT IoU=0.8369. The changed selection and box also occur among newly generated conditions.",
+      "image": "private/ollama_run/circular12/case_3084_four_shifts.png"
+    }
+  ],
+  "caveats": [
+    "No identical-input repetitions; numeric/session/cache variations are unquantified.",
+    "3028 and 4208 differ only between reused shift0 and the new run; order alone is not isolated.",
+    "Five other items vary among new shifts1/2/3, but this is still single-generation evidence.",
+    "48 paired conditions are not 48 independent questions; no significance or population claim.",
+    "Literal description matching found zero conflicts and zero unmatched descriptions; this is not a proof of correct visual grounding.",
+    "Existing choice-position diagnosis, not a novel mechanism or method."
+  ]
+}
