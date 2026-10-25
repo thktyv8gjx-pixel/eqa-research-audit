@@ -1,0 +1,155 @@
+{
+  "source_code_commit": "b1b6a7be261e3cde814e117eabe330d5ef47c1f0",
+  "dataset_revision": "6c962f5227acc133d2196cbf89f09441c7ccb703",
+  "test_json_bytes": 3652047,
+  "test_json_sha256": "26e20426052b49d97f8122c31deb1399d349a7e679e92632e951afd78dc8e32a",
+  "selection_key": "MultihopSpatial-20261025-v1",
+  "rule": "Two lowest SHA256(key:id) per hop/view stratum, excluding used image/video filename groups; no answer or model-output filtering.",
+  "independence_limit": "COCO image IDs are distinct; physical scene independence is not annotated or established.",
+  "samples": [
+    {
+      "id": 706,
+      "image_path": "000000055651.jpg",
+      "group": "000000055651.jpg",
+      "hop": "1hop",
+      "view": "ego",
+      "image_resolution": "640x426",
+      "tags": [
+        "REL"
+      ]
+    },
+    {
+      "id": 403,
+      "image_path": "000000151848.jpg",
+      "group": "000000151848.jpg",
+      "hop": "1hop",
+      "view": "ego",
+      "image_resolution": "500x333",
+      "tags": [
+        "REL"
+      ]
+    },
+    {
+      "id": 1193,
+      "image_path": "000000568187.jpg",
+      "group": "000000568187.jpg",
+      "hop": "1hop",
+      "view": "exo",
+      "image_resolution": "500x375",
+      "tags": [
+        "REL"
+      ]
+    },
+    {
+      "id": 764,
+      "image_path": "000000355175.jpg",
+      "group": "000000355175.jpg",
+      "hop": "1hop",
+      "view": "exo",
+      "image_resolution": "640x480",
+      "tags": [
+        "POS"
+      ]
+    },
+    {
+      "id": 1696,
+      "image_path": "000000377473.jpg",
+      "group": "000000377473.jpg",
+      "hop": "2hop",
+      "view": "ego",
+      "image_resolution": "640x480",
+      "tags": [
+        "POS",
+        "REL"
+      ]
+    },
+    {
+      "id": 1837,
+      "image_path": "000000463360.jpg",
+      "group": "000000463360.jpg",
+      "hop": "2hop",
+      "view": "ego",
+      "image_resolution": "640x360",
+      "tags": [
+        "POS",
+        "REL"
+      ]
+    },
+    {
+      "id": 2480,
+      "image_path": "000000112904.jpg",
+      "group": "000000112904.jpg",
+      "hop": "2hop",
+      "view": "exo",
+      "image_resolution": "640x480",
+      "tags": [
+        "ATT",
+        "POS"
+      ]
+    },
+    {
+      "id": 2748,
+      "image_path": "000000169872.jpg",
+      "group": "000000169872.jpg",
+      "hop": "2hop",
+      "view": "exo",
+      "image_resolution": "500x375",
+      "tags": [
+        "POS",
+        "REL"
+      ]
+    },
+    {
+      "id": 3028,
+      "image_path": "000000071302.jpg",
+      "group": "000000071302.jpg",
+      "hop": "3hop",
+      "view": "ego",
+      "image_resolution": "640x480",
+      "tags": [
+        "ATT",
+        "POS",
+        "REL"
+      ]
+    },
+    {
+      "id": 3084,
+      "image_path": "000000560088.jpg",
+      "group": "000000560088.jpg",
+      "hop": "3hop",
+      "view": "ego",
+      "image_resolution": "500x375",
+      "tags": [
+        "ATT",
+        "POS",
+        "REL"
+      ]
+    },
+    {
+      "id": 4208,
+      "image_path": "000000299067.jpg",
+      "group": "000000299067.jpg",
+      "hop": "3hop",
+      "view": "exo",
+      "image_resolution": "640x423",
+      "tags": [
+        "ATT",
+        "POS",
+        "REL"
+      ]
+    },
+    {
+      "id": 4153,
+      "image_path": "000000253907.jpg",
+      "group": "000000253907.jpg",
+      "hop": "3hop",
+      "view": "exo",
+      "image_resolution": "500x380",
+      "tags": [
+        "ATT",
+        "POS",
+        "REL"
+      ]
+    }
+  ]
+}
