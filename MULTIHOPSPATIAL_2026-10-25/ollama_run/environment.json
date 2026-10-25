@@ -1,0 +1,64 @@
+{
+  "model": "qwen3-vl:4b-instruct-q4_K_M",
+  "digest": "sha256:84f7ed8042fa7cdbd902f7dcb7d0370e032095047cc3244179f263b77b5bc318",
+  "runtime": {
+    "version": "0.40.11"
+  },
+  "architecture": "arm64",
+  "python": "3.12.14",
+  "platform": "macOS-26.6-arm64-arm-64bit",
+  "macos": "26.6",
+  "cpu": "Apple M5",
+  "unified_memory_bytes": 25769803776,
+  "options": {
+    "temperature": 0,
+    "seed": 20261025,
+    "num_ctx": 8192,
+    "num_predict": 4096
+  },
+  "generations_per_item": 1,
+  "runtime_release": "https://github.com/ollama/ollama/releases/tag/v0.40.11",
+  "runtime_archive_bytes": 181324349,
+  "runtime_archive_sha256": "aea7d3f2e32371b7644a6e2ec8d4f26820a0e3965918cce8a46cef3e947f6291",
+  "model_layer_bytes": 3337225651,
+  "successful_runtime_model_payload_bytes": 3518550000,
+  "download_accounting": "Successful file payload sizes, not packet-level network traffic; one official runtime download and one native pull, no manual retry or alternate source.",
+  "additional_image_payload_bytes": 9858558,
+  "runtime_model_allocated_disk_bytes": 4109303808,
+  "runtime_model_logical_disk_bytes": 4105221326,
+  "pull_duration_seconds": 1940,
+  "metal_log_evidence": [
+    "time=2026-10-25T20:56:40.178+08:00 level=INFO source=types.go:32 msg=\"inference compute\" id=0 filter_id=0 library=Metal compute=0.0 name=MTL0 description=\"Apple M5\" libdirs=\"\" driver=0.0 pci_id=\"\" type=iGPU total=\"17.8 GiB\" available=\"17.8 GiB\""
+  ],
+  "loaded_models": {
+    "models": [
+      {
+        "name": "qwen3-vl:4b-instruct-q4_K_M",
+        "model": "qwen3-vl:4b-instruct-q4_K_M",
+        "size": 4465948098,
+        "digest": "84f7ed8042fa7cdbd902f7dcb7d0370e032095047cc3244179f263b77b5bc318",
+        "details": {
+          "parent_model": "",
+          "format": "gguf",
+          "family": "qwen3vl",
+          "families": [
+            "qwen3vl",
+            "clip"
+          ],
+          "parameter_size": "4.0B",
+          "quantization_level": "Q4_K_M"
+        },
+        "expires_at": "2026-10-25T22:10:32.069592+08:00",
+        "size_vram": 4465948098,
+        "context_length": 8192,
+        "runner": "llamacpp"
+      }
+    ]
+  },
+  "baseline_scope": "Quantized base Qwen3-VL self-built Ollama baseline, not author post-training reproduction.",
+  "first12_started_utc": "2026-10-25T13:39:56.229118+00:00",
+  "extra60_started_utc": "2026-10-25T13:46:47.362779+00:00",
+  "pre_generation_fix": "Initial digest assertion compared sha256-prefixed and unprefixed strings; normalized representation before any generation; no item repeated.",
+  "post_run_models_unloaded": true,
+  "local_service_retained": "127.0.0.1:11435; no autostart configured"
+}

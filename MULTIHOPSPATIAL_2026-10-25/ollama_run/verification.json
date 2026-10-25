@@ -1,0 +1,78 @@
+{
+  "checked_items": 72,
+  "chat_requests": 72,
+  "attempts_per_item": 1,
+  "all_outputs_preserved": true,
+  "same_options_all_items": true,
+  "no_gt_fields_in_model_requests": true,
+  "official_rescoring_matches": true,
+  "distinct_image_video_filename_groups": 72,
+  "physical_scene_independence_established": false,
+  "acc_at_025iou": {
+    "correct": 22,
+    "total": 72
+  },
+  "acc_center_in_box": {
+    "correct": 22,
+    "total": 72
+  },
+  "predicted_letter_counts": {
+    "c": 14,
+    "b": 17,
+    "a": 31,
+    "d": 10
+  },
+  "sample_gt_letter_counts": {
+    "d": 14,
+    "a": 30,
+    "b": 16,
+    "c": 12
+  },
+  "full_test_gt_letter_counts": {
+    "c": 750,
+    "a": 1938,
+    "d": 910,
+    "b": 902
+  },
+  "full_test_gt_letter_counts_by_stratum": {
+    "1hop_ego": {
+      "c": 80,
+      "a": 370,
+      "d": 203,
+      "b": 97
+    },
+    "1hop_exo": {
+      "b": 88,
+      "c": 85,
+      "d": 191,
+      "a": 386
+    },
+    "2hop_ego": {
+      "a": 258,
+      "b": 230,
+      "c": 157,
+      "d": 105
+    },
+    "2hop_exo": {
+      "d": 139,
+      "c": 115,
+      "b": 150,
+      "a": 346
+    },
+    "3hop_ego": {
+      "b": 149,
+      "a": 347,
+      "c": 138,
+      "d": 116
+    },
+    "3hop_exo": {
+      "d": 156,
+      "c": 175,
+      "b": 188,
+      "a": 231
+    }
+  },
+  "always_a_descriptive_correct": 30,
+  "always_a_caveat": "Post-hoc descriptive label-prior control, no bbox and no grounding score; not a proof of model position bias.",
+  "model_vs_authors": "Quantized base model with Ollama, not author post-training or full benchmark reproduction."
+}

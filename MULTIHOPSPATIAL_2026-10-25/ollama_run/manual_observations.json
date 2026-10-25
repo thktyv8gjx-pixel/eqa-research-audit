@@ -1,0 +1,70 @@
+{
+  "review_mode": "Assistant visual inspection of original pixels and overlays; not independent human inter-rater labels. No extra Ollama calls.",
+  "case_selection": "Post-hoc illustrative failures; all 72 fixed samples and outputs remain in the metrics.",
+  "internal_causal_claims_established": false,
+  "cases": [
+    {
+      "id": 3084,
+      "observed": "Predicted cat with a box visibly enclosing the cat, while the query restricts the candidate to a device. This is an observable category-constraint violation.",
+      "reference": "black laptop",
+      "iou": 0.0,
+      "cause_not_proven": [
+        "attribute/category perception error",
+        "constraint not retained at final selection"
+      ],
+      "existing_coverage": "MultihopSpatial Appendix F attribute failures; SATURN semantic-scoring/query-selection errors.",
+      "annotated_image_local": "private/ollama_run/case_3084.png"
+    },
+    {
+      "id": 2748,
+      "observed": "Predicted red folder; its box x=0.788..0.855 is visibly on the image right, conflicting with the explicit image-left condition.",
+      "reference": "wristwatch",
+      "iou": 0.0,
+      "cause_not_proven": [
+        "left/right recognition error",
+        "left constraint overridden or omitted during distance selection"
+      ],
+      "existing_coverage": "MultihopSpatial Fig.15/Table8 intermediate-condition omission; no new internal mechanism established.",
+      "annotated_image_local": "private/ollama_run/case_2748.png"
+    },
+    {
+      "id": 1045,
+      "observed": "MCQ vest is scored correct, but the red predicted box encloses the man's black apron. The green reference box encloses a white vest at the far right. This is a real wrong-entity grounding, not a tight-box precision issue.",
+      "reference": "vest",
+      "iou": 0.0,
+      "cause_not_proven": [
+        "vest/apron semantic confusion",
+        "answer text and selected visual entity inconsistent",
+        "lucky option match"
+      ],
+      "existing_coverage": "MultihopSpatial MCQ/grounding gap; SATURN detection/semantic scoring; SpatialReasoner perception vs computation.",
+      "annotated_image_local": "private/ollama_run/case_1045.png"
+    },
+    {
+      "id": 1721,
+      "observed": "MCQ sunglasses is correct. The predicted box covers the lens region, inside the wider reference region, but omits part of the frame/extent. IoU=0.3063; both Acc@0.25IoU and Center-In-Box accept this case.",
+      "reference": "sunglasses",
+      "iou": 0.3063,
+      "cause_not_proven": [
+        "predicted object extent differs from annotation",
+        "small-object localization precision"
+      ],
+      "existing_coverage": "MultihopSpatial Appendix B.5 explicitly studies loose IoU and Center-In-Box; DiSR small-object perception limitations.",
+      "annotated_image_local": "private/ollama_run/case_1721.png"
+    },
+    {
+      "id": 3028,
+      "observed": "Predicted left lamp at image left; reference is the partly cropped purple bottle at image right. The subject-relative view, cylindrical attribute and distance constraints are composed in this query. The two-line output does not identify which one failed.",
+      "reference": "purple bottle",
+      "iou": 0.0,
+      "cause_not_proven": [
+        "subject-frame error",
+        "cylindrical category interpretation",
+        "distance error",
+        "reference ambiguity"
+      ],
+      "existing_coverage": "MultihopSpatial Appendix F perspective/attribute/relation failures; SATURN frame-aware composition; SpatialReasoner 3D perception.",
+      "annotated_image_local": "private/ollama_run/case_3028.png"
+    }
+  ]
+}
