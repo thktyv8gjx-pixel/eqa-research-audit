@@ -1,89 +1,71 @@
 # OVERNIGHT_RESEARCH
 
-**当前决定：ArtiPoint 是唯一“有条件复现候选”。本轮交付②：已核实的资源缺口、可直接发给作者的请求草稿（未发送）、一页导师讨论问题。** 创新性尚未确认；缺少缓存不构成假设失败。下一步先排除计分集合变化，暂不进入轨迹、可见性、运动范围或平滑的机制比较。
+**2026-10-25｜本轮结论：NOVELTY_OVERLAP（核心通用机制），研究决策 NO_GO（按当前描述作为独立创新立项）。**
 
-更新：2026-10-25，Asia/Shanghai。仅维护本文件；停止新增候选，不重启 D1/D2/D3、下载器或 RoboSpatial Z 原点提案。此前三轮筛选、淘汰理由和未运行记录完整保存在 [85bd3a 版历史笔记](https://github.com/thktyv8gjx-pixel/eqa-research-audit/blob/85bd3a431757b2d4015dc7b6da7460ff054df0ed/OVERNIGHT_RESEARCH.md)。本次调整的是小规模探索的优先级与准入顺序，不改写历史结果，也不沿用旧版顶端 NO_GO 作为当前决定。
+候选是：用在线可获取的几何证据，判断竞争三维解释能否被观察区分，进而决定立即回答、继续观察及下一视角。定向反证发现：ATAP 已明确实现“几何多假设—可区分性收益—真实观测验证—停止”的闭环，并报告对应消融。按照本轮“相同机制已有实现与验证就停止”的规则，不再为这一通用机制启动新方法或基线工程。
 
-## 1. 需要解释的结果与当前证据边界
+**判断边界：尚未核实一篇同时满足相同 EQA 任务、相同信息接口、完整相同机制的工作。ATAP 是 RGB-D 任务抓取，不能说它已解决 RGB 空间问答，也不能把多篇论文拼接成一个已存在的完整系统。NO_GO 针对当前机制创新主张，不代表 H1 在 EQA 上为假。** 本轮不凭数据缺失否定科学假设，不将换任务名称自动当作创新。
 
-母论文：[Articulated Object Estimation in the Wild，CoRL 2025](https://proceedings.mlr.press/v305/werby25a.html)。数字固定引用可读取的 [arXiv:2509.01708v1，S.1.3 / Table S.2](https://arxiv.org/html/2509.01708#A1.SS3)，不混用旧 OpenReview 稿或声称已独立核对最终 PDF 的表格。
+本文件继续作为唯一研究记录。此前 ArtiPoint 的有条件复现、作者请求草稿及配对分析门，完整保存在 [963737b 版笔记](https://github.com/thktyv8gjx-pixel/eqa-research-audit/blob/963737b736c67ca688ee20f6b7e288b10c160c7d/OVERNIGHT_RESEARCH.md)；其状态不由本轮改判。MoMa-SG、旧下载器和已关闭 EQA 支线均未重启。
 
-| 作者报告的总体角误差（度） | predicted segments | GT segments |
-| --- | ---: | ---: |
-| Revolute | 17.14 | 20.24 |
-| Prismatic | 14.54 | 11.99 |
+## 1. 决定性反证：ATAP 已把可区分性用于真实主动观察
 
-作者称结果 “not allowing a clear interpretation”。这些是论文汇总值，**不是我们的复现或配对结果**。论文 §5 / S.1.1 使用交互窗口的一维 IoU>0.5 关联预测和 GT；Table S.2 未给逐交互 ID、两条件各自计分集合及失败明细。仅凭上述均值不能确定同一次交互是否变差，也不能确定变化来自平滑。
+原文：[Imagine then Verify，2609.23504v1，2026-09-20](https://arxiv.org/html/2609.23504)。直接读取 III–V；未找到论文内官方代码入口，未独立复现。
 
-本轮唯一待回答的问题：**在同一 GT 交互、沿用作者原始匹配与有效性规则时，GT segments 条件的轴误差劣化是否仍存在？** 两条件都获得有效估计的配对差，与覆盖率和失败状态变化，必须分开报告。
+ATAP 的输入为已采集 RGB-D、标定/位姿及任务指令。IV-B 保留多种完成几何的配准，生成结果仅为待验证先验。IV-C 公式7–8计算预期验证量，9–11计算假设区分与后验熵，12联合区分/验证/移动代价选视点，14同时约束剩余未验证量和假设熵以停止观察、执行抓取。GT几何供离线评分。
 
-## 2. 已核实的公开资源与缺口
+作者表II：85个高遮挡仿真场景，单假设→完整方法的功能成功率 **48.24%→56.47%**，平均调整 **3.14→2.51**；最大预算均为5。表III另有真机验证。它支持“通用机制已有实验先例”，不等于同信息EQA已解决。
 
-官方代码固定为 [`ec88e43e178616697fbc948d0fdda48c0c880702`](https://github.com/robot-learning-freiburg/artipoint/tree/ec88e43e178616697fbc948d0fdda48c0c880702)；本次读取 main ref 与该 SHA 一致。
+反证限制：单假设消融同时改变假设表示与规划，不能单独识别熵项相对可见性项的因果贡献；同一最大预算也不等于同一实际观察数。因此不能据此宣布本任务H0a/H0b已排除，但“首次用竞争几何解释区分能力进行主动观察”不能成立。
 
-| 已实际检查的入口 | 能取得什么；不能据此取得什么 |
-| --- | --- |
-| [该 commit 的完整递归 Git 树](https://api.github.com/repos/robot-learning-freiburg/artipoint/git/trees/ec88e43e178616697fbc948d0fdda48c0c880702?recursive=1) | `truncated=false`，26 个文件，包括源码、配置、README、teaser；没有两设置的运行结果或交互匹配表。 |
-| [README](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/README.md) | 提供场景 raw ZIP、metadata ZIP、相机里程计包。`matched_cues.csv` 是 GT 交互窗口，不能替代两条件预测/失败/误差结果；ToDo 的 Evaluation protocol 尚未勾选。未下载这些包。 |
-| [官方项目页](https://artipoint.cs.uni-freiburg.de/) | 介绍数据与方法，Code & Dataset 栏仍写 coming soon，没有结果表下载入口。该栏滞后于已发布代码，不能据此说代码/数据不存在。网页与 README 均列 Martin Büchner 的联系邮箱。 |
-| [Releases](https://api.github.com/repos/robot-learning-freiburg/artipoint/releases)；[全部 Issues](https://github.com/robot-learning-freiburg/artipoint/issues?q=is%3Aissue)及两条回复 | Releases 返回空列表；Issues #1 是旧函数名修复，#2 是无效深度可视化说明，均未提供所需逐交互结果。 |
-| 论文、补充与本地工作区定向检索 | 论文声明会公开 model predictions，但上述入口未找到对应结果文件；本地未找到 ArtiPoint 运行缓存或结果表。原始数据服务器目录本次无法通过网页工具读取，未检查压缩包内部。 |
+## 2. 指定五项工作的逐项对照
 
-**缺口结论的范围：在已核实且可读取的官方入口和当前工作区，没有取得可用于这项配对分析的小型结果表；不声称作者未保存结果，也不声称任何公开位置都不存在它。** 无需为核实这一缺口下载完整场景、模型或重跑前端。
+“未见显式区分量”限于已读方法、附录及下列源码，不是宣称其所有后续版本都不存在该机制。数字分别属于作者自己的协议，不横向拼成方法增益。
 
-源码进一步说明为什么“只要两个成功结果目录”仍不够：
+| 工作与原文位置 | 真实任务、输入输出 | 几何区分及回答/拒答/下一视角 | 信息边界与决定性证据 |
+| --- | --- | --- | --- |
+| [SpatialUncertain v2](https://arxiv.org/html/2605.30557v2)，§3.3–3.4、表1、附录A.2.2/A.3.2 | 受控渲染 RGB 空间问答；输出关系答案或 Cannot determine。ViewSel 另从五个候选图像选择参考视图；AbstainViewSel 先答或拒答，再进行选择。 | 联合任务接口已存在；未见由竞争三维假设构成的几何区分评分。 | 五幅候选图像在选择时已呈现，不是仅凭当前视图预测未知下一观察。场景几何、隐藏遮挡物后的参考 mask、物理尺寸供构造标签/分组；不能当部署输入。§3.3 明说透视冲突不必然意味着单图不可恢复。表1 GPT-5.4 的 ViewSel 70.9、AbstainViewSel 28.5；两者定义不同，不能相减成配对因果效应。 |
+| [CoV，ACL 2026](https://aclanthology.org/2026.findings-acl.1623/)；[可读 arXiv v2](https://arxiv.org/html/2601.05172)，§3、表2–3、附录A | 问题、已有帧及预建三维场景→选锚点、相机移动/旋转、最终文本答案。 | 已有回答—继续看—选动作；以 VLM 指令与充分性判断控制，未见显式几何多假设区分评分或独立拒答风险控制。 | 原任务允许全场景重建、全局 BEV 和新视图渲染；对未知环境的部分观测协议属于额外信息，不能直接作为同信息对照。表3检验粗选帧，表2增加最低动作步数，不能证明固定观察预算下的 H1。 |
+| [Opti3D，IEEE Access 2026](https://doi.org/10.1109/ACCESS.2026.3720265)；[同 DOI 作者稿全文](https://www.researchgate.net/publication/411278767_Query-Driven_Evidence_Retrieval_for_Efficient_3D_Question_Answering)，III-C/算法1、表4–8 | 问题、既有多帧、相机参数及三维点云→BEV与去重后的局部证据→冻结 Video LLM 答案。 | 射线几何一致性合并实例；再用检测置信度、中心性、面积及边界惩罚评分。未形成竞争场景假设下的观察可区分性，也不控制在线停止/拒答。 | 使用已有场景及候选帧做离线证据检索。算法1及表5已经覆盖几何去重收益；表6分析视图评分权重。不能把“几何帮助筛图”当新贡献。出版网页直接读取受验证码限制，方法/实验依据为同 DOI 作者稿；未找到可核官方代码入口。 |
+| [AVIC v2](https://arxiv.org/html/2602.08236v2)，§4、公式1–4、表4 | 当前图像、问题和选项→skip/call_wm、动作计划、世界模型生成视图及最终答案；另有导航扩展。 | 已联合决定是否追加观察、计划和预算；多数票门控与轨迹验证器评估生成结果。未见物理多假设似然的显式计算。没有独立的最终拒答保证。 | 新视图是世界模型生成，不能等同已获取的真实视觉证据；训练奖励可用答案 GT，推理不因此获得 GT。表4只门控为73.3，门控加动作控制为79.3，提示简单开关已不足。 |
+| [E3VS-Bench v3](https://arxiv.org/html/2604.17969v3)，§3–5、表2–5及补充协议；[官方 README](https://github.com/K0uya/E3VS-BENCH) | 当前 RGB、问题、位姿/碰撞反馈→5-DoF 离散动作或 stop→最终回答。 | 已评测闭环观察与停止；默认代理无显式几何假设区分，配置默认不加入 Cannot answer。 | 场景供环境渲染；GOAL图像与 GT 答案给离线 judge，不能给策略。表3 Start/Goal 差距是特权视角对照，不是选视角方法收益。代码发布 QA/位姿；图片因 ScanNet++ 条款不重分发，重渲染需 CUDA 栈。 |
 
-- [`artipoint.py L164–227`](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L164) 只返回有 queries 的 `valid_segments`；无 query 的原始分段被过滤。GT 输入另在 [L523–537](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L523) 仅取 `VERIFIED` 行。这些过滤是否与论文评测一致，需要作者确认。
-- [L342–418](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L342) 只将成功估计加入 `segments_results`，同时保存成功分段索引。它说明存在删选路径，**不证明 Table S.2 实际发生了计分集合变化**。
-- [L462–484](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L462) 导出 `segment_i/axis_info.json`、`metadata.json` 和可选 `poses.npy`；`segment_i` / `metadata.id` 按成功结果重新编号，不能作为两设置的稳定 GT 交互 ID。
-- [L549–588](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L549) 可保存 `segments.json`、`refined_segments.json`；[L804–823](https://github.com/robot-learning-freiburg/artipoint/blob/ec88e43e178616697fbc948d0fdda48c0c880702/artipoint/track/artipoint.py#L804) 保存 `final_successful_segments.json` 及成功结果。它们是作者可能已有的小文件，仍需 GT 对应关系、最终匹配及失败说明才能恢复分母。
+### 已实际读取的关键源码与固定版本
 
-本轮取得逐交互结果表 **0**，可用真实配对 **0**，已执行配对分析 **0**。新增/丢失/匹配失败/估计失败的实际数量均为**未知**，不能填成零。
+- SpatialUncertain：[`420c8700d487893ac17c47044abf8287b05240f8`](https://github.com/zhangyuejoslin/SpatialUncertain_code/tree/420c8700d487893ac17c47044abf8287b05240f8)。读取 `eval_gpt5.py`、`gen_distortion_scene.py`、`render_distortion.py`、`generate_questions/question_gen_distortion.py`。其中 [`build_prompt` L617–683](https://github.com/zhangyuejoslin/SpatialUncertain_code/blob/420c8700d487893ac17c47044abf8287b05240f8/eval_gpt5.py#L617) 使用图像/问题/选项并允许 Cannot determine；不是几何检验器。仓库有生成/渲染源码，但完整树中没有已渲染题目资源，也未核到 v2 两阶段 ViewSel 的专门执行入口，不能冒称完整协议已经可运行。
+- CoV：[`c41fd1997e21fd58abc86f93f2cad83ea3d56ba4`](https://github.com/ziplab/CoV/tree/c41fd1997e21fd58abc86f93f2cad83ea3d56ba4)。读 `cov/agents.py`、`bots.py`、`camera.py` 与 `prompts/chatbot.j2`。[`cov_agent`](https://github.com/ziplab/CoV/blob/c41fd1997e21fd58abc86f93f2cad83ea3d56ba4/cov/agents.py) 加载 GLB、渲染 BEV、调用相机指令，遇 done 提取答案；提示还强制最低动作数。GT 答案在该函数仅加入记录页面，未据此指控答案泄漏。
+- AVIC：[`40ffc1c52450dcbdea9cf16e21226eeb6be7cbbe`](https://github.com/Yui010206/Adaptive-Visual-Imagination-Control/tree/40ffc1c52450dcbdea9cf16e21226eeb6be7cbbe)。[`pipeline_avic.py` L333–379](https://github.com/Yui010206/Adaptive-Visual-Imagination-Control/blob/40ffc1c52450dcbdea9cf16e21226eeb6be7cbbe/visual_spatial_reasoning/pipelines/pipeline_avic.py#L333) 的 `_majority_vote_decision` 和 `_score_one_candidate_ordered` 分别统计策略票、用 VLM 为整段生成轨迹评分；读了对应 prompt，不把语言里的“解决歧义”当成可执行的几何证明。
+- E3VS：[`bb7e603ccdcf2dd77fbeedd15660a09310a8a881`](https://github.com/K0uya/E3VS-BENCH/tree/bb7e603ccdcf2dd77fbeedd15660a09310a8a881)。读取 `e3vs/agents/base_agent.py` 和动作提示；[`DEFAULT_CONFIG` L32–65](https://github.com/K0uya/E3VS-BENCH/blob/bb7e603ccdcf2dd77fbeedd15660a09310a8a881/e3vs/agents/base_agent.py#L32) 明确 stop 及默认关闭 Cannot answer。未运行代理或评测器。
 
-## 3. 可直接发送的作者材料请求（草稿，未发送）
+## 3. 截至 2026-10-25 的额外直接反证
 
-官方联系来源：[项目页 Contact](https://artipoint.cs.uni-freiburg.de/)；可发给 Martin Büchner，`buechner@cs.uni-freiburg.de`。这是公开联系地址，不据此推定唯一通讯作者。本轮没有发送邮件或创建 Issue。
+- **[RFL，2610.11039v1，2026-10-08](https://arxiv.org/html/2610.11039)**：IV-A–D，公式1–6；训练 teacher 从全场景渲染一/二步未来视图，student 推理只用问题、已观测 RGB 历史和候选动作，预测未来可回答性。不能把训练特权与部署泄漏混同。表I同主干与停止机制下均分2.14→3.05，已覆盖部署时不渲染未来视图的 question-guided 选视角；它预测的是 VLM answerability，不是物理几何可辨识性证书。
+- **[FOVEA / S-BOED，2605.01345v3](https://arxiv.org/html/2605.01345v3)**：§2–4、公式4及附录算法。已将视觉取证写成对隐变量的预期信息增益与序贯设计，实际方法用覆盖率—分辨率及 VLM 可解性代理优化图像裁剪；不是三维相机的同协议实验，但“根据假设不确定性选下一证据”这一通用表述也不是新理论。
+- **[Explore until Confident](https://arxiv.org/html/2403.15941)**：§V、停止策略实验，以校准的可能答案集合及其跨步更新决定停止，探索使用在线深度语义地图。此为停止决策的直接基础对照，不是几何可行场景集合；也不能无视它而只比未校准单阈值。
 
-**Subject: Request for per-interaction results behind ArtiPoint Table S.2**
+以上不以综述摘要代替原文。未对上述不同模型、任务、信息预算的数值做跨论文排名；表内数字仅标明哪些机制已有作者实验支持。
 
-Dear Dr. Büchner and ArtiPoint authors,
+## 4. 真实运行与数据准入事实
 
-Thank you for releasing ArtiPoint and Arti4D. We are planning a small reproduction study of the interaction-segmentation ablation, before running the full frontend. In Table S.2 of arXiv:2509.01708v1, the reported revolute angular error is 17.14° with predicted segments and 20.24° with GT segments, while the prismatic trend is reversed. We would first like to establish whether the difference remains on the same GT interactions, rather than attributing it to any particular processing stage.
+**真实模型推理0次、真实样本实验0题、新方法代码0、安装0。** 因新颖性门未通过，未启动第二、三阶段；不存在可交付的逐题原始预测或方法增益，不编造空结果表。
 
-Could you share the existing small per-interaction evaluation tables (CSV/JSON or equivalent) for these two settings, ideally covering the full Table S.2 evaluation? We only need:
+另已只读核实官方数据入口，不能把“公开页面”当成“已取得完整样本”：
 
-1. Stable GT interaction identifiers (scene, sequence, object and interaction/annotation row ID), GT joint type and window, and the evaluation split/eligibility list. Please include all eligible GT interactions, even when no prediction was obtained.
-2. Each input/predicted segment's identifier and window, with its mapping through any query filtering and successful-result renumbering; the assigned GT ID and IoU, and unassigned or duplicate predictions. Please retain all attempted segments, not only successful estimates.
-3. Separate matching and estimation statuses, including no detected segment, no queries/other frontend exclusion, failed or not-attempted estimation, unmatched predictions and invalid/excluded results, with reasons where recorded. If matching is performed only after successful estimation, the pre-estimation segment windows and failure log would help distinguish these cases without changing your original scoring.
-4. The per-interaction axis angular error, revolute axis-position error, and predicted joint type for valid estimates; the original metric units/sign convention, treatment of wrong joint types and failures, and the denominator/weighting used for each Table S.2 aggregate. Missing errors can remain missing; we would not impute them as zero.
+- [SpatialUncertain 官方 HF 数据卡](https://huggingface.co/datasets/Yuezhangjoslin/spatialuncertain) 标注 CC-BY-4.0，但访问文件需登录、接受信息共享条件并获得权限。卡片声明多视角 PNG、相机参数、对象/场景标注；未实际取得它们，不认证其内容完整性或与 v2 划分一一对应。
+- 本机检查只返回凭据是否存在，未读取/输出任何秘密；未发现 HF 环境凭据或默认 token 文件。对卡片列出的 `questions/perspective_benchmark.json` 仅发起一次 HEAD，真实响应为 **HTTP 401 / GatedRepo**，要求已获授权并认证。未自动接受条款、未绕过访问控制、未重试下载。
+- README 另链 Google Drive 场景目录，本次工具无法读取；未据此宣称文件不存在。获取 QA 元数据也不能代替初始 RGB、全部候选视图和逐视图位姿。对完整样本的资源门而言，唯一已证实的决定性缺口是**尚未取得合法授权且完整的样本包**；不把潜在模型/环境困难再列成已发生的阻塞。
 
-Could you also confirm which code/config/data version produced these results (the currently available code is commit ec88e43e178616697fbc948d0fdda48c0c880702), the exact IoU>0.5 assignment rule (including one-to-many/duplicate and tie handling), and the frame/time convention used for windows? We would follow your original assignments rather than choose matches by axis error. If the table corresponds to a different manuscript revision, please identify it.
+这个访问缺口不是 NO_GO 的科学依据；即使立即拿到数据，也不能恢复被现有机制反证的“首创”主张。
 
-Existing output files and logs are fine: for example, `segments.json`, `refined_segments.json`, `final_successful_segments.json`, and the small `axis_info.json` / `metadata.json` files, together with the GT association/evaluation output. We are not asking you to rerun the full pipeline. If complete tables are unavailable, an existing paired subset with its selection rule would still support a bounded exploratory check, although it could not establish the full-table explanation. A pointer to an already public result archive would also be very helpful.
+在线与 oracle 边界：允许给策略的几何必须来源于截至当前的实际传感器观测、已知标定与在线位姿/估计；对象真实尺寸、隐藏结构、全场景 GT、未来候选图像、评测 GOAL 与 GT 答案只能按原协议用于离线评价或单列 oracle 上界。候选图像已经全部展示的 ViewSel 与尚未访问视点的在线 NBV 是不同信息问题，不能直接比较为策略收益。
 
-Only if an error difference persists on common GT interactions would we later ask about a few paired **pre-smoothing** 3D tracks and visibility masks from both settings, query identities, GT/predicted windows and GT axes, with the coordinate/frame mapping and relevant config. This second-stage request would be limited to a small, preselected subset; no full scenes, RGB-D videos or model weights are needed for the initial comparison.
+## 5. 科学判断、停止范围与导师讨论
 
-We would use any shared material within the permissions you specify and would not redistribute non-public data without consent. We are investigating the reported result, not assuming a smoothing failure or claiming a new method. Thank you for your time.
+- **创新性：** 任务层已有 SpatialUncertain 联合接口、CoV/E3VS 的动作—停止闭环；几何证据组织已有 Opti3D；竞争三维假设区分并经真实观测验证、联合停止已有 ATAP。当前未提出超过这些已实现机制的可操作差异，不能以移植到 EQA 自动建立创新。
+- **H1：** 未在本任务上检验，不能说被证实或被否定。ATAP 只提供跨任务的机制先例；它不是同信息 EQA 上的完整替代。
+- **H0a / H0b：** 未排除。尤其需要区分多假设数量、可见性收益和信息增益项，匹配实际观察次数而不只是上限；本轮不以文献总体增益替代这些对照。
+- **H0c：** 通用机制重合已有直接证据；完整同任务同信息系统的等价性未证实。依用户预设止损，**当前 Idea 作为独立机制创新 NO_GO，停止此路线的新方法/基线投入，不改名保留、不转选其他方向。**
 
-Best regards,
-Renyaocheng
+**可交给导师的具体讨论，仅基于已有作者实验：** ATAP 表II是否足以支持“多假设规划有用”，却仍不能回答“额外价值来自假设区分项还是不同假设下的预期可见性”？其消融同时改了表示与评分，故后一个因果问题仍未被隔离。这个实验解释边界值得讨论，但不是本轮已发现的新 EQA 机制，也不作为继续立项的借口。本轮没有自有真实错例，暂不提出新的算法题目。
 
-## 4. 一页导师讨论：先问“同一交互是否变差”
-
-**讨论对象。** 只保留 ArtiPoint 的 GT / predicted segments 消融作为有条件复现入口。作者总体结果出现不同方向变化，值得用一项低成本分析澄清；当前没有真实配对证据，也没有理由把平滑预设为原因。目标是把“评价对象改变”与“同一对象估计改变”分开。
-
-**为什么先看计分集合。** 换分段会改变 query 生成、前端保留的段和后端成功的段，IoU 匹配又可能改变参与误差平均的 GT 交互。两个总体均值可能在比较不同难度的样本。成功目录编号还经过压缩重排，直接按 `segment_0` 配对会产生错误对应。源码只证明这些通路存在，没有证明它们解释了论文结果。
-
-**唯一分析及所需材料。** 先向作者索取两设置已有的小型结果表，不搭建前端。以同一 eligible GT 交互全集为基准，保留 scene/sequence/object/interaction 的稳定键，沿用作者最终关联；重复预测和匹配冲突单列，不按误差挑配对。逐 GT ID 建立两条件状态表：是否有候选段、能否匹配、估计成功/失败/未运行、是否纳入原指标。匹配失败和估计失败是独立维度；若作者只对成功估计做匹配，须保留此前窗口和日志，不能事后把所有缺失都叫估计失败。
-
-**怎样报告才有判别力。** 列出共同匹配 GT 集合、GT 设置新增匹配、GT 设置丢失匹配、两边均未匹配及未匹配预测；另列共同 GT 内的成功→失败、失败→成功、双方失败和前端过滤。错误类型预测及指标排除单列。对双方都有效的同一 GT 交互，逐项给出 Δθ＝GT-setting error−predicted-setting error，以及旋转轴位置误差差值；按 GT 关节类型分层，报告配对数、均值/中位数及变化方向。Prismatic 位置误差记不适用，失败/缺失不赋零。匹配集合与成功集合分别计数，缺失原因交叉展示，不混成可相加的重复类别。先核对原作者统计口径，再讨论配对结果；小子集不外推整表，也不宣称显著性。
-
-**讨论的三个决策分支。** 共同交互差异消失：支持计分构成解释，到此停止平滑因果猜测。差异主要体现在覆盖或失败转移：先解释检出、匹配与估计能力的不同，不能用成功样本均值代替总体性能。共同交互的有效误差差异仍存在：才进入第二道门，用少量预先固定的真实配对轨迹，区分前端点集/可见性、运动范围及平滑等解释；继续存在不等于平滑致因，更不等于创新成立。
-
-**请导师决定的一件事。** 是否值得发送上述小表请求，以一次共同交互比较决定后续机制诊断的投入？若暂时拿不到表，维持有条件复现、等待材料；这不是否定科学假设或小样本探索资格，不增加候选，也不以完整重跑替代缺失材料。
-
-## 5. 本轮执行与归档边界
-
-只读取公开论文、官方页面/源码/Issues及本地现有记录，修改本文件。未执行训练、前端、平滑比较或模拟实验；未安装依赖，未下载场景、媒体、模型或轨迹包，未联系作者。没有新增候选专属临时材料；清理 0 文件、释放 0 字节。现有未跟踪用户文档、旧实验及第三方资产均保留。
-
-原创请求草稿、资源核实和讨论文字仅随本文件归档 GitHub；不上传第三方数据。归档父提交为 `85bd3a431757b2d4015dc7b6da7460ff054df0ed`；交付时核实远端 ref、父提交、tree 与本文件原文字节/SHA256，提交链接随最终回复提供。
+本轮只更新本文件并保存原创分析到已有 GitHub 仓库；论文、第三方源码和数据均未另存/上传。没有新候选缓存需要清理；已有唯一资料、未跟踪用户文件及历史阶段记录保留。最终提交及远端原文校验结果随交付给出。
