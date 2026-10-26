@@ -350,3 +350,43 @@ ATAP 的输入为已采集 RGB-D、标定/位姿及任务指令。IV-B 保留多
 **数据/合法评价准入。** 原VOST许可可支持遵守署名、非商业及相同方式共享要求的研究性补标，但公开union mask不够。需要独立标注的child ID、parent-child edge、工具接触/分离时段、物理connected/disconnected/unknown及证据依据。可用后续明确分开/重接触的画面离线判GT，但不得作为更早时刻模型的额外输入；5fps应给事件时间区间而非伪精确时刻。单纯“两个可见块”或刀接触不是物理切断GT，所有不确定例须保留并单列覆盖率，不能用自家规则或BladeMaster模拟标签给真实视频自证。边级正确性/假split/假merge/时段误差需独立计分，原J或仅lineage组成员指标不能替代。此协议原则上可不做大规模训练，但**本轮未核实到已获得、满足它的真实小包及独立标注**，因此没有最小算法实现方案。
 
 **唯一下一动作：取得并核验一个小型真实标注包的评价资格。** 向数据作者请求少量可单独合法取得的切割片段及上述已有额外标注/可补标权限；优先覆盖遮挡、未切断、完全切断后再接触。只提供请求建议，不自行发信，不下载全量视频，不开发新算法。若没有独立可判的连接/父子真值，维持HOLD；不因暂无同名论文而升级GO。本轮仅读取公开源码、文献和两份小型论文PDF，没有模型/数据集下载、安装、训练或仿真。
+
+
+### 可验证空间证据压缩｜2026-10-26｜NO_GO
+
+**决策及实际执行。** NO_GO针对当前“给带误差界的3D图提取答案保持、可独立检查的紧凑证书，再胜过距离/相关性剪枝”的通用算法主张。数学内核已有先例，未提出超出经典最小逻辑支持与证明检查的新算法、证书界或复杂度结果，因此按本轮查新优先规则停止在实验前。实际实验数0、取得3DSSG场景数0；答案保持率、错误证书率、证据大小、验证耗时均未测量，不记作0或100%。未下载数据/模型、安装依赖、运行VLM/训练/仿真。所有下面的论文效果均为作者报告，不是本轮复现。
+
+**决定性等价：证书不是一种新的推理语义。** 固定有限实体全集R、身份/坐标系/关系与查询语义B、可满足的测量约束集C，所有允许世界满足B∧C；误差界作为约束而非事后置信度阈值。对查询q的精确答案a，令Φ(q,a)表示“q的完整结果为a”。例如唯一对象查询须包含目标满足条件，且R内每个竞争者不满足；不能只证明目标存在。对证据子集S⊆C：
+
+    B ∧ S ⊨ Φ(q,a)
+    当且仅当 B ∧ S ∧ ¬Φ(q,a) 不可满足。
+
+这在同一实体域、同一误差模型、同一查询下是等价变换，不是换任务后的类比。以B∧¬Φ为固定背景，寻找不可再删的S，正是background-relative minimal unsatisfiable support / MSMP；[QuickXplain形式化原文](https://arxiv.org/html/2001.01835v3) §3 Definitions1–3、§4 Algorithm1、§5 Theorem1给出通用求解与正确性。它适用于单调不可满足谓词；背景自身已不可满足时支持为空，必须明确该平凡情形。**subset-minimal不等于最少条数/最短字节数**，QuickXplain不保证后者；也不保证任何场景都能大幅压缩。这里没有把“可约化到SAT”单独当否定理由：目标函数本身是既有支持集提取问题，且下一段已有独立检查机制，当前提案未提供新的专用求解优势。
+
+对有理线性测量界和固定参照系下的仿射空间谓词，否定答案后各线性不可行分支可用Farkas系数证明。对Ax≤b，λ≥0、λᵀA=0、λᵀb<0是可独立核验的不可行证书；严格不等式须用支持它的证明规则，不能直接套非严格公式。析取/有限候选由布尔证明连接各理论分支；多跳约束消元、累积误差及排除竞争者也能在这一框架表达，并不会因为“多跳”自动超出经典方法。[Extending DRAT to SMT，FMCAD2024](https://www.amazon.science/publications/extending-drat-to-smt) §II–IV明确分离生成、理论证明细化与独立验证，QF_LRA验证器检查Farkas证书；该论文不是3D场景系统，亦未核实其VALIDO工具可直接公开部署。
+
+另实际读取可公开检查器[Carcara](https://github.com/ufmg-smite/carcara/tree/20bf49c5ce31089ac83118574c888669355aaae1)固定源码：src/checker/rules/linear_arithmetic.rs:L258–325处理否定约束及系数，L328–392的la_generic以精确Rational计算并要求消元后为矛盾；相应[TACAS2023原文§3.1](https://link.springer.com/chapter/10.1007/978-3-031-30823-9_19)已说明算法。只读未编译/运行。证明生成器与检查器分离已有实际实现，不能把另写一份Python checker视为新机制。整份证明仍须核对输入断言、证据ID/来源绑定、布尔推导及最终结论，拒绝holes/未检查规则；单独某个la_generic通过不代表整份证明通过，也不认证传感器误差界真实成立。
+
+**最强近邻与实际覆盖，未把它们一概称为严格证书。**
+
+| 近邻 | 原文/实现证据 | 已覆盖的内容 | 未覆盖或不可夸大的部分 |
+|---|---|---|---|
+| MSSR | [论文§3.1式1–2](https://arxiv.org/html/2510.16688)；official gyj155/mssr commit a1044a949fda9d3186144999ae1c9c2d72c833e6，src/agents/agents.py:L268–330，src/prompts/analysis_prompt.py | 最小充分空间信息的定义、迭代收集与删除；充分性/最小性不是本轮首次提出 | 定义依赖理想reasoner；实际代码L301–308在最后轮要求信息不全也选字母，没有全误差集合上的独立证明 |
+| CAPruner | [论文§4及Table2](https://arxiv.org/html/2606.07529)；fz-zsl/CAPruner commit 8e6ac6b47a43ce7a1c9ebd2ddd2ecec595e0faf3，model/target_detector.py:L50–100，model/pruning.py:L25–36 | 问题语义匹配分数与bbox距离输入MLP，聚合节点权重并用learned top-k/KNN或MST剪枝 | 目标节点监督/经验问答效果不是答案保持证明；无传感误差界输入或proof checker |
+| WorldScope / WorldFlow | [原文§3.1式1、§3.5、§4.1](https://arxiv.org/html/2609.32456) | 所有兼容世界的true/false/non-identifiable、最小充分视图集；训练用certified counterworlds；实体/覆盖率证据压缩 | counterworld认证是数据生成监督，WorldFlow是学习表示；不能据“certified”推定部署答案有独立证明。未定位到可核实作者算法仓库，未声称源码验证 |
+| CROSS | [原文Appendix C.1–C.3、D.2/Table11、E](https://arxiv.org/html/2610.01999) | 类型化几何算子、完整候选距离比较、error/margin门控、过滤证据与operator sequence；Table11已有screened-context对照 | §E明确gate heuristic且漏错；阈值由dev grid search选，不能当sound bounded-error guarantee。未核实公开算法仓库，依据原文而非虚构函数 |
+| S-Agent 2.0 | [论文§2](https://arxiv.org/html/2610.28354)；Ropedia/S-Agent-2.0 commit c99526846220534e02f1bfb7498c7f8e2201f3df，agent/gateway/scene_store.py:L395–414,L441–482；workspace/geom.py；evidence-check/SKILL.md | 几何测量、持久实体记忆、鲁棒位置/重力聚合、检查视觉证据与小于噪声的间隙 | median/uncertainty排序和自然语言检查指引不是逻辑证书；读到的路径没有误差集合上的形式化保证，不外推为整个仓库所有功能均已穷尽 |
+| 查询保持图压缩 / Smallest Witness | [Fan等SIGMOD2012 §2–4](https://www.pure.ed.ac.uk/ws/portalfiles/portal/17753436/Fan_Li_ET_AL_2012_Query_Preserving_Graph_Compression.pdf)；[Hu/Sintos ICDT2024 §1.1、§2、§3–5](https://arxiv.org/html/2311.18157v3) | 前者对reachability/(bounded) simulation保留查询类；后者直接求D'⊆D且Q(D')=Q(D)的最小子库，含多跳line CQ与复杂度/近似分析 | 2012方法不是任意否定/度量查询；2024限制无self-join CQ，不能独自覆盖不确定几何与唯一性排除 |
+| certain answers / 约束证明支持 | [UA-DB §2.1–2.2式1–2](https://www.cs.uic.edu/~bglavic/dbgroup/assets/pdfpubls/FH19.pdf)；QuickXplain；Carcara/Farkas | 允许世界下的确定答案语义、最小逻辑支持、可独立检验推导；对应上面的当前算法核心 | UA-DB本身是近似，不冒称精确万能算法；证明有效性与最短证明/实时开销不同，均未被本轮改进 |
+
+这里没有找到某一篇机器人论文在同一3DSSG数据上完整跑过当前所有指标；**NO_GO不是宣称存在完全相同的机器人系统**。决定性的先例是所提答案保持证书的数学问题及可检查证明机制已存在；MSSR等五篇说明其空间应用接口也有强近邻。仅比启发式更少丢答案，不能证明优于既有sound支持集/证明算法。
+
+**必须保留的保证边界与竞争解释。**
+- 闭世界只固定可竞争实体，不得将未保留节点当作不存在；实体注册表/ID映射/坐标契约属于证书依赖和大小成本，不能免费藏在验证器里。检测漏物体、错误身份、未校准误差界或错误自然语言翻译均不由逻辑proof自动修复。
+- B∧C须先有一致性依据，否则任意答案都可由矛盾推出。证据须可追溯到输入，不能用GT答案制造新测量约束；checker只是从受信输入到结论的条件保证。
+- 完整输入若允许不同答案，只能给certain/possible/unknown或区间；保留certain-answer集合与证明某个世界的唯一答案是不同合同。集合/排名/否定须定义全部候选、ties和边界，不能以一个positive witness代替完整答案保持。
+- 非线性距离、未知姿态和关联不确定性不直接落入上述线性Farkas实例；可能需要不同理论求解与证明系统。未证明所有此类问题已经高效解决；当前也没有提出针对它们的新证书定理或可验证的成本优势。不能仅靠加入这些难条件制造新颖性。
+- 证据条数、证书字节数、实体映射与背景成本、生成时间、验证时间各不相同；压缩可能把开销转移到生成器，某些输入须保留全部证据。任何优势必须以已有exact/sound方法为强基线，不能只胜距离/相关性启发式。
+- 3DSSG公开关系标签本身不等于带可信测量误差界的几何GT。本轮因数学准入已否决，没有获取它或核验具体文件许可/字段完整性，因此不声明已具备可进行真实几何实验的数据，更未伪造误差界。
+
+**核心算法差异与唯一下一动作。** 当前可描述的实现是“将场景转为约束→提取答案支持→携带proof→独立检查”，它是已有方法的空间实例化；没有新提取算法、新的可压缩条件/界、非平凡查询类的复杂度改进或真实资源优势证据。故关闭并归档这个通用证书提案，不进入3DSSG/CPU实验，不把合成链式约束正确性或理论上0错误当新实验成果。这一结论不禁止未来以具体新定理或新算法重新立项，但本轮不继续制造研究任务。
