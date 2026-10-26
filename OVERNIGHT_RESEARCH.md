@@ -284,3 +284,37 @@ ATAP 的输入为已采集 RGB-D、标定/位姿及任务指令。IV-B 保留多
 - [MultihopSpatial](https://arxiv.org/html/2603.18892v2) Fig.15/Table8及附录F已记录条件遗漏和识别失败；附录B.5已有定位指标差异分析。4057只增加了此例在固定blur下文字/框分离的自有测量，不能据此声称发现新的内部机制。
 
 **本轮新增的是：固定ROI、同题B/C控制下的9例独立真实测量，包含零选择性救回、1例错误对象切换和1例错误答案/正确框错配。没有新增经过替代解释排除的机制或有效方法。** 因此按本轮准入关闭创新候选（NO_GO），不继续调模糊强度、补样、拼装网络或切换新项目。只保留可检查的原始结果及图像，沿用当前研究记录与既有GitHub归档方式。
+
+### 几何有用性与可靠性联合建模审查｜2026-10-26｜NO_GO
+
+**范围与决策。** 仅阅读原论文/附录和固定版本源码，没有部署、安装、下载模型、训练或推理。NO_GO针对“把几何有用性门控与可靠性控制结合即可构成新机制”的当前提案；不等同于证明所有可靠性问题已经解决。无法指出超出下述近邻的具体算法贡献，不进入实现。唯一下一动作：按反证结论关闭并归档当前联合门控提案。
+
+**GeoSR实际路径，已分别读取两个代码分支。**
+
+- static固定commit `d2455359fcf62555eb04686e397aa1ab9393df9f`：[FeatureFusionModule](https://github.com/SuhZhang/GeoSR/blob/d2455359fcf62555eb04686e397aa1ab9393df9f/src/qwen_vl/model/feature_fusion.py#L183-L229)。令V=LN(v)、G=LN(g)，代码等价于 α=sigmoid(W[V;G]+b)，F=α⊙V+(1−α)⊙G；α偏大是更多视觉，并非更多几何。输入只有两组特征，无几何方差、重投影残差、有效性/置信度输入。geometry_encoders/vggt_encoder.py:L20,L43–50关闭camera/point/depth/track heads，取aggregator隐特征；modeling_qwen2_5_vl.py:L1627–1653完成merger和fusion，L1664–1690只在训练随机遮视觉token。任务Q不直接输入此静态门控。
+- dynamic固定commit `122e8694c1775e67fd386dce81a04301015dd968`：[qwen_vl_spatial.py](https://github.com/SuhZhang/GeoSR/blob/122e8694c1775e67fd386dce81a04301015dd968/model/qwen-vl-finetune/qwenvl/train/qwen_vl_spatial.py#L384-L399)。_gated_fusion对视觉、geometry_attended分别LN，再线性sigmoid；可选mask仅乘视觉value。L500–520的QFormer先用文本查询空间特征，因此几何输入间接带问题信息；L568–584经geometry_kv_attn取回位置相关几何，再门控。L592还拼接geometry_i，故这个门控并未控制全部几何通路。L339–359和L525–545是attention相关性/TopK训练mask，不能称几何可靠性概率。
+- [GeoSR论文](https://arxiv.org/html/2603.26639v1) §3.2式8–10是相关性选择，§3.3式12–15与上述门控一致；Tables3–4是mask/fusion模块消融，未独立操纵几何正确性。可以确认**没有显式、可校准的可靠性变量/目标**；不能从无此变量推出网络完全不能隐式抑制坏几何，也不能将门值解释为正确概率。源码支持的是任务损失驱动的自适应融合，不是已验证的纯有用性分类器。
+
+**NISE是决定性反证，但需保持信息边界。**
+
+[NISE v1](https://arxiv.org/html/2610.24674v1) §3.3用局部坐标Gaussian先验得到 α_prior(k,a)=exp(−σ_a²ω_k²/2)，再学习 α=α_prior+δ，并以L_reg=E[(α−α_prior)²]约束。先验编码位置不确定性，残差通过L_policy学习哪些位置频率对动作有用；并非只在门外加一个标量置信度。§3.2另以标定多视角RGB-D构造可见性过滤的跨视角训练监督。AppendixG.1指定两组4→64→60 MLP，输入XYZ和range；未将接触GT作为部署输入。AppendixF/Table11的GT接触区域及材料/误差掩膜仅用于离线诊断。
+- Table8固定policy stack、训练数据、种子及评测协议：固定频率衰减 vs 自适应残差，clean/mild/saturated成功率79.3/70.7/66.7 vs 85.3/77.3/73.3；是任务自适应的实际比较。Table9固定GCVSS，precision任务insert_peg与stack_cups各提高10个百分点，而所列coarse任务均值不变。Table11按可靠表面、边界、透明/反光代理区、接触区和任务类型分析衰减，已涉及可靠性与任务需求。
+- 这些是**作者报告结果，本轮未复现**。NISE作用于深度提升坐标的3D-RoPE频率，不是GeoSR隐式token的完整可靠性认证；不能直接宣称与RGB-only问答在同信息下等价。RLBench训练需有重叠的标定RGB-D；MetaWorld单视角训练使用clean模拟depth监督（AppendixG.1）。部署不需clean depth，但也不能无条件视为RGB-only或零额外传感信息。
+- §5/AppendixD.1明确：多视角同时穿透透明物体得到同一错误背景时，一致性可能强化错误；Gaussian先验不完整覆盖偏置/多模态错误，且抑制不恢复隐藏表面。
+- 公开实现边界：官方项目页仓库 `nise-robotics/nise-robotics.github.io` commit `e273c80d4cd7b032590b4ba6041f7fec4ea2a28e`，递归tree112个文件、0个.py；index.html:L42说明Code尚未发布，论文G.1也只承诺将发布。因此这里只完成其公式、协议和公开网页源码核对，**没有读到NISE训练/注意力算法实现**；不能声称部署时σ估计及残差约束均经源码验证。网页关于透明/边界自适应的动画明确是概念示意，未将其当实验。
+
+**其余近邻的真实可靠性路径。**
+
+- SpatioLM commit `9cdbee057fcb11e22ec7ba778d05b58dda470904`：[distill_3d.py:L18–66](https://github.com/xiaomi-research/spatio-lm/blob/9cdbee057fcb11e22ec7ba778d05b58dda470904/src/spatiolm/losses/distill_3d.py#L18-L66)既用teacher depth/ray confidence对误差加权，也包含student confidence损失。swift/trainers.py:L103–115将其与语言及token蒸馏损失联合。**它不是完全不考虑可靠性**。models/modules/qwen3.py:L120–147,L343–347的推理融合是空间分支zero projection残差加法，不以depth_conf/ray_conf作为运行时门控输入。[论文](https://arxiv.org/html/2608.01899v1)式6、Table5及C.4分别覆盖融合、监督消融、route-planning共享失败与motion退化；没有将独立的相关性×可靠性四格作为因果控制。
+- GeoMem-VLA commit `a71a643770d86d38b93653f47886431be02346bb`：[fusion.py:L53–64](https://github.com/GeoMem-VLA/GeoMem-VLA/blob/a71a643770d86d38b93653f47886431be02346bb/starVLA/model/modules/geoplan/fusion.py#L53-L64)是视觉查询记忆几何后sigmoid通道门控，不接收显式uncertainty。vggt_teacher.py:L171–231支持point confidence归一化权重；QwenGeoGR00T.py:L912–930将w_cur传入辅助损失，geo_model.py:L157–172,L249–257实施加权，因此训练可靠性加权与任务门控已共存。**这仍非经校准的部署可靠性判别**。[论文](https://arxiv.org/html/2610.29866v1)附录B式9及Tables3–4覆盖几何/记忆消融，未隔离相关但错误 vs 可靠但无关。RGB历史/状态/指令为部署输入；teacher和未来EEF轨迹为训练监督，不当未来在线输入。发布README还明确默认quick-start不等于整篇论文协议。
+
+| 最强近邻 | 任务与输入 | 有用性/可靠性机制 | 作者已验证优势 | 当前联合提案可能新增什么 | 代价与失败条件 |
+|---|---|---|---|---|---|
+| GeoSR | RGB视频+Q→空间答案 | 相关几何提取+特征门控；无显式可靠性变量 | VSI51.9、DSR66.1；Tables3–4模块消融 | 只有独立错误几何控制可能不同，尚无算法/证据 | 外部几何encoder；动态9.23B、18.95GB/H200；隐式坏几何可混入，门控外仍有compact几何 |
+| NISE | 标定RGB-D+状态→动作 | 不确定性先验+policy学习频率残差；跨视角监督 | Table8自适应优于固定衰减，Table9精细任务对照，Table11区域诊断 | 还须超出其任务自适应可靠性控制；目前未定义 | +8.44K部署参数、+0.8GFLOPs（Table13）；共错表面/非Gaussian误差；未公开算法代码 |
+| SpatioLM | RGB+Q→深度/空间文本；可适配动作 | 训练confidence加权+联合任务损失；推理zero-proj融合 | Table5同backbone监督消融68.7→71.6VSI | 非简单叠加confidence门才能成立；目前无 | 默认6×50M SV-block；teacher偏差、长程记忆及motion失败 |
+| GeoMem-VLA | RGB历史+状态+指令→动作 | 训练point confidence加权+记忆检索/任务门控 | Tables3–4：几何/记忆matched消融有效 | 需证明部署可靠性控制优于现有学习门，未做到 | 历史bank和动作专家；teacher错误可蒸馏，confidence不是正确性保证 |
+
+**对“同任务、同信息、同预算”的结论。** 在核查的四篇及公开代码中，未找到独立操纵相关性和可靠性、固定视觉内容/模型/观察与计算预算，直接比较“相关但不可靠”“可靠但不相关”的完整交叉消融。NISE Table8/9/11是最近的控制/诊断，但Table11是区域统计不是四格干预，Table3/13还明确GM3A多0.8GFLOPs，不能声称严格等计算预算；跨论文的VSI得分、RGB-D操作成功率也不能直接比较。未见精确四格**不构成机制创新证据**。
+
+**最终科学判断。** “有用性与可靠性从未联合考虑”已被NISE的任务自适应不确定性衰减、以及SpatioLM/GeoMem训练加权与任务学习的共存反驳。把GeoSR门控与NISE/常见confidence融合相乘或串接，只是组件组合；换到EQA也不产生算法差异。当前没有回答超出这些方法的新估计量、决策目标、可辨识条件或独立失败机制，因此NO_GO。不部署、不追加训练或新模块，仅归档本次机制证据。
