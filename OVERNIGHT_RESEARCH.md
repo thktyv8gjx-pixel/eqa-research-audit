@@ -318,3 +318,35 @@ ATAP 的输入为已采集 RGB-D、标定/位姿及任务指令。IV-B 保留多
 **对“同任务、同信息、同预算”的结论。** 在核查的四篇及公开代码中，未找到独立操纵相关性和可靠性、固定视觉内容/模型/观察与计算预算，直接比较“相关但不可靠”“可靠但不相关”的完整交叉消融。NISE Table8/9/11是最近的控制/诊断，但Table11是区域统计不是四格干预，Table3/13还明确GM3A多0.8GFLOPs，不能声称严格等计算预算；跨论文的VSI得分、RGB-D操作成功率也不能直接比较。未见精确四格**不构成机制创新证据**。
 
 **最终科学判断。** “有用性与可靠性从未联合考虑”已被NISE的任务自适应不确定性衰减、以及SpatioLM/GeoMem训练加权与任务学习的共存反驳。把GeoSR门控与NISE/常见confidence融合相乘或串接，只是组件组合；换到EQA也不产生算法差异。当前没有回答超出这些方法的新估计量、决策目标、可辨识条件或独立失败机制，因此NO_GO。不部署、不追加训练或新模块，仅归档本次机制证据。
+
+### 材料拓扑变化与动作条件化谱系｜2026-10-26｜HOLD
+
+**结论：HOLD，不实现算法。** 未核实到在真实RGB视频、同样动作信息与时间预算下，联合工具接触、视觉点轨迹并输出物理材料父子谱系的完整等价系统；这不是创新性通过。已核实的可用标注不足以独立评价物理断开与父子边，且“动作条件化拓扑更新”本身已有强近邻。当前0个带完整所需真值的本地真实评价样本、0次模型实验。
+
+**必须分开的三个量：** 可见掩膜的连通分量；材料的物理连接状态；碎片的来源/父子有向谱系。原物体ID的并集能监督来源，却不能唯一决定当前碎片数、切断时刻、局部未切断桥或谱系边。手/刀遮挡可使一个物理连通体投影成多块；已切断碎片再次接触也不等于材料重新连接。同样RGB与接触动作对隐藏连接桥可能不可辨识，须允许unknown，不能用方法自身规则产生评价真值。
+
+| 最强近邻 | 实际机制/输出 | 与物理材料谱系的边界 | 源码/标注证据 |
+|---|---|---|---|
+| VOST / AOT+ | 首帧目标掩膜→原实例材料的逐帧mask；身份/时空记忆传播 | 碎片沿用原ID；没有单独子代ID、父子边、物理连接或工具接触GT | official commit fe274574cb03c8a3ea83e121dd76e20b703781fd；论文§3.2、B.2；aot.py:L48–59,L96–102；dataset.py:L89–104；evaluation.py:L27–74 |
+| MuSMem（IJCV 2026-04-07） | HQ-SAM候选由DINO外观相似性验证；固定大小Smart Memory、深度辅助分割 | 是mask跟踪/精炼，不输出工具导致的物理连接状态或材料父子图 | 正式论文§3.1–3.4、Tables6–9；作者脚注仓库es15326/MuSMem commit ac3f279a2ae870ffd2d70d47d30a00d2440146a9仅8字节README，无算法实现可读 |
+| MOLT（BMC Bioinformatics 2026） | 配准→binary union→关联图/冲突消解→morphological DAG与tracked/lineage ID | 已修复配准导致的伪分裂，但依靠输入实例、重叠和生物规则；不是一般视觉遮挡与真实切断判别 | official LCSB-SCG/MOLT commit 9a4731f044c7d998a90a7618261460fdf340f84a；下列实际函数 |
+| UAI 2026 splitting/merging MOT | 最大权重DAG子图，入/出度约束；weighted partial Max-SAT | 分支关联和全局最优化已存在；目标函数正确不等于物理切断被识别。本文真实实验为不分裂T细胞，分裂实验为CPM模拟 | 正式PDF§3–7、附录E；实现附件访问未完成，详见下文 |
+| BladeMaster v2 | 已知材料点/刀几何下维护永久cut-side编码与兼容网格，允许断面再接触而不重新耦合 | 物理“切断≠接触”已显式处理；是正向仿真而非从视觉估计未知谱系；局部side code亦非完整父子图 | 原文§III-C–F、IV-C；官方项目页未列算法代码/原始物理谱系标注下载 |
+
+**实际阅读的实现与原始来源。**
+
+- [VOST原文](https://arxiv.org/html/2212.06200) §3.2规定所有后代保留初始身份，混合无法区分的材料为Ignore；标注5fps。[数据页](https://github.com/TRI-ML/VOST/blob/fe274574cb03c8a3ea83e121dd76e20b703781fd/data.html#L192)提供train/val ZIP及CC BY-NC-SA 4.0声明，来源Ego4D/EPIC-KITCHENS。本轮未下载该数据包，未将公开演示当成已取得谱系GT。读取[AOT输出头](https://github.com/TRI-ML/VOST/blob/fe274574cb03c8a3ea83e121dd76e20b703781fd/aot_plus/networks/models/aot.py#L48-L59)及engine的首帧身份/记忆传播；[数据读取](https://github.com/TRI-ML/VOST/blob/fe274574cb03c8a3ea83e121dd76e20b703781fd/evaluation/source/dataset.py#L89-L104)按首帧已有ID分通道，[评分](https://github.com/TRI-ML/VOST/blob/fe274574cb03c8a3ea83e121dd76e20b703781fd/evaluation/source/evaluation.py#L27-L74)计算J/J_last而无父子边或连接事件得分。不能从掩膜连通分量自动补出物理GT。
+- [MuSMem正式全文](https://doi.org/10.1007/s11263-026-02742-1) §3.3式15以DINO余弦相似度选SAM候选，未给动作/接触谱系模块；§4.1/Table1还明确VOST采用train→val监督协议，其余若干数据集才是zero-shot，不把其摘要泛称zero-shot当VOST协议。[作者公开仓库](https://github.com/es15326/MuSMem/tree/ac3f279a2ae870ffd2d70d47d30a00d2440146a9)递归tree只有README，不能声称已读到其算法源码。
+- [MOLT正式全文](https://doi.org/10.1186/s12859-026-06434-y) Fig2–3有配准伪分裂冲突消解。[instance_matching.py:L68–142](https://github.com/LCSB-SCG/MOLT/blob/9a4731f044c7d998a90a7618261460fdf340f84a/src/labels/functional/instance_matching.py#L68-L142)构建图及lineage connected components；[morphological_graph.py:L5–36,L114–235](https://github.com/LCSB-SCG/MOLT/blob/9a4731f044c7d998a90a7618261460fdf340f84a/src/labels/functional/morphological_graph.py#L114-L235)按IoU选择约束边、按入/出度给分裂或合并新tracked ID。函数参数无工具接触/切割动作输入。S1全序列union用未来，S2相邻帧不能gap-closing；不得未经对齐就与在线候选比较。细胞数据有谱系但无切割动作；具有分裂/融合的beta-amyloid数据仍按论文声明延后开放，未核实到已发布的原始包。
+- [UAI正式论文](https://proceedings.mlr.press/v337/mihaylova26a.html)实际读取14页PDF（1,089,559B，SHA256 e712cb6ddb8e99504f9cc7104b918a37a590f0e234a13eba252c80aab6180a1f）。§3–4求max Σ_e w(e)x_e并施加入/出度集合约束，分裂实验将O(v)放宽为{1,2}。改变事件代价/允许分支的位置，本来就在此框架表达范围内。附录E列scripts/、tracks/all_gt.csv.gz、tracks/dividing-cell.csv.gz；公开OpenReview页面有验证挑战，官方API返回403，停止访问，**未取得/审查该附件源码**。文献中的Zenodo链接是TaichiCPM仿真框架，不能冒充Max-SAT tracker源码。论文运行时间含M3 Pro CPU实验，但本轮未安装/运行求解器。
+- [BladeMaster v2原文](https://arxiv.org/html/2609.27342v2) 式6–7按扫过的刀几何赋持久三进制side digits，conflict关系禁止相对切面跨网格耦合；未到达刀锋的材料仍可连接。**D_p影响定向接触阻力，而side assignment由刀扫过几何决定，不能把D_p阈值误写为切断标签触发器。** 材料点和动作为仿真状态，不是视觉点轨迹。真实香蕉实验是切割/推移及力曲线验证，未提供可核验的真实父子谱系GT。[官方项目页](https://jango6324.github.io/blademaster/)仅论文和演示入口，未核实到公开算法实现或所需标注。
+
+**定向反证补查，未扩展选题。** [TopoCut](https://arxiv.org/html/2509.19712) §3.1已用damage/刀轨迹/SDF/connected components维护碎片，§3.3.1明确F:(topo_t,a_t)→topo_(t+1)，以位置损失和Hungarian cluster损失训练；是“动作条件化拓扑更新”极强近邻。输入定义含粒子/cluster及由SE(3)刀动作投影的cut mask，不等于普通RGB工具接触。其宣称递归处理真实depth，不能因此推定已公开带真实谱系GT的RGB测试；官方页面Code仍Coming Soon。另[2016 RGB-D拓扑跟踪原文](https://users.ics.forth.gr/~argyros/mypapers/2016_10_3dv_tearing.pdf)已有SIFT对应、几何间隙和断边；[2025 topology-aware SfT](https://doi.org/10.2312/stag.20251322)已有点对应和物理/重投影约束推断切缝，作者代码/数据地址git.zib.de/asengupta/topology-aware-sft本轮429，未进一步获取。未把这些检索命中当作完整等价系统，但“视觉轨迹＋更新连通图”不能作为首次贡献。CulinaryCut-VLAP的材料/工具数据主体为仿真，不能替代独立真实物理GT。
+
+**创新风险与同条件下真正需要优于的基线。** 若新机制只是接触后放宽split、改变edge weights、断边后禁止重连，再接MOLT或Max-SAT，就是既有谱系关联与切割连接规则组合。必须对比同一冻结mask/点轨迹/动作证据下的：MOLT关联、带相同动作代价/分支约束的全局匹配、简单持久连接规则；不能只与不看动作的原版跟踪器比较。所有方法使用同样观察前缀、工具信息、硬件和wall-clock上限；不得把真实接触/切割GT作为候选额外在线输入。
+
+理论上有判别力但**尚未取得真实独立证据**的样本，是：(a)遮挡使mask断开但材料未断；(b)工具接触/部分切割仍有连接桥；(c)切断后碎片再接触；(d)相似碎片交叉或遮挡后重现。候选应降低(a)(b)假split、(c)假merge及(d)父子误关联，并控制普通完整切断样本的退化；现阶段没有结果支持这些优势。相同视觉和动作若对隐藏桥不可辨识，合理输出应为unknown而非自信造谱系。
+
+**数据/合法评价准入。** 原VOST许可可支持遵守署名、非商业及相同方式共享要求的研究性补标，但公开union mask不够。需要独立标注的child ID、parent-child edge、工具接触/分离时段、物理connected/disconnected/unknown及证据依据。可用后续明确分开/重接触的画面离线判GT，但不得作为更早时刻模型的额外输入；5fps应给事件时间区间而非伪精确时刻。单纯“两个可见块”或刀接触不是物理切断GT，所有不确定例须保留并单列覆盖率，不能用自家规则或BladeMaster模拟标签给真实视频自证。边级正确性/假split/假merge/时段误差需独立计分，原J或仅lineage组成员指标不能替代。此协议原则上可不做大规模训练，但**本轮未核实到已获得、满足它的真实小包及独立标注**，因此没有最小算法实现方案。
+
+**唯一下一动作：取得并核验一个小型真实标注包的评价资格。** 向数据作者请求少量可单独合法取得的切割片段及上述已有额外标注/可补标权限；优先覆盖遮挡、未切断、完全切断后再接触。只提供请求建议，不自行发信，不下载全量视频，不开发新算法。若没有独立可判的连接/父子真值，维持HOLD；不因暂无同名论文而升级GO。本轮仅读取公开源码、文献和两份小型论文PDF，没有模型/数据集下载、安装、训练或仿真。
